@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./libs/css/styles.css" />
+    <link rel="stylesheet" href="./libs/css/output.css" />
+    <link href="./assets/font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/font-awesome/css/regular.css" rel="stylesheet" />
+    <link href="./assets/font-awesome/css/solid.css" rel="stylesheet" />
+    <link href="./assets/font-awesome/css/brands.css" rel="stylesheet" />
+    <title>Jordan S.</title>
+  </head>
+  <body>
+    <main class="min-h-screen">
+      <div class="visible" id="preloader"></div>
+      <div
+        aria-disabled="true"
+        id="message-bg"
+        class="z-[9999] opacity-100 flex aria-disabled:opacity-100 aria-disabled:invisible visible aria-disabled:pointer-events-none justify-center items-center pointer-events-auto fixed w-full h-full bg-black/20 p-2"
+      >
+        <div
+          id="message-container"
+          class="w-72 h-44 rounded-md border grid grid-cols-[40px,1fr] gap-2 bg-black justify-center items-center border-white-300 border-spacing-2 p-2 justify-items-center"
+        >
+          <div class="w-4/6 flex justify-center">
+            <div
+              class="rounded-md bg-blue-700 p-2 shadow-[0px_0px_10px_0px_rgba(255,255,255,.7),_3px_-3px_2px_0px_rgba(0,0,0,.7)_inset] border-white-600"
+            >
+              <i
+                class="fa-solid fa-info animate-bounce relative left-[1px] text-white-300 text-lg"
+              ></i>
+            </div>
+          </div>
+          <div
+            id="message"
+            class="font-abel h-full flex justify-center items-center font-light w-full rounded backdrop-blur bg-black/20"
+          ></div>
+        </div>
+      </div>
+      <div
+        id="error-screen"
+        aria-disabled="true"
+        class="fixed z-[9999] p-3 aria-disabled:invisible visible flex items-center justify-center rounded-md h-screen w-screen bg-white-300 border-slate-300 group border"
+      >
+        <div
+          class="max-w-lg w-full h-80 group-aria-disabled:translate-x-5 group-aria-disabled:opacity-0 gap-2 translate-x-0 transition-all opacity-100 delay-150 duration-1000 ease-in-out grid grid-rows-[1fr] sm:grid-cols-[auto,1fr] p-2 rounded-lg items-center justify-items-center"
+        >
+          <div
+            class="flex justify-center items-center rounded-[40px] shadow-[10px_1px_40px_10px_rgba(0,0,0,.5)_inset,_-10px_-10px_40px_5px_rgba(255,255,255,1)_inset] bg-[url('/libs/css/assets/error_icon.svg')] bg-center w-36 h-36 bg-no-repeat"
+          ></div>
+          <div
+            class="flex flex-col text-center items-center p-2 w-full justify-center max-w-xs"
+          >
+            <h2
+              id="big-error-title"
+              class="font-title text-3xl w-full text-red-600 font-semibold"
+            ></h2>
+            <p
+              id="big-error-subtitle"
+              class="font-title font-semibold text-lg text-white-900 sm:text-lg"
+            ></p>
+          </div>
+        </div>
+      </div>
+      <div
+        id="home"
+        class="h-screen flex justify-center items-center relative contain-layout bg-[linear-gradient(315deg,_#130f40_0%,_#000000_74%)]"
+      >
+        <div
+          class="bg-yellow-400 animate-fall -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:1s] transition-all transform h-36 w-1 absolute left-[15%]"
+        ></div>
+        <div
+          class="bg-yellow-400 animate-fall -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:2s] transition-all transform h-36 w-1 absolute left-[45%]"
+        ></div>
+        <div
+          class="bg-yellow-400 animate-fall -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:0.5s] transition-all transform h-36 w-1 absolute left-[5%]"
+        ></div>
+        <div
+          class="bg-red-500 animate-fall -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:2s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[55%]"
+        ></div>
+        <div
+          class="bg-red-500 animate-fall -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:3.5s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[15%]"
+        ></div>
+        <div
+          class="bg-red-500 animate-fall -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:0s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[95%]"
+        ></div>
+        <div
+          class="bg-green-700 animate-fall -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:3s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+        ></div>
+        <div
+          class="bg-green-700 animate-fall -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:1.3s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+        ></div>
+        <div
+          class="bg-green-700 animate-fall -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:0.3s] transition-all transform h-36 w-1 absolute border-blue-600 left-3/4"
+        ></div>
+        <div
+          class="p-4 relative backdrop-blur-lg backdrop-saturate-200 overflow-hidden w-full max-w-3xl flex justify-center bg-slate-800/40 rounded-sm z-10"
+        >
+          <div class="h-full w-screen absolute bottom-1 -z-10">
+            <div
+              class="bg-yellow-400 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:1.2s] transition-all transform h-36 w-1 absolute left-[15%]"
+            ></div>
+            <div
+              class="bg-yellow-400 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:2.2s] transition-all transform h-36 w-1 absolute left-[45%]"
+            ></div>
+            <div
+              class="bg-yellow-400 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:0.7s] transition-all transform h-36 w-1 absolute left-[5%]"
+            ></div>
+            <div
+              class="bg-red-500 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:2.2s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[55%]"
+            ></div>
+            <div
+              class="bg-red-500 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:3.7s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[15%]"
+            ></div>
+            <div
+              class="bg-red-500 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:0.2s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[95%]"
+            ></div>
+            <div
+              class="bg-green-700 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:3.2s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+            ></div>
+            <div
+              class="bg-green-700 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:1.5s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+            ></div>
+            <div
+              class="bg-green-700 animate-fall blur-xl -top-52 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:0.5s] transition-all transform h-36 w-1 absolute border-blue-600 left-3/4"
+            ></div>
+          </div>
+          <div class="flex gap-4 items-center">
+            <div
+              class="border-white border-4 size-44 shadow-[30px_0px_40px_red_inset,_-25px_-25px_30px_green_inset] rounded-full relative"
+            >
+              <img src="/libs/css/assets/images/sticker(11).png" class="h-43" />
+            </div>
+            <div class="flex flex-col gap-4">
+              <div
+                class="font-quantico m-auto font-bold text-4xl sm:text-[80px] text-slate-100"
+              >
+                Jordan Shade
+              </div>
+              <div class="flex justify-center items-center mb-5">
+                <span class="font-oxanium text-4xl text-slate-100 mr-4">
+                  Frontend Developer
+                </span>
+                <div class="size-8">
+                  <img class="" src="/libs/css/assets/images/syntax-1.svg" />
+                </div>
+              </div>
+              <div class="ml-auto flex gap-2">
+                <a
+                  title="https://www.github.com/jordanss1"
+                  href="https://www.github.com/jordanss1"
+                  target="_blank"
+                  class="cursor-pointer p-2 group flex justify-center items-center"
+                >
+                  <i
+                    class="fa-brands fa-github text-slate-100 group-hover:text-sky-400 transition-all duration-300 group-hover:scale-110 group-hover:translate-y-0.5 ease-out text-2xl"
+                  ></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jsshade"
+                  title="https://www.linkedin.com/in/jsshade"
+                  target="_blank"
+                  class="cursor-pointer p-2 group flex justify-center items-center"
+                >
+                  <i
+                    class="fa-brands fa-linkedin-in text-slate-100 group-hover:text-sky-400 transition-all duration-300 group-hover:scale-110 group-hover:translate-y-0.5 ease-out text-2xl"
+                  ></i>
+                </a>
+                <a
+                  href="https://medium.com/@jordan.to.code"
+                  title="https://medium.com/@jordan.to.code"
+                  target="_blank"
+                  class="cursor-pointer p-2 group flex justify-center items-center"
+                >
+                  <i
+                    class="fa-brands fa-medium text-slate-100 group-hover:text-sky-400 transition-all duration-300 group-hover:scale-110 group-hover:translate-y-0.5 ease-out text-2xl"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./libs/js/jquery.js"></script>
+    <script src="./libs/js/script.js"></script>
+  </body>
+</html>

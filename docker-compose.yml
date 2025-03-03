@@ -1,0 +1,37 @@
+services:
+  web4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    ports:
+      - 8080:8080
+    depends_on:
+      - api4
+    develop:
+      watch:
+        - path: .
+          target: /usr/share/nginx/html/
+          action: sync
+        - path: ./conf.d/
+          target: /etc/nginx/conf.d/
+          action: rebuild
+    restart: always
+    env_file:
+      - ./.env
+
+  api4:
+    build:
+      context: ./libs/php
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    container_name: api
+    restart: always
+    develop:
+      watch:
+        - path: ./libs/php
+          target: /var/www/html/
+          action: sync
+    env_file:
+      - ./.env
