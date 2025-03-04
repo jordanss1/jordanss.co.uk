@@ -14,20 +14,61 @@ module.exports = {
         fall: {
           '0%': { transform: 'translateY(-100%)', opacity: '1' },
           '10%': {
-            transform: 'translateY(120vh)',
+            transform: 'translateY(90vh)',
             opacity: '0',
           },
           '100%': {
-            transform: 'translateY(120vh)',
+            transform: 'translateY(90vh)',
             opacity: '0',
           },
         },
-      
+        blink: {
+          '25%': {
+            opacity: '1',
+          },
+          '50%': {
+            opacity: '0',
+          },
+          '75%': {
+            opacity: '1',
+          },
+        },
+        explosion: {
+          '0%': {
+            'box-shadow': '0 0 15px 25px var(--explosion-color)',
+          },
+          '2%': {
+            'box-shadow': '0 0 0px 0px var(--explosion-color)',
+          },
+          '100%': {
+            'box-shadow': '0 0 0px 0px var(--explosion-color)',
+          },
+        },
+        typing: {
+          '0%': {
+            width: '0%',
+          },
+          '66%': {
+            width: '100%',
+          },
+          '100%': {
+            width: '100%',
+          },
+        },
+        blink_caret: {
+          from: { 'border-color': 'transparent' },
+          to: { 'border-color': 'transparent' },
+          '50%': { 'border-color': 'white' },
+        },
       },
       animation: {
         start_absolute: 'startAbsolute 500ms forwards',
         end_absolute: 'endAbsolute 1s forwards',
         fall: 'fall 5s linear var(--fall-delay) infinite',
+        blink: 'blink 500ms linear infinite',
+        typing:
+          'typing 4s steps(25, end) infinite, blink_caret .5s step-end infinite',
+        explosion: 'explosion 5s linear var(--fall-delay) infinite',
       },
       fontFamily: {
         quantico: ['Quantico', 'Arial', 'sans-serif'],
