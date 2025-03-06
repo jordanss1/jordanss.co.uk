@@ -13,6 +13,7 @@ module.exports = {
         },
         fall: {
           '0%': { transform: 'translateY(-100%)', opacity: '1' },
+          '7%': { opacity: 'var(--middle-opacity,.4)' },
           '10%': {
             transform: 'translateY(90vh)',
             opacity: '0',
