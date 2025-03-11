@@ -16,7 +16,7 @@ services:
         - path: ./conf.d/
           target: /etc/nginx/conf.d/
           action: rebuild
-    restart: always
+    restart: no
     env_file:
       - ./.env
 
@@ -27,7 +27,7 @@ services:
     ports:
       - 9000:9000
     container_name: api
-    restart: always
+    restart: no
     develop:
       watch:
         - path: ./libs/php
