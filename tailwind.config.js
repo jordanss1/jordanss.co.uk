@@ -83,6 +83,7 @@ module.exports = {
         lg: '1280px',
         xl: '1920px',
       },
+
       colors: {
         yellow: {
           50: '#fdffcc',

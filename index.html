@@ -65,50 +65,84 @@
         </div>
       </div>
       <nav
-        class="fixed top-0 left-4 h-full gap-4 flex items-center my-auto max-w-32 w-full z-[9999] p-1"
+        id="nav"
+        aria-expanded="false"
+        class="fixed pointer-events-none group/nav top-0 left-1 md:left-4 h-full gap-4 flex items-center my-auto max-w-32 w-full z-[9999] p-1"
       >
-        <ul class="h-fit flex flex-col gap-4">
-          <li class="list-none">
+        <input type="checkbox" id="nav-toggle" class="hidden peer" />
+
+        <label
+          for="nav-toggle"
+          class="fixed top-2 size-9 group rounded-full flex items-center justify-center opacity-70 hover:opacity-100 transition-all ease-in cursor-pointer pointer-events-auto hover:bg-slate-500 bg-slate-600 left-2 sm:hidden"
+        >
+          <i
+            class="fa-solid fa-angles-right text-slate-400 group-hover:text-white group-hover:translate-y-[1px] transition-all ease-out text-xl !inline group-aria-expanded/nav:!hidden"
+          ></i>
+          <i
+            class="fa-solid fa-angles-left text-slate-400 group-hover:text-white group-hover:translate-y-[1px] transition-all ease-out text-xl !hidden group-aria-expanded/nav:!inline"
+          ></i>
+        </label>
+        <ul
+          id="nav-ul"
+          class="h-fit overflow-hidden group sm:w-fit transition-all duration-500 ease-in-out flex flex-col gap-4"
+        >
+          <li
+            class="list-none group-aria-expanded/nav:delay-0 delay-300 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 opacity-0 scale-x-50 origin-left transition-all pointer-events-auto sm:opacity-100 sm:scale-x-100"
+          >
             <a
-              class="bg-slate-300 w-11 cursor-pointer h-11 group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-[102px]"
+              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
-              <img class="w-7" src="/libs/css/assets/images/home.svg" />
-              <span class="text-white hidden group-hover:inline font-abel">
+              <img class="md:w-7 w-5" src="/libs/css/assets/images/home.svg" />
+              <span
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline font-abel"
+              >
                 Home
               </span>
             </a>
           </li>
-          <li class="list-none">
+          <li
+            class="list-none pointer-events-auto delay-200 group-aria-expanded/nav:delay-100 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-50 origin-left sm:opacity-100 sm:scale-x-100"
+          >
             <a
-              class="bg-slate-300 w-11 cursor-pointer h-11 group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-[102px]"
+              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
-              <img class="w-7" src="/libs/css/assets/images/about.svg" />
+              <img class="md:w-7 w-5" src="/libs/css/assets/images/about.svg" />
               <span
-                class="text-white hidden group-hover:inline delay-300 font-abel"
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline delay-300 font-abel"
               >
                 About
               </span>
             </a>
           </li>
-          <li class="list-none">
+          <li
+            class="list-none pointer-events-auto delay-100 group-aria-expanded/nav:delay-200 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-50 origin-left sm:opacity-100 sm:scale-x-100"
+          >
             <a
-              class="bg-slate-300 w-11 cursor-pointer h-11 group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-[102px]"
+              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
-              <img class="w-7" src="/libs/css/assets/images/portfolio.svg" />
+              <img
+                class="md:w-7 w-5"
+                src="/libs/css/assets/images/portfolio.svg"
+              />
               <span
-                class="text-white hidden group-hover:inline delay-300 font-abel"
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline delay-300 font-abel"
               >
                 Portfolio
               </span>
             </a>
           </li>
-          <li class="list-none">
+          <li
+            class="list-none pointer-events-auto delay-0 group-aria-expanded/nav:delay-300 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-50 origin-left sm:opacity-100 sm:scale-x-100"
+          >
             <a
-              class="bg-slate-300 w-11 cursor-pointer h-11 group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-[102px]"
+              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
-              <img class="w-7" src="/libs/css/assets/images/contact.svg" />
+              <img
+                class="md:w-7 w-5"
+                src="/libs/css/assets/images/contact.svg"
+              />
               <span
-                class="text-white hidden group-hover:inline delay-300 font-abel"
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline delay-300 font-abel"
               >
                 Contact
               </span>
@@ -241,7 +275,7 @@
                   Frontend Developer
                 </h2>
                 <div
-                  class="md:size-8 size-5 min-w-5 xs:size-6 xs:min-w-6 md:min-w-8"
+                  class="md:size-9 size-5 min-w-5 xs:size-6 xs:min-w-6 md:min-w-8"
                 >
                   <img class="" src="/libs/css/assets/images/syntax-1.svg" />
                 </div>
@@ -282,7 +316,24 @@
           </div>
         </div>
       </section>
-      <section id="about" class="h-screen relative bg-black"></section>
+      <section
+        id="about-skills"
+        class="h-[125vh] relative bg-black overflow-hidden"
+      >
+        <section
+          id="about"
+          class="h-1/2 [background:conic-gradient(from_1660deg_at_14%_45%,_#13212e_0_7%,_#204789_26%,_#0000_26%_96%,_#4fa3b1_96%_100%),_linear-gradient(20deg,_#198e9b_0%,_#130f40_45%,_#000_70%)]"
+        ></section>
+        <section id="skills" class="h-1/2 relative">
+          <div
+            class="w-full h-full [background:conic-gradient(from_1660deg_at_14%_-55%,_#13212e_0_7%,_#204789_26%,_#0000_26%_96%,_#4fa3b1_96%_100%),_linear-gradient(150deg,_#198e9b_0%,_#130f40_25%,_#0000,_#0000_70%),_radial-gradient(18%_28%_at_24%,_#93a5ae_7%,_#15245d00_100%),_radial-gradient(28%_28%_at_18%_71%,_#ffffff59_17%,_#073aff00_100%),_radial-gradient(28%_28%_at_10%_87%,_#cae439_7%,_#073aff00_100%),_radial-gradient(8%_43%_at_7%_98%,_#ffffff00_24%,_#073aff00_100%),_radial-gradient(24%_47%_at_68%_33%,_#869828_24%,_#073aff00_100%),_radial-gradient(35%_56%_at_90%_74%,_#5533b0_9%,_#141d4a_100%),_radial-gradient(70%_53%_at_36%_76%,_#73f2ff_0%,_#073aff00_100%),_radial-gradient(74%_86%_at_67%_38%,_#175b77_24%,_#073aff00_100%),_linear-gradient(338deg,_#187a8c_1%,_#164c6b00_100%)]"
+          ></div>
+
+          <div
+            class="sm:w-3/4 w-11/12 absolute [box-shadow:rgb(254_254_254_/_46%)_0px_10px_50px_10px,_rgb(255_255_255_/_50%)_0px_-10px_40px_0px_inset] [background:conic-gradient(from_.5turn_at_0%_0%,_#00c476,_30%,_#95deeb,_90%,_#50a4b2)] h-full -top-20 rounded-md left-1/2 -translate-x-1/2"
+          ></div>
+        </section>
+      </section>
     </main>
     <script src="./libs/js/jquery.js"></script>
     <script src="./libs/js/script.js"></script>

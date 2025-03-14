@@ -16,10 +16,18 @@ const updateOccupation = () => {
   let index = 0;
 
   setInterval(() => {
-    index = index === occupations.length - 1 ? 0 : index + 1  ;
+    index = index === occupations.length - 1 ? 0 : index + 1;
 
     $('#occupation').text(occupations[index]);
   }, 4000);
 };
 
 updateOccupation();
+
+$('#nav-toggle').on('change', function () {
+  if ($(this).prop('checked')) {
+    $('#nav').attr('aria-expanded', 'true');
+  } else {
+    $('#nav').attr('aria-expanded', 'false');
+  }
+});
