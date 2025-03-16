@@ -13,6 +13,7 @@ const updateOccupation = () => {
     'PHP Developer',
     'Frontend Developer',
   ];
+
   let index = 0;
 
   setInterval(() => {
@@ -31,3 +32,15 @@ $('#nav-toggle').on('change', function () {
     $('#nav').attr('aria-expanded', 'false');
   }
 });
+
+let angle = 122;
+
+const animateSkillSquare = () => {
+  angle -= 1;
+
+  $('#skills-square').css('--conic-deg', `${angle}deg`);
+
+  requestAnimationFrame(animateSkillSquare);
+};
+
+animateSkillSquare();
