@@ -38,7 +38,7 @@ let angle = 122;
 const animateSkillSquare = () => {
   angle -= 1;
 
-  $('#skills-square').css('--conic-deg', `${angle}deg`);
+  $('.skills-square').css('--conic-deg', `${angle}deg`);
 
   requestAnimationFrame(animateSkillSquare);
 };
