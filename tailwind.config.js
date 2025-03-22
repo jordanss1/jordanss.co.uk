@@ -11,6 +11,34 @@ module.exports = {
           '0%': { position: 'relative' },
           '100%': { position: 'absolute' },
         },
+        reverse_scale_transform: {
+          '0%': {
+            transform:
+              'scale(2) perspective(7em) rotate3d(50,20,100,23deg) translateZ(-10px)',
+          },
+          '30%': {
+            transform:
+              'scale(2) perspective(.9em) rotate3d(0,0,0,0deg) translateZ(0px)',
+          },
+          '100%': {
+            transform:
+              'scale(1) perspective(.9em) rotate3d(0,0,0,0deg) translateZ(0px)',
+          },
+        },
+        scale_then_transform: {
+          '0%': {
+            transform:
+              'scale(1) perspective(4em) rotate3d(0,0,0,0deg) translateZ(0px)',
+          },
+          '75%': {
+            transform:
+              'scale(2) perspective(7em) rotate3d(50,20,100,23deg) translateZ(-10px)',
+          },
+          '100%': {
+            transform:
+              'scale(2) perspective(7em) rotate3d(50,20,100,23deg) translateZ(-10px)',
+          },
+        },
         fall: {
           '0%': { transform: 'translateY(-100%)', opacity: '1' },
           '7%': { opacity: 'var(--middle-opacity,.4)' },
@@ -70,6 +98,10 @@ module.exports = {
         typing:
           'typing 4s steps(25, end) infinite, blink_caret .5s step-end infinite',
         explosion: 'explosion 5s linear var(--fall-delay) infinite',
+        scale_then_transform:
+          'scale_then_transform 1.5s ease-in-out .3s forwards',
+        reverse_scale_transform:
+          'reverse_scale_transform 1.5s ease-in-out forwards',
       },
       fontFamily: {
         quantico: ['Quantico', 'Arial', 'sans-serif'],
