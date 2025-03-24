@@ -44,3 +44,5 @@ const animateSkillSquare = () => {
 };
 
 animateSkillSquare();
+
+$()
