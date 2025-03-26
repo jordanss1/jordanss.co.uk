@@ -45,4 +45,11 @@ const animateSkillSquare = () => {
 
 animateSkillSquare();
 
-$()
+$('.switch-1').on('click', function () {
+  $(this).closest('.group').attr('aria-disabled', 'true');
+  $(this).closest('.controller-div').attr('aria-expanded', 'false');
+});
+$('.switch-2').on('click', function () {
+  $(this).closest('.group').attr('aria-disabled', 'false');
+  $(this).closest('.controller-div').attr('aria-expanded', 'true');
+});
