@@ -16,58 +16,68 @@
     <main class="min-h-screen">
       <div class="visible" id="preloader"></div>
       <div
-        aria-disabled="true"
-        id="message-bg"
-        class="z-[9999] opacity-100 flex aria-disabled:opacity-100 aria-disabled:invisible visible aria-disabled:pointer-events-none justify-center items-center pointer-events-auto fixed w-full h-full bg-black/20 p-2"
+        id="taskx-overview"
+        class="fixed z-[9999] overflow-auto p-8 h-screen w-full"
       >
         <div
-          id="message-container"
-          class="w-72 h-44 rounded-md border grid grid-cols-[40px,1fr] gap-2 bg-black justify-center items-center border-white-300 border-spacing-2 p-2 justify-items-center"
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[conic-gradient(from_90deg_at_50%_-16%,_#111,_50%,_#222,_#111)] w-full rounded-lg overflow-auto flex flex-col gap-4"
         >
-          <div class="w-4/6 flex justify-center">
-            <div
-              class="rounded-md bg-blue-700 p-2 shadow-[0px_0px_10px_0px_rgba(255,255,255,.7),_3px_-3px_2px_0px_rgba(0,0,0,.7)_inset] border-white-600"
-            >
-              <i
-                class="fa-solid fa-info animate-bounce relative left-[1px] text-white-300 text-lg"
-              ></i>
-            </div>
-          </div>
+          <div class="h-screen"></div>
           <div
-            id="message"
-            class="font-abel h-full flex justify-center items-center font-light w-full rounded backdrop-blur bg-black/20"
-          ></div>
-        </div>
-      </div>
-      <div
-        id="error-screen"
-        aria-disabled="true"
-        class="fixed z-[9999] p-3 aria-disabled:invisible visible flex items-center justify-center rounded-md h-screen w-screen bg-white-300 border-slate-300 group border"
-      >
-        <div
-          class="max-w-lg w-full h-80 group-aria-disabled:translate-x-5 group-aria-disabled:opacity-0 gap-2 translate-x-0 transition-all opacity-100 delay-150 duration-1000 ease-in-out grid grid-rows-[1fr] sm:grid-cols-[auto,1fr] p-2 rounded-lg items-center justify-items-center"
-        >
-          <div
-            class="flex justify-center items-center rounded-[40px] shadow-[10px_1px_40px_10px_rgba(0,0,0,.5)_inset,_-10px_-10px_40px_5px_rgba(255,255,255,1)_inset] bg-[url('/libs/css/assets/error_icon.svg')] bg-center w-36 h-36 bg-no-repeat"
-          ></div>
-          <div
-            class="flex flex-col text-center items-center p-2 w-full justify-center max-w-xs"
+            class="rounded-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-14 slider-container h-full"
           >
-            <h2
-              id="big-error-title"
-              class="font-title text-3xl w-full text-red-600 font-semibold"
-            ></h2>
-            <p
-              id="big-error-subtitle"
-              class="font-title font-semibold text-lg text-white-900 sm:text-lg"
-            ></p>
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div class="flex gap-7 slider-track h-full">
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset]"
+                src="/libs/css/assets/images/projects/desktop/taskx1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset]"
+                src="/libs/css/assets/images/projects/desktop/taskx2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset]"
+                src="/libs/css/assets/images/projects/desktop/taskx3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset]"
+                src="/libs/css/assets/images/projects/desktop/taskx4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset]"
+                src="/libs/css/assets/images/projects/desktop/taskx5.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>
       <nav
         id="nav"
         aria-expanded="false"
-        class="fixed pointer-events-none group/nav top-0 left-1 md:left-4 h-full gap-4 flex items-center my-auto max-w-32 w-full z-[9999] p-1"
+        class="fixed pointer-events-none group/nav top-0 left-1 md:left-4 h-full gap-4 flex items-center my-auto max-w-32 w-full z-[9998] p-1"
       >
         <input type="checkbox" id="nav-toggle" class="hidden peer" />
 
@@ -90,7 +100,7 @@
             class="list-none group-aria-expanded/nav:delay-0 delay-300 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 opacity-0 scale-x-0 origin-left transition-all pointer-events-auto sm:opacity-100 sm:scale-x-100"
           >
             <a
-              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
+              class="bg-slate-300 hover:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
               <img class="md:w-7 w-5" src="/libs/css/assets/images/home.svg" />
               <span
@@ -104,7 +114,7 @@
             class="list-none pointer-events-auto delay-200 group-aria-expanded/nav:delay-100 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-0 origin-left sm:opacity-100 sm:scale-x-100"
           >
             <a
-              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
+              class="bg-slate-300 hover:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
               <img class="md:w-7 w-5" src="/libs/css/assets/images/about.svg" />
               <span
@@ -118,7 +128,7 @@
             class="list-none pointer-events-auto delay-100 group-aria-expanded/nav:delay-200 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-0 origin-left sm:opacity-100 sm:scale-x-100"
           >
             <a
-              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
+              class="bg-slate-300 hover:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
               <img
                 class="md:w-7 w-5"
@@ -135,7 +145,7 @@
             class="list-none pointer-events-auto delay-0 group-aria-expanded/nav:delay-300 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-0 origin-left sm:opacity-100 sm:scale-x-100"
           >
             <a
-              class="bg-slate-400 hover:bg-slate-300 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
+              class="bg-slate-300 hover:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px]"
             >
               <img
                 class="md:w-7 w-5"
@@ -150,6 +160,7 @@
           </li>
         </ul>
       </nav>
+
       <section
         id="home"
         class="h-screen p-4 flex justify-center items-center relative contain-layout bg-[linear-gradient(197deg,_#130f40_0%,_#000000_74%)]"
@@ -217,7 +228,7 @@
           ></div>
         </div>
         <div
-          class="p-2 xs:p-6 outline-2 outline outline-[#3400ff] shadow-[0_0_2em_0px_black,inset_0_0_1em_5px_#110e3b,0_0_1em_5px_#110e3b] relative backdrop-blur-lg backdrop-saturate-200 overflow-hidden w-full max-w-lg md:max-w-3xl flex justify-center bg-[#160c3d] rounded-sm z-10"
+          class="p-2 xs:!p-6 outline-2 outline outline-[#3400ff] !shadow-[0_0_2em_0px_black,inset_0_0_1em_5px_#110e3b,0_0_1em_5px_#110e3b] relative backdrop-blur-lg backdrop-saturate-200 overflow-hidden w-full max-w-lg md:max-w-3xl flex justify-center bg-[#160c3d] rounded-sm z-10"
         >
           <div class="h-full w-screen absolute bottom-1 -z-10">
             <div
@@ -416,7 +427,7 @@
             class="max-w-4xl h-full mx-auto flex-col flex contain-layout xs:mt-20 sm:mt-24"
           >
             <h3
-              class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4"
+              class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4 sm:ml-0 ml-6"
             >
               Skills
             </h3>
@@ -630,13 +641,13 @@
       </section>
       <section
         id="portfolio"
-        class="min-h-screen px-4 sm:px-10 w-full [background:conic-gradient(from_77deg_at_47%_-20%,_#478d9c,_#145484,_#10207f00,_#421d85,_#3c1b87,_#134381,_#135da5,_#156e84),_linear-gradient(181deg,_#140c7c_15%,_#130d7e_100%)] overflow-hidden"
+        class="min-h-screen px-4 sm:px-10 w-full [background:conic-gradient(from_92deg_at_54%_-7%,_#378286,_#144c85,_#10207f00,_#421d85,_#3c1b87,_#134381,_#135da5,_#156e84),_linear-gradient(181deg,_#140c7c_15%,_#130d7e_100%)] overflow-hidden"
       >
         <div
           class="w-full h-full mx-auto flex-col flex contain-layout mt-20 sm:mt-24"
         >
           <h3
-            class="font-oxanium w-full mx-auto max-w-4xl before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4"
+            class="font-oxanium w-full mx-auto max-w-4xl before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4 sm:ml-0 ml-6"
           >
             Portfolio
           </h3>
@@ -734,7 +745,7 @@
               </div>
             </div>
             <div
-              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-12 controller-div mb-32"
+              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 xs:gap-12 controller-div mb-20 xs:mb-32"
               aria-expanded="false"
             >
               <div class="w-full self-start">
@@ -745,13 +756,13 @@
                     <div class="flex items-center justify-between px-1">
                       <div
                         aria-disabled="true"
-                        class="group drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] border flex gap-2 p-1 border-slate-400 hover:border-slate-300 rounded-sm h-full w-8"
+                        class="group drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] border flex gap-2 p-2 border-slate-400/0 hover:border-slate-400/50 rounded-sm h-full w-fit"
                       >
                         <div
-                          class="rounded-full size-2 transition-all ease-in border-slate-300 hover:border-white cursor-pointer border bg-black/60 group-aria-disabled:bg-amber-400 group-aria-disabled:hover:bg-amber-300 hover:bg-slate-400/40 switch-1"
+                          class="rounded-full size-2 p-1 transition-all ease-in border-slate-300 hover:border-white cursor-pointer border bg-black/60 group-aria-disabled:bg-amber-400 group-aria-disabled:hover:bg-amber-300 hover:bg-slate-400/40 switch-1"
                         ></div>
                         <div
-                          class="rounded-full size-2 transition-all ease-in group-aria-disabled:border-slate-400 border-slate-300 hover:border-white cursor-pointer border group-aria-disabled:bg-black/60 hover:bg-amber-300 bg-amber-400 group-aria-disabled:hover:bg-slate-400/40 switch-2"
+                          class="rounded-full size-2 p-1 transition-all ease-in group-aria-disabled:border-slate-400 border-slate-300 hover:border-white cursor-pointer border group-aria-disabled:bg-black/60 hover:bg-amber-300 bg-amber-400 group-aria-disabled:hover:bg-slate-400/40 switch-2"
                         ></div>
                       </div>
                       <h4
@@ -829,7 +840,7 @@
                   </div>
                 </article>
               </div>
-              <div class="h-44 sm:h-96">
+              <div class="h-44 xs:h-56 sm:h-96">
                 <div
                   class="w-fit h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto"
                 >
@@ -851,7 +862,7 @@
                     ></div>
                   </div>
                   <div
-                    class="absolute -bottom-3 sm:bottom-9 xs:-right-30 xs:-bottom-22 -right-20 xs:-right-24 md:bottom-10 sm:-right-36 rounded-md w-20 xs:w-28 sm:w-36 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(-1deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                    class="absolute -bottom-3 sm:bottom-9 xs:-right-30 xs:-bottom-12 -right-20 xs:-right-24 md:bottom-10 sm:-right-36 rounded-md w-20 xs:w-28 sm:w-36 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(-1deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
                   >
                     <img
                       class="rounded-md group-aria-expanded/grid:hidden block"
@@ -871,9 +882,9 @@
               </div>
             </div>
             <div
-              class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-12 mb-52"
+              class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] xs:gap-12 gap-4 controller-div mb-20 xs:mb-32"
             >
-              <div class="h-64 xs:h-96">
+              <div class="h-64 xs:h-72 sm:h-96">
                 <div
                   class="w-fit h-full relative mr-auto xs:translate-x-0 -translate-x-10 ml-auto min-[902px]:mr-0 min-[902px]:ml-auto"
                 >
@@ -890,7 +901,7 @@
                     ></div>
                   </div>
                   <div
-                    class="absolute xs:-bottom-4 sm:bottom-9 -bottom-2 -right-36 md:bottom-1 md:-right-28 rounded-md w-20 sm:w-28 md:w-32 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                    class="absolute xs:-bottom-4 sm:bottom-9 -bottom-2 -right-32 xs:-right-24 sm:-right-36 md:bottom-1 md:-right-28 rounded-md w-16 xs:w-20 sm:w-28 md:w-32 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
                   >
                     <img
                       class="rounded-md"
@@ -898,7 +909,7 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-1 md:-right-2 xs:-top-1 md:-top-2 w-[110%] h-[105%] rounded-md -z-10"
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-1 md:-right-2 xs:-top-1 md:-top-2 w-[110%] h-[105%] md:h-[107%] md:w-[111%] rounded-md -z-10"
                     ></div>
                   </div>
                 </div>
@@ -958,10 +969,115 @@
                 </article>
               </div>
             </div>
+            <div
+              class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 xs:gap-12 mb-32"
+            >
+              <div class="w-full self-start sm:mt-0 mt-5">
+                <article
+                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2"
+                >
+                  <div class="mb-2">
+                    <h4
+                      class="font-oxanium text-amber-400 text-end text-3xl xs:text-4xl drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
+                    >
+                      Hacknernews
+                    </h4>
+                    <span
+                      class="group-aria-expanded/grid:hidden block text-lg text-slate-200 text-end"
+                    >
+                      clone
+                    </span>
+                  </div>
+                  <p
+                    class="font-oxanium text-end text-white text-lg xs:text-xl mb-2"
+                  >
+                    A clone of Hackernews that looks good on all devices.
+                  </p>
+                  <div
+                    class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
+                  >
+                    <button
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Source</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </button>
+                    <button
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:text-white cursor-pointer p-2 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-book-open text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">
+                        Overview
+                      </span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </button>
+                    <button
+                      class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 text-sm xs:text-lg text-white sm:text-2xl"
+                      ></i>
+                      <span
+                        class="sm:text-xl group-hover:text-slate-300/50 text-sm xs:text-lg text-white"
+                      >
+                        Website
+                      </span>
+                      <div
+                        class="absolute -top-4 left-0 w-fit group-hover:-translate-y-16 translate-y-0 opacity-0 group-hover:opacity-100 blur-sm group-hover:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        API can only be used in development
+                      </div>
+                    </button>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="h-[450px] xs:h-[500px] sm:h-[700px] min-[902px]:h-[700px]"
+              >
+                <div
+                  class="w-fit h-full sm:translate-x-0 xs:translate-x-20 min-[902px]:translate-x-10 relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto"
+                >
+                  <div
+                    class="max-w-36 xs:max-w-40 sm:max-w-52 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-15px)] xs:transform-[perspective(3em)_rotateY(-1deg)_translateZ(15px)_translateY(76px)_translateX(-40px)]"
+                  >
+                    <img
+                      class="w-full rounded-md max-h-[500px]"
+                      src="/libs/css/assets/images/projects/mobile/hackernews1.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000008a,inset_0_-36px_30px_#0000007a,inset_0_-16px_40px_#c3c3c3b5,0_-2px_1px_#c3c3c300,0_4px_2px_#00000017,-12px_0_26px_#00000052,0_26px_28px_#00000038,0_0_16px_#ffffff94] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 sm:-right-3 sm:-top-3 w-[110%] h-[105%] rounded-md -z-10"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute xs:-bottom-12 sm:bottom-11 -left-5 xs:-left-24 md:-left-36 rounded-md w-24 xs:w-32 md:w-36 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                  >
+                    <img
+                      class="rounded-md"
+                      src="/libs/css/assets/images/projects/mobile/hackernews3.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 w-[110%] h-[105%] rounded-md -z-10"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
     <script src="./libs/js/jquery.js"></script>
     <script src="./libs/js/script.js"></script>
   </body>
