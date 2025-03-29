@@ -56,15 +56,14 @@ $('.switch-2').on('click', function () {
 });
 
 let index = 0;
-const imgWidth = $('.slider-track').width() + 28;
-const totalImages = $('.slider-track img').length;
+const imgWidth = $('.slider-track').width() + 64;
 
 function updateSlider() {
   $('.slider-track').css('transform', `translateX(${-index * imgWidth}px)`);
 }
 
 $('.next-photo').on('click', function () {
-  if (index < totalImages - 1) {
+  if (index < $('.slider-track img:visible').length - 1) {
     index++;
     updateSlider();
   }
