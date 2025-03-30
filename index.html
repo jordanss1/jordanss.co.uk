@@ -16,11 +16,12 @@
     <main class="min-h-screen">
       <div class="visible" id="preloader"></div>
       <div
+        aria-disabled="true"
         id="taskx-overview"
-        class="fixed z-[9999] overflow-auto p-4 sm:p-8 h-screen w-full"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 overflow-auto p-4 sm:p-8 h-screen w-full"
       >
         <div
-          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto"
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
         >
           <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
             <div
@@ -31,7 +32,10 @@
               >
                 Task-X
               </h4>
-              <div role="button" class="cursor-pointer p-1 group relative">
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
                 <i
                   class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
                 ></i>
@@ -41,7 +45,7 @@
               </div>
             </div>
             <div
-              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 xs:p-2"
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
             >
               <div
                 class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
@@ -97,10 +101,10 @@
                     Skills
                   </h4>
                   <div
-                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(55px,1fr))] h-fit justify-items-center grid gap-x-1 md:gap-x-2 *:cursor-pointer"
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
                   >
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
                         class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
@@ -113,7 +117,7 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
                         class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
@@ -126,10 +130,23 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
                     >
                       <img
-                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        class="bg-slate-200 border-[#99425b] border-1 p-1 size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react-router.svg"
+                      />
+                      <span
+                        class="text-xs h-4 text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React Router
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-14 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
                         src="/libs/css/assets/images/nodejs.svg"
                       />
                       <span
@@ -139,10 +156,10 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
-                        class="size-9 sm:size-12 p-1 rounded-lg mx-auto bg-slate-200 border-[#44a8b3] translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        class="size-9 sm:size-13 p-1 rounded-lg mx-auto bg-slate-200 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
                         src="/libs/css/assets/images/express.svg"
                       />
                       <span
@@ -152,10 +169,10 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
-                        class="size-9 sm:size-12 p-1 rounded-lg bg-slate-200 border-[#44a8b3] mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        class="size-9 sm:size-13 p-1 rounded-lg bg-slate-200 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
                         src="/libs/css/assets/images/redux.svg"
                       />
                       <span
@@ -165,10 +182,10 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
-                        class="size-9 sm:size-12 rounded-lg bg-slate-200 border-[#44a8b3] border-2 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        class="size-9 sm:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
                         src="/libs/css/assets/images/tailwind.svg"
                       />
                       <span
@@ -178,10 +195,10 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
-                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        class="size-9 sm:size-14 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
                         src="/libs/css/assets/images/mongodb.svg"
                       />
                       <span
@@ -191,10 +208,10 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
-                        class="size-9 sm:size-12 rounded-lg mx-auto bg-slate-800 border border-slate-400 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-800 border border-slate-400 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
                         src="/libs/css/assets/images/framer.svg"
                       />
                       <span
@@ -204,7 +221,7 @@
                       </span>
                     </div>
                     <div
-                      class="flex flex-col justify-center h-20 group scale-110 md:scale-100 lg:scale-110"
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
                     >
                       <img
                         class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
@@ -265,7 +282,7 @@
                         class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
                       ></div>
                       <div
-                        class="absolute -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-20 group-active:-translate-y-20 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-20 group-active:-translate-y-20 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
                       >
                         Website loads slow due to host render.com
                       </div>
@@ -348,6 +365,1171 @@
               <img
                 class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
                 src="/libs/css/assets/images/projects/mobile/taskx5.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="map-overview"
+        aria-disabled="true"
+        aria-expanded="false"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 group/container overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Doublemap
+                <div
+                  role="button"
+                  id="overview-switch"
+                  class="block cursor-pointer group xs:inline xs:ml-0 ml-4 relative"
+                >
+                  <span
+                    class="text-xs xs:text-sm sm:text-lg transition-all ease-out text-slate-400 group-active:text-slate-300 group-hover:text-slate-300 ml-2 inline group-aria-expanded/container:hidden"
+                  >
+                    mapbox version
+                  </span>
+                  <span
+                    class="text-xs xs:text-sm sm:text-lg transition-all ease-out text-slate-400 group-hover:text-slate-300 ml-2 hidden group-aria-expanded/container:inline"
+                  >
+                    leaflet version
+                  </span>
+                  <i
+                    class="fa-solid fa-right-left transition-all ease-out group-hover:scale-105 group-active:scale-105 text-xs xs:text-sm ml-2 text-slate-400 group-hover:text-slate-300 group-active:text-slate-300"
+                  ></i>
+                </div>
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <div class="block group-aria-expanded/container:hidden">
+                  <div
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                  >
+                    The Mapbox version of Doublemap uses JQuery with a PHP
+                    backend and MySQL for database needs. Tailwind was used to
+                    give the application a decent feel and design. It was
+                    deployed using Docker on a VPS with an Nginx container and a
+                    PHP-FPM container. The map has a
+                    <span class="font-bold">modern</span>
+                    side and a
+                    <span class="font-bold">historical</span>
+                    side.
+                    <div class="mt-2">
+                      The modern side delivers:
+                      <ul class="list-disc first:mt-2 *:mb-2 last:mb-0 px-8">
+                        <li>
+                          Points of interest based on where the map is centered
+                          using the OpenStreetMap Overpass API. The user can
+                          expand the search for POIs at will.
+                        </li>
+                        <li>
+                          A search box that uses the Mapbox Search API to
+                          deliver countries, regions, cities, towns and streets.
+                        </li>
+                        <li>
+                          Users can select countries with the cursor or the
+                          select box and get information on a countries
+                          population, capital, region etc.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mt-2">
+                      The historical side delivers:
+                      <ul class="list-disc first:mt-2 *:mb-2 last:mb-0 px-8">
+                        <li>
+                          A range slider allowing users to choose a day of the
+                          year where the Wikipedia 'On This Day' API is used and
+                          combined with ChatGPT API to convert events to
+                          latitude and longitude that can be mapped.
+                        </li>
+                        <li>
+                          OpenHistoricalMap API is used so when users choose an
+                          event in time the tiles on the map change to represent
+                          the year in question, giving a context to the event.
+                        </li>
+                        <li>
+                          Users can select countries with the cursor or the
+                          select box where the history of that country is
+                          retrieved from Wikipedia and presented to the user.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <h4
+                    class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                  >
+                    Challenges and Solutions
+                  </h4>
+                  <div
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                  >
+                    There were many challenges and things I had to experiment
+                    with while creating this map but I will name the most
+                    significant:
+                    <ul class="list-disc first:mt-2 *:mb-2 last:mb-0 px-8">
+                      <li>
+                        <span class="font-bold">Challenge 1:</span>
+                        Is there an API that provides historical events with
+                        latitude and longitude? If not, how can this be done and
+                        what possible solutions are there?
+                      </li>
+                      <li>
+                        <span class="font-bold">Challenge 2:</span>
+                        ChatGPT API costs and can be slow in response especially
+                        GPT-4. GPT-3 is not accurate and can't be trusted, how
+                        can I get this working?
+                      </li>
+                      <li>
+                        <span class="font-bold">Challenge 3:</span>
+                        Mapbox also costs after a certain amount of requests,
+                        how can I ensure I don't go over this limit?
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="p-2">
+                    <h4
+                      class="font-oxanium w-fit text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2 -translate-x-4"
+                    >
+                      Solution 1
+                    </h4>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      After a few weeks of research I realised my needs were
+                      very niche and no API would provide what I needed. I knew
+                      Wikipedia would be a great resource but didn't know where
+                      to start. After researching the API I found 'On This Day'.
+                      Events that stretch back sometimes 2000 years -
+                      <span class="font-bold">perfect!</span>
+                      Wait, these events don't come with latitude and
+                      longitude...
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      On inspection the events have text with popular figures in
+                      pop culture, famous landmarks, and many times country,
+                      city or town names. There must be a way to deduce
+                      coordinates in this modern age if I have all this
+                      information to hand, right? Enter ChatGPT.
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      The answer was clear. ChatGPT excelled at this. Within
+                      these events are famous places, historical landmarks, and
+                      well-known figures. With the right approach, there had to
+                      be a way to extract locations. ChatGPT could recognize
+                      names and infer places even when they weren't explicitly
+                      mentioned. It wasn't just matching text - it was
+                      reasoning, connecting history, and filling in the gaps
+                      where a traditional API would fail. It could adapt, making
+                      it the perfect tool to bridge the missing latitude and
+                      longitude gap.
+                    </p>
+                    <h4
+                      class="font-oxanium w-fit text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2 -translate-x-4"
+                    >
+                      Solution 2
+                    </h4>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      ChatGPT costs. After testing, GPT-3 is less expensive at
+                      the cost of reasoning and accuracy, struggling with
+                      ambiguous locations or missing context. It might recognize
+                      a famous landmark but fail entirely to provide its
+                      coordinates, even mixing up events (as they are sent in
+                      batches). GPT-4, on the other hand, excels with a better
+                      understanding of historical events, better disambiguation,
+                      and a good grasp of geographic clues. GPT-4 is much slower
+                      and costs more with much better results, while GPT-3 is
+                      much faster and cheaper with less accurate results.
+                      Solution?
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      I
+                      <span class="font-bold">had</span>
+                      to use GPT-4 otherwise this was pointless. Streaming the
+                      response to my PHP backend was the key to prevent
+                      timeouts. How to reduce costs overall? Storing the events
+                      was the key, that way once I retrieved the events one I
+                      could be almost certain I wouldn't have to send them to
+                      GPT ever again. Enter MySQL. After receiving the events
+                      back from ChatGPT I would fill my database up with the
+                      events. When a user selects the day again, the events
+                      would be ready, and if ChatGPT failed to provide coords
+                      for one the events, I would send a batch of these events
+                      again on this new request. This worked surprisingly well!
+                    </p>
+                    <h4
+                      class="font-oxanium w-fit text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2 -translate-x-4"
+                    >
+                      Solution 3
+                    </h4>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      This one is similar to the second problem and was a more
+                      easy solution. Loading the map and searching POIs go
+                      towards two seperate API calls that will cost after a
+                      certain amount of requests each month. Once again nothing
+                      a simple MySQL table can't solve.
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      I setup a table to track the amount of requests per API
+                      and increment the counts after each request. If the app is
+                      at the limit the request never makes it to Mapbox and a
+                      429 error is returned to the user letting them know no
+                      more requests can be made. To reset the request counts on
+                      the 1st of the month I created a scheduled event. Viola,
+                      problem solved.
+                    </p>
+                  </div>
+                </div>
+                <div class="hidden group-aria-expanded/container:block">
+                  <p
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                  >
+                    The leaflet version of Doublemap was much easier than the
+                    Mapbox version and was completed in about a week give or
+                    take. JQuery and PHP are used to perform basic routines
+                    retrieving news articles, wikipedia articles, country
+                    information, weather for the capital and providing a
+                    currency converter. Tailwind and Bootstrap give the app a
+                    modern and simple design. Docker was used for deployment on
+                    a VPS with an Nginx container and a PHP-FPM container.
+                  </p>
+                  <p
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                  >
+                    When a user first uses the map they are asked to give the
+                    map permission to access location using the Geolocation API.
+                    This is where the routine finds the coordinates and can
+                    select the correct country and query PHP to retrieve the
+                    country's information. There are also cities and airports
+                    pinned to the map and clustered.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto p-1 bg-blue-800 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/jquery.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        JQuery
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/javascript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Javascript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/php.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        PHP
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 p-1 rounded-lg mx-auto bg-slate-200 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/docker.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Docker
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/tailwind.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Tailwind
+                      </span>
+                    </div>
+                    <div
+                      class="hidden group-aria-expanded/container:flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/bootstrap.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Bootstrap
+                      </span>
+                    </div>
+                    <div
+                      class="flex group-aria-expanded/container:hidden flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg p-1 bg-white mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/mysql.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        MySQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div
+                    class="flex group-aria-expanded/container:hidden p-4 gap-6 items-center"
+                  >
+                    <a
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *: *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 z-20"
+                      ></i>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-14 group-active:-translate-y-14 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <a
+                      title="https://www.double-map.online/"
+                      href="https://www.double-map.online/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                  </div>
+                  <div
+                    class="hidden group-aria-expanded/container:flex p-4 gap-6 items-center"
+                  >
+                    <a
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *: *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 z-20"
+                      ></i>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-14 group-active:-translate-y-14 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <a
+                      title="https://map.double-map.online/"
+                      href="https://map.double-map.online/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex group-aria-expanded/container:hidden gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-6.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-7.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-8.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-6.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-7.png"
+                alt=""
+              />
+            </div>
+            <div
+              class="hidden group-aria-expanded/container:flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-5.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        id="whatsong-overview"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Whatsong
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  Whatsong integrates with Spotify API to provide users the
+                  option to search songs and artists. It is a React/Typescript
+                  app that makes use of reducers and the useContext hook to
+                  handle the most important data in the application. React
+                  Router is used to route the user between the components.
+                  Framer Motion is used to give the app a decent design
+                  experience.
+                </p>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  Jest, React Testing Library and Mock Service Worker are used
+                  to test the user interface and network requests to the Spotify
+                  API. Axios is used to make all network requests. Users choose
+                  artists or songs and can search either one. The artists side
+                  gives users detailed information on that artist including top
+                  tracks and album lists. The songs sides lets users grab an
+                  element and drag it into a highlighted box in order to see the
+                  song's details.
+                </p>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  Looking back on Whatsong there are many things I would love to
+                  upgrade about this including the design and the knowledge I
+                  now have on React Router. React Router could have been
+                  implemented better. I also eventually want to move this over
+                  to Docker, add a Laravel backend, create an auth flow and
+                  allow users to save tracks, artists, songs and albums as
+                  favorites - all integrated with a user dashboard.
+                </p>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/typescript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        TypeScript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
+                    >
+                      <img
+                        class="bg-slate-200 border-[#99425b] border-1 p-1 size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react-router.svg"
+                      />
+                      <span
+                        class="text-xs h-4 text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React Router
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-200 border-[#99425b] border-2 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/jest.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Jest
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-800 border border-slate-400 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/framer.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Framer
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/npm.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        npm
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div class="flex p-4 gap-6 items-center">
+                    <a
+                      href="https://github.com/jordanss1/whatsong"
+                      title="https://github.com/jordanss1/whatsong"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl z-20 sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <button
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-medium group-hover:text-amber-300 *:group-active:text-amber-300 z-20 text-2xl sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-0 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                      <div
+                        class="absolute -top-4 left-1/2 w-56 -translate-x-1/2 group-hover:-translate-y-32 group-active:-translate-y-32 -translate-y-20 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40 *:cursor-pointer flex flex-col *:rounded-md *:hover:text-amber-300 *:active:hover:text-amber-300 *:hover:bg-black/50 *:active:hover:bg-black/50 *:transition-all *:delay-75 *:ease-in-out *:duration-150 gap-1 *:line-clamp-1 *:p-0.5 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7]"
+                      >
+                        <a
+                          href="https://medium.com/@jordan.to.code/react-front-end-renovation-adding-react-router-and-more-aa87918f602"
+                          target="_blank"
+                          title="React front-end renovation: adding react router and more"
+                        >
+                          React front-end renovation: adding react router and
+                          more
+                        </a>
+                        <a
+                          href="https://medium.com/@jordan.to.code/new-features-refactoring-and-reusable-components-290f42718885"
+                          target="_blank"
+                          title="New features, refactoring, and reusable components"
+                        >
+                          New features, refactoring, and reusable components
+                        </a>
+                        <a
+                          href="https://medium.com/@jordan.to.code/my-adventure-with-react-testing-and-jest-4d255bf12ef"
+                          target="_blank"
+                          title="My adventure with React Testing and Jest"
+                        >
+                          My adventure with React Testing and Jest
+                        </a>
+                        <a
+                          href="https://medium.com/@jordan.to.code/framer-motion-revision-b7a38895998b"
+                          target="_blank"
+                          title="React front-end renovation: adding react router and more"
+                        >
+                          Framer-motion revision
+                        </a>
+                      </div>
+                    </button>
+                    <a
+                      title="https://whatsong-rust.vercel.app/"
+                      href="https://whatsong-rust.vercel.app/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl sm:text-3xl"
+                      ></i>
+
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong6.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong6.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        id="hackernews-overview"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Hackernews
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  A simple responsive hackernews clone in React/Typescript.
+                  Axios is used to make requests to the News API which is used
+                  for both the News Feed and the Trending. Jest, React Testing
+                  Library and Mock Service Worker are used to test the user
+                  interface and network requests to the News API.
+                </p>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/typescript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        TypeScript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-200 border-[#99425b] border-2 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/jest.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Jest
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/npm.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        npm
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div class="flex p-4 gap-6 items-center">
+                    <a
+                      href="https://github.com/jordanss1/hackernews-clone"
+                      title="https://github.com/jordanss1/hackernews-clone"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl z-20 sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <button
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *: *:text-white cursor-default p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket text-2xl group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 z-20"
+                      ></i>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-20 group-active:-translate-y-20 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        API can only be used in development
+                      </div>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/hackernews1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/hackernews1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/hackernews2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/hackernews2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/hackernews3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/hackernews3.png"
                 alt=""
               />
             </div>
@@ -579,7 +1761,7 @@
                   class="cursor-pointer p-2 group flex justify-center items-center"
                 >
                   <i
-                    class="fa-brands fa-github text-slate-100 group-hover:text-[#1141a0] group-active:text-[#1141a0] transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
+                    class="fa-brands fa-github text-slate-100 group-hover:text-white group-active:text-white transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
                   ></i>
                 </a>
                 <a
@@ -589,7 +1771,7 @@
                   class="cursor-pointer p-2 group flex justify-center items-center"
                 >
                   <i
-                    class="fa-brands fa-linkedin-in text-slate-100 group-hover:text-[#1141a0] group-active:text-[#1141a0] transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
+                    class="fa-brands fa-linkedin-in text-slate-100 group-hover:text-white group-active:text-white transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
                   ></i>
                 </a>
                 <a
@@ -599,8 +1781,19 @@
                   class="cursor-pointer p-2 group flex justify-center items-center"
                 >
                   <i
-                    class="fa-brands fa-medium text-slate-100 group-hover:text-[#1141a0] group-active:text-[#1141a0] transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
+                    class="fa-brands fa-medium text-slate-100 group-hover:text-white group-active:text-white transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
                   ></i>
+                </a>
+                <a
+                  title="Download CV"
+                  href="/assets/jordan-shade-cv.pdf"
+                  download
+                  class="group p-1 cursor-pointer transition-all duration-300 hover:scale-110 active:scale-110 hover:translate-y-0.5 active:translate-y-0.5 ease-out"
+                >
+                  <img
+                    class="sm:size-8 size-7 xs:size-6"
+                    src="/libs/css/assets/images/cv.svg"
+                  />
                 </a>
               </div>
             </div>
@@ -691,10 +1884,10 @@
             <div class="w-full h-full mt-0 xs:mt-10 relative">
               <div
                 id=""
-                class="skills-square max-w-md xs:w-full mx-auto xs:h-[457px] transition-all rounded-xl overflow-hidden mt-20 xs:mt-14 sm:scale-110 md:scale-125 top-0 [background:conic-gradient(from_var(--conic-deg)_at_50%_50%,_#20b2aa33,_#19879cb3_7%,_#20b2aa30_15%,_#0d089500,_#4b008200,_#782ca000,_#0d089500,_#135da500),_conic-gradient(from_107deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_indigo,_indigo,_#0d0895,_#1b78ae,_#20b2aa)] animate-spinReverse [clip-path:_polygon(0%_0%,_0%_100%,_25%_100%,_25%_25%,_75%_25%,_75%_75%,_25%_75%,_25%_100%,_100%_100%,_100%_0%)] [box-shadow:rgb(0_0_0_/_46%)_0px_-30px_36px_-28px_inset,_rgb(19_15_86_/_69%)_-20px_10px_33px_-13px_inset,_rgb(19_15_86_/_69%)_10px_0px_33px_-12px_inset] relative h-80 w-72 aspect-square gap-0 xs:gap-2 py-1 px-2 xs:p-0 xs:py-4 xs:px-7 flex flex-col"
+                class="skills-square max-w-md xs:w-full mx-auto xs:h-[457px] transition-all rounded-xl overflow-hidden mt-20 xs:mt-14 sm:scale-110 md:scale-125 top-0 [background:conic-gradient(from_var(--conic-deg)_at_50%_50%,_#20b2aa33,_#19879cb3_7%,_#20b2aa30_15%,_#0d089500,_#4b008200,_#782ca000,_#0d089500,_#135da500),_conic-gradient(from_107deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_indigo,_indigo,_#0d0895,_#1b78ae,_#20b2aa)] animate-spinReverse [clip-path:_polygon(0%_0%,_0%_100%,_25%_100%,_25%_25%,_75%_25%,_75%_75%,_25%_75%,_25%_100%,_100%_100%,_100%_0%)] [box-shadow:rgb(0_0_0_/_46%)_0px_-30px_36px_-28px_inset,_rgb(19_15_86_/_69%)_-20px_10px_33px_-13px_inset,_rgb(19_15_86_/_69%)_10px_0px_33px_-12px_inset] relative h-80 w-[304px] aspect-square gap-0 xs:gap-2 py-1 px-2 xs:p-0 xs:py-4 xs:px-4 sm:px-7 flex flex-col"
               >
                 <div
-                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:overflow-hidden *:xs:[scale:inherit] *:scale-75 *:flex *:flex-col *:items-center min-h-[65px] xs:min-h-[73px] -translate-x-1 xs:translate-x-0"
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:xs:[scale:inherit] *:scale-75 *:flex *:flex-col *:items-center min-h-[65px] xs:min-h-[73px] -translate-x-1 xs:translate-x-0"
                 >
                   <div
                     class="gap-1 h-10 xs:h-12 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
@@ -704,9 +1897,22 @@
                       src="/libs/css/assets/images/javascript.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       JavaScript
+                    </span>
+                  </div>
+                  <div
+                    class="gap-1 h-10 xs:h-12 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                  >
+                    <img
+                      class="size-10 xs:size-12 rounded-lg bg-blue-800 p-1 my-auto"
+                      src="/libs/css/assets/images/jquery.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      JQuery
                     </span>
                   </div>
                   <div
@@ -717,7 +1923,7 @@
                       src="/libs/css/assets/images/typescript.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       TypeScript
                     </span>
@@ -730,7 +1936,7 @@
                       src="/libs/css/assets/images/react.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       React
                     </span>
@@ -743,7 +1949,7 @@
                       src="/libs/css/assets/images/nodejs.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Node JS
                     </span>
@@ -756,24 +1962,24 @@
                       src="/libs/css/assets/images/php.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       PHP
                     </span>
                   </div>
                 </div>
                 <div
-                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:overflow-hidden *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
                 >
                   <div
                     class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-12 xs:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-2 my-auto p-1"
+                      class="size-12 xs:size-13 rounded-lg bg-slate-200 my-auto p-1"
                       src="/libs/css/assets/images/express.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Express
                     </span>
@@ -782,103 +1988,116 @@
                     class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-12 xs:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-2 my-auto p-1"
+                      class="size-12 xs:size-13 rounded-lg bg-slate-200 my-auto p-1"
                       src="/libs/css/assets/images/redux.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Redux
                     </span>
                   </div>
                 </div>
                 <div
-                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:overflow-hidden *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
                 >
                   <div
-                    class="gap-1 h-12 xs:h-14 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-12 xs:size-14 rounded-lg bg-slate-200 border-[#44a8b3] border-2 my-auto p-1"
+                      class="size-12 xs:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-2 my-auto p-1"
                       src="/libs/css/assets/images/tailwind.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Tailwind
                     </span>
                   </div>
                   <div
-                    class="gap-1 h-12 xs:h-14 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-12 xs:size-14 rounded-lg my-auto"
+                      class="size-12 xs:size-13 rounded-lg my-auto"
                       src="/libs/css/assets/images/bootstrap.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Bootstrap
                     </span>
                   </div>
                 </div>
                 <div
-                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:overflow-hidden *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
                 >
                   <div
-                    class="gap-1 h-12 xs:h-14 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-12 xs:size-14 rounded-lg my-auto"
+                      class="size-12 xs:size-13 rounded-lg p-1 bg-white my-auto"
                       src="/libs/css/assets/images/mysql.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       MySQL
                     </span>
                   </div>
                   <div
-                    class="gap-1 h-12 xs:h-14 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-12 xs:size-14 rounded-lg my-auto"
+                      class="size-12 xs:size-13 rounded-lg my-auto"
                       src="/libs/css/assets/images/mongodb.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       MongoDB
                     </span>
                   </div>
                 </div>
                 <div
-                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:overflow-hidden *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-0 xs:mt-2"
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
                 >
                   <div
-                    class="gap-1 h-11 xs:h-12 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-11 xs:size-12 rounded-lg my-auto bg-slate-200 border-[#539fce] border-2 p-1"
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#539fce] border-2 p-1"
                       src="/libs/css/assets/images/docker.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Docker
                     </span>
                   </div>
                   <div
-                    class="gap-1 h-11 xs:h-12 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-11 xs:size-12 rounded-lg my-auto bg-slate-200 border-[#99425b] border-2"
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#99425b] border-2"
                       src="/libs/css/assets/images/jest.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Jest
+                    </span>
+                  </div>
+                  <div
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] overflow-visible"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#99425b] border-1 p-1"
+                      src="/libs/css/assets/images/react-router.svg"
+                    />
+                    <span
+                      class="text-xs w-10 text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      React Router
                     </span>
                   </div>
                   <div
@@ -889,33 +2108,33 @@
                       src="/libs/css/assets/images/git.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Git
                     </span>
                   </div>
                   <div
-                    class="gap-1 h-11 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-11 xs:size-13 rounded-lg my-auto"
+                      class="size-12 xs:size-13 rounded-lg my-auto"
                       src="/libs/css/assets/images/npm.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       npm
                     </span>
                   </div>
                   <div
-                    class="gap-1 h-12 xs:h-14 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px]"
                   >
                     <img
-                      class="size-12 xs:size-14 rounded-lg my-auto bg-slate-800 border-slate-400 border-2"
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-800 border-slate-400 border-1"
                       src="/libs/css/assets/images/framer.svg"
                     />
                     <span
-                      class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 font-oxanium"
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
                     >
                       Framer
                     </span>
@@ -1007,6 +2226,7 @@
                       ></div>
                     </a>
                     <button
+                      id="taskx-overview-button"
                       class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
@@ -1023,17 +2243,21 @@
                       title="https://task-x.onrender.com/"
                       href="https://task-x.onrender.com/"
                       target="_blank"
-                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
-                        class="fa-solid fa-arrow-right-from-bracket text-sm xs:text-lg sm:text-2xl"
+                        class="fa-solid fa-arrow-right-from-bracket group-hover:text-amber-300 group-active:text-amber-300 text-sm xs:text-lg sm:text-2xl"
                       ></i>
-                      <span class="text-sm xs:text-lg sm:text-xl">Website</span>
+                      <span
+                        class="text-sm xs:text-lg group-hover:text-amber-300 group-active:text-amber-300 sm:text-xl"
+                      >
+                        Website
+                      </span>
                       <div
                         class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
                       ></div>
                       <div
-                        class="absolute -top-4 left-0 w-fit group-hover:-translate-y-16 group-active:-translate-y-16 translate-y-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                        class="absolute pointer-events-none p-1 -top-4 left-0 w-fit group-hover:-translate-y-24 group-active:-translate-y-24 -translate-y-10 opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
                       >
                         Website loads slow due to host render.com
                       </div>
@@ -1057,10 +2281,10 @@
                         class="group drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] border flex gap-2 p-2 border-slate-400/0 hover:border-slate-400/50 active:border-slate-400/50 rounded-sm h-full w-fit"
                       >
                         <div
-                          class="rounded-full size-2 p-1 transition-all ease-in border-slate-300 hover:border-white active:border-white cursor-pointer border bg-black/60 group-aria-disabled:bg-amber-400 group-aria-disabled:hover:bg-amber-300 hover:bg-slate-400/40 active:bg-slate-400/40 switch-1"
+                          class="rounded-full size-2 p-1 transition-all ease-in border-slate-300 hover:border-white active:border-white cursor-pointer border bg-black/60 group-aria-disabled:bg-amber-400 group-aria-disabled:hover:bg-amber-300 hover:bg-slate-400/40 active:bg-slate-400/40 map-switch-1"
                         ></div>
                         <div
-                          class="rounded-full size-2 p-1 transition-all ease-in group-aria-disabled:border-slate-400 border-slate-300 hover:border-white active:border-white cursor-pointer border group-aria-disabled:bg-black/60 hover:bg-amber-300 bg-amber-400 group-aria-disabled:hover:bg-slate-400/40 group-aria-disabled:active:bg-slate-400/40 switch-2"
+                          class="rounded-full size-2 p-1 transition-all ease-in group-aria-disabled:border-slate-400 border-slate-300 hover:border-white active:border-white cursor-pointer border group-aria-disabled:bg-black/60 hover:bg-amber-300 bg-amber-400 group-aria-disabled:hover:bg-slate-400/40 group-aria-disabled:active:bg-slate-400/40 map-switch-2"
                         ></div>
                       </div>
                       <h4
@@ -1101,17 +2325,24 @@
                     class="flex flex-row-reverse gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
                   >
                     <a
-                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                      class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md cursor-default"
                     >
                       <i
-                        class="fa-brands fa-square-github text-sm xs:text-lg sm:text-2xl"
+                        class="fa-solid fa-arrow-right-from-bracket group-hover:text-slate-300/50 group-active:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 text-sm xs:text-lg text-white sm:text-2xl"
                       ></i>
-                      <span class="text-sm xs:text-lg sm:text-xl">Source</span>
+                      <span
+                        class="sm:text-xl group-hover:text-slate-300/50 group-hactiveover:text-slate-300/50 text-sm xs:text-lg text-white"
+                      >
+                        Source
+                      </span>
                       <div
-                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
-                      ></div>
+                        class="absolute pointer-events-none p-1 -top-4 left-0 w-fit group-hover:-translate-y-12 group-active:-translate-y-12 translate-y-10 opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
                     </a>
-                    <a
+                    <button
+                      id="map-overview-button"
                       class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
@@ -1123,9 +2354,26 @@
                       <div
                         class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
                       ></div>
+                    </button>
+                    <a
+                      href="https://www.double-map.online/"
+                      title="https://www.double-map.online/"
+                      target="_blank"
+                      class="flex group-aria-expanded/grid:hidden gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Website</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
                     </a>
                     <a
-                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                      href="https://map.double-map.online/"
+                      title="https://map.double-map.online/"
+                      target="_blank"
+                      class="hidden group-aria-expanded/grid:flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
                         class="fa-solid fa-arrow-right-from-bracket text-sm xs:text-lg sm:text-2xl"
@@ -1147,12 +2395,12 @@
                   >
                     <img
                       class="w-full group-aria-expanded/grid:hidden block rounded-md max-h-[500px]"
-                      src="/libs/css/assets/images/projects/desktop/doublemap2-1.png"
+                      src="/libs/css/assets/images/projects/desktop/doublemap1-1.png"
                       alt=""
                     />
                     <img
                       class="w-full group-aria-expanded/grid:block hidden rounded-md max-h-[500px]"
-                      src="/libs/css/assets/images/projects/desktop/doublemap1-4.png"
+                      src="/libs/css/assets/images/projects/desktop/doublemap2-4.png"
                       alt=""
                     />
                     <div
@@ -1173,7 +2421,7 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] sm:-right-2 -right-1 -top-1 sm:-top-2 w-[110%] h-[105%] rounded-md -z-10"
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] xs:-right-1.5 sm:-right-2 -right-1 -top-1 sm:-top-2 w-[110%] h-[105%] rounded-md -z-10"
                     ></div>
                   </div>
                 </div>
@@ -1229,6 +2477,9 @@
                     class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
                   >
                     <a
+                      href="https://www.github.com/jordanss1/whatsong"
+                      title="https://www.github.com/jordanss1/whatsong"
+                      target="_blank"
                       class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
@@ -1239,7 +2490,8 @@
                         class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
                       ></div>
                     </a>
-                    <a
+                    <button
+                      id="whatsong-overview-button"
                       class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
@@ -1251,8 +2503,11 @@
                       <div
                         class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
                       ></div>
-                    </a>
+                    </button>
                     <a
+                      href="https://whatsong-rust.vercel.app/"
+                      title="https://whatsong-rust.vercel.app/"
+                      target="_blank"
                       class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
@@ -1278,7 +2533,7 @@
                     <h4
                       class="font-oxanium text-amber-400 text-end text-3xl xs:text-4xl drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
                     >
-                      Hacknernews
+                      Hackernews
                     </h4>
                     <span
                       class="group-aria-expanded/grid:hidden block text-lg text-slate-200 text-end"
@@ -1295,6 +2550,9 @@
                     class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
                   >
                     <a
+                      href="https://www.github.com/jordanss1/hackernews-clone"
+                      title="https://www.github.com/jordanss1/hackernews-clone"
+                      target="_blank"
                       class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
                     >
                       <i
@@ -1305,7 +2563,8 @@
                         class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
                       ></div>
                     </a>
-                    <a
+                    <button
+                      id="hackernews-overview-button"
                       class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-2 relative rounded-md"
                     >
                       <i
@@ -1317,9 +2576,9 @@
                       <div
                         class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
                       ></div>
-                    </a>
-                    <a
-                      class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md"
+                    </button>
+                    <button
+                      class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md cursor-default"
                     >
                       <i
                         class="fa-solid fa-arrow-right-from-bracket group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 text-sm xs:text-lg text-white sm:text-2xl"
@@ -1334,7 +2593,7 @@
                       >
                         API can only be used in development
                       </div>
-                    </a>
+                    </button>
                   </div>
                 </article>
               </div>
@@ -1374,6 +2633,10 @@
           </div>
         </div>
       </section>
+      <section
+        id="contact"
+        class="h-screen flex justify-center items-center relative contain-layout [background:linear-gradient(181deg,_#13147f00_7%,_#171717_67%),_linear-gradient(90deg,_#13137e_25%,_#142581_70%)]"
+      ></section>
     </main>
 
     <script src="./libs/js/jquery.js"></script>
