@@ -2635,36 +2635,55 @@
       </section>
       <section
         id="contact"
-        class="h-screen flex justify-center items-center relative contain-layout [background:linear-gradient(181deg,_#13147f00_7%,_#171717_67%),_linear-gradient(90deg,_#13137e_25%,_#142581_70%)]"
+        class="h-screen flex flex-col justify-center items-center relative contain-layout [background:linear-gradient(181deg,_#13147f00_7%,_#171717_67%),_linear-gradient(90deg,_#13137e_25%,_#142581_70%)]"
       >
         <div
-          class="flex relative h-full items-center justify-center gap-4 max-w-3xl w-full rounded-lg p-4"
+          class="flex flex-col-reverse relative h-full items-center min-[790px]:-translate-x-40 md:-translate-x-28 justify-center gap-4 max-w-3xl w-full rounded-lg p-4"
         >
-          <div class="relative max-w-lg w-full">
+          <div
+            class="relative max-w-lg w-full -translate-y-1 translate-x-0 min-[790px]:translate-x-[69px] md:translate-x-0 md:translate-y-0"
+          >
+            <div
+              class="absolute -top-14 sm:-top-20 left-0 flex items-center gap-1"
+            >
+              <img
+                src="/libs/css/assets/images/write.svg"
+                class="size-7 sm:size-9"
+                alt=""
+              />
+              <h4 class="font-abel text-3xl sm:text-4xl text-slate-200">
+                Contact
+              </h4>
+            </div>
             <form
-              class="w-full flex [box-shadow:rgba(0,_0,_0,_0.17)_0px_-23px_25px_0px_inset,_rgba(0,_0,_0,_0.15)_0px_-36px_30px_0px_inset,_rgba(0,_0,_0,_0.1)_0px_-79px_40px_0px_inset,_rgba(0,_0,_0,_0.06)_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgba(0,_0,_0,_0.09)_0px_8px_4px,_rgba(0,_0,_0,_0.09)_0px_16px_8px,_rgba(0,_0,_0,_0.09)_0px_32px_16px] flex-col justify-center items-center p-8 [background:conic-gradient(from_90deg_at_bottom_right,_cyan,_rebeccapurple)] rounded-lg gap-4 max-w-lg transform-[perspective(6em)rotateY(1deg)] overflow-hidden"
+              class="w-full flex [box-shadow:rgba(0,_0,_0,_0.17)_0px_-23px_25px_0px_inset,_rgba(0,_0,_0,_0.15)_0px_-36px_30px_0px_inset,_rgba(0,_0,_0,_0.1)_0px_-79px_40px_0px_inset,_rgba(0,_0,_0,_0.06)_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgba(0,_0,_0,_0.09)_0px_8px_4px,_rgba(0,_0,_0,_0.09)_0px_16px_8px,_rgba(0,_0,_0,_0.09)_0px_32px_16px] flex-col justify-center items-center p-4 xs:p-8 [background:conic-gradient(from_266deg_at_34%_134%,_#1800c5,_#6c01e1)] rounded-lg gap-4 max-w-md md:max-w-lg min-[790px]:transform-[perspective(6em)rotateY(1deg)] overflow-hidden"
             >
               <input
                 placeholder="Your email"
-                class="h-8 font-abel p-1 placeholder:drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] placeholder:text-lg placeholder: text-slate-200 text-lg w-full bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+                class="focus:outline-none h-8 font-abel p-2 placeholder:drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] placeholder:text-xl placeholder:text-slate-200 text-slate-200 text-xl w-full bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-400"
                 type="text"
               />
               <textarea
-                class="focus:outline-none p-1 placeholder:drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] placeholder:text-lg placeholder: text-slate-200 text-lg font-abel w-full rounded-lg h-44 bg-gray-700 focus:ring-2 focus:ring-blue-500"
+                class="focus:outline-none p-2 placeholder:drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] placeholder:text-xl text-slate-200 placeholder:text-slate-200 text-xl font-abel w-full rounded-lg h-44 bg-gray-700 focus:ring-2 focus:ring-blue-400"
                 name=""
                 id=""
                 placeholder="What you'd like to say"
               ></textarea>
+              <button
+                class="border-slate-200 cursor-pointer border-2 w-full rounded-lg text-sky-400 font-abel text-2xl"
+              >
+                Send
+              </button>
               <div
-                class="w-full h-full pointer-events-none absolute overflow-hidden"
+                class="w-full h-full pointer-events-none hidden min-[790px]:block absolute overflow-hidden"
               >
                 <div
-                  class="flex absolute -right-[227px] justify-center rounded-lg items-center -top-24"
+                  class="flex absolute -right-[227px] justify-center rounded-lg items-center -top-12"
                 >
                   <div class="relative">
                     <img
                       src="/libs/css/assets/images/sticker_copy.png"
-                      class="h-[600px] rounded-full transform-[perspective(4em)rotateY(2deg)]"
+                      class="h-[450px] md:h-[600px] rounded-full"
                       alt=""
                     />
                   </div>
@@ -2672,17 +2691,42 @@
               </div>
             </form>
           </div>
+
           <div
-            class="flex absolute -right-24 -z-10 justify-center rounded-full items-center top-[156px] transform-[perspective(4em)rotateY(-1deg)] overflow-hidden"
+            class="hidden min-[790px]:flex absolute -right-24 -z-10 justify-center rounded-full items-center top-[177px] transform-[perspective(4em)rotateY(-1deg)] [box-shadow:0_54px_55px_#92929240,_0_-12px_30px_#ffffff40,_0_4px_6px_#ffffff99,_0_12px_13px_#c2c2c282,_0_-3px_5px_#ffffff78]"
           >
-            <div class="relative rounded-full border-8 border-white">
+            <div class="absolute -top-10 md:top-3 right-5 md:right-0">
+              <div
+                class="size-2 rounded-full absolute top-[72px] right-3 border-slate-200 border-2 [background:conic-gradient(from_43deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+              ></div>
+              <div
+                class="size-4 rounded-full absolute top-12 -right-3 border-slate-200 border-2 [background:conic-gradient(from_103deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+              ></div>
+              <div
+                class="size-6 rounded-full absolute top-4 -right-10 border-slate-200 border-2 [background:conic-gradient(from_180deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+              ></div>
+              <div
+                class="w-16 h-12 md:w-24 md:h-20 [box-shadow:rgb(160_160_160_/34%)_0px_19px_38px,_rgb(130_0_225_/25%)_0px_15px_12px] rounded-full absolute flex items-center justify-center top-[-42px] -right-20 md:-top-[72px] md:-right-28 border-slate-200 border-2 [background:conic-gradient(from_243deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)] transform-[perspective(4em)rotateY(-4deg)]"
+              >
+                <img
+                  class="size-10 md:size-16"
+                  src="/libs/css/assets/images/message.svg"
+                />
+              </div>
+            </div>
+
+            <div
+              class="relative rounded-full border-8 border-white overflow-hidden"
+            >
               <img
                 src="/libs/css/assets/images/sticker_copy.png"
-                class="h-[600px] rounded-full"
+                class="h-[450px] md:h-[600px] rounded-full"
                 alt=""
               />
+
+              <div class=""></div>
               <div
-                class="absolute top-0 right-5 w-[110%] h-full z-10 transform-[perspective(4em)rotateY(-2deg)] rounded-full mix-blend-saturation [background:conic-gradient(from_243deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+                class="absolute top-0 right-0 md:right-10 w-[155%] h-full z-10 transform-[perspective(4em)rotateY(-2deg)] rounded-full mix-blend-saturation [background:conic-gradient(from_243deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
               ></div>
             </div>
           </div>
