@@ -169,10 +169,101 @@ $('.next-photo').on('mouseleave', function () {
   $(this).closest('div').css('--right-grad', 'rgba(0,0,0,.5)');
 });
 
-$('contact-button').on('click', function () {
-  $.ajax({
-    url: '/api/mailer',
-    method: 'POST',
-    dataType: 'json',
-  });
+let contactSending = false;
+let errorTimer;
+
+const isValidEmail = (email) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+$('#contact-button').on('click', async function (e) {
+  e.preventDefault();
+
+  if (contactSending) return;
+
+  contactSending = true;
+  clearTimeout(errorTimer);
+
+  $('#contact-button').attr('aria-disabled', 'false');
+  $('#contact-button').attr('aria-busy', 'true');
+  $('#contact-error').attr('aria-disabled', 'true');
+  $('#email-error').closest('div').attr('aria-disabled', 'true');
+  $('#message-error').closest('div').attr('aria-disabled', 'true');
+  $('#general-error').closest('div').attr('aria-disabled', 'true');
+
+  $('#email-error').text('');
+  $('#message-error').text('');
+  $('#general-error').text('');
+
+  const email = $('#email-input').val().trim();
+  const message = $('#message-input').val().trim();
+
+  if (!isValidEmail(email) && email.length) {
+    $('#email-error').text('Not valid email');
+    $('#email-error').closest('div').attr('aria-disabled', 'false');
+  }
+
+  if (!email.length) {
+    $('#email-error').text('Email field is empty');
+    $('#email-error').closest('div').attr('aria-disabled', 'false');
+  }
+
+  if (!message.length) {
+    $('#message-error').text('Message field is empty');
+    $('#message-error').closest('div').attr('aria-disabled', 'false');
+  }
+
+  if (!isValidEmail(email) || !email.length || !message.length) {
+    $('#contact-error').attr('aria-disabled', 'false');
+
+    errorTimer = setTimeout(
+      () => $('#contact-error').attr('aria-disabled', 'true'),
+      4000
+    );
+
+    $('#contact-button').attr('aria-busy', 'false');
+    contactSending = false;
+    return;
+  }
+
+  try {
+    const { data } = await $.ajax({
+      url: '/api/mailer',
+      method: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+
+      data: JSON.stringify({ email, message }),
+    });
+
+    $('#contact-button').attr('aria-busy', 'false');
+
+    if (data === 'success') {
+      $('#contact-button').attr('aria-disabled', 'true');
+      $('#message-input').val('');
+
+      setTimeout(
+        () => $('#contact-button').attr('aria-disabled', 'false'),
+        1500
+      );
+    }
+  } catch (err) {
+    $('#contact-button').attr('aria-busy', 'false');
+
+    errorTimer = setTimeout(
+      () => $('#contact-error').attr('aria-disabled', 'true'),
+      4000
+    );
+
+    const error = err.responseJSON
+      ? err.responseJSON.error
+      : 'Server error please try again';
+
+    $('#contact-error').attr('aria-disabled', 'false');
+    $('#general-error').text(error);
+    $('#general-error').closest('div').attr('aria-disabled', 'false');
+  } finally {
+    contactSending = false;
+  }
 });

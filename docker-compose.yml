@@ -24,6 +24,11 @@ services:
     build:
       context: ./libs/php
       dockerfile: Dockerfile
+      args:
+        SMTP_USER: ${SMTP_USER}
+        SMTP_EMAIL: ${SMTP_EMAIL}
+        SMTP_SERVER: ${SMTP_SERVER}
+        PASSWORD: ${PASSWORD}
     ports:
       - 9000:9000
     container_name: api

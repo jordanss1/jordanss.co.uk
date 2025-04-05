@@ -1,47 +1,62 @@
 <?php
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
-    
+    header('Content-Type: application/json' );
+
+    use PHPMailer\PHPMailer\PHPMailer;    
     
     require 'assets/PHPMailer-6.9.3/src/PHPMailer.php';
     require 'assets/PHPMailer-6.9.3/src/SMTP.php';
-    require 'assets/PHPMailer-6.9.3/src/Exception.php';
     
     
     $mail = new PHPMailer(true);
-    
-    try {
-        
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
-        $mail->isSMTP();                                            
-        $mail->Host       = 'smtp.example.com';                     
-        $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'user@example.com';                     
-        $mail->Password   = 'secret';                               
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
-        $mail->Port       = 465;                                    
-    
-        
-        $mail->setFrom('from@example.com', 'Mailer');
-        $mail->addAddress('joe@example.net', 'Joe User');     
-        $mail->addAddress('ellen@example.com');               
-        $mail->addReplyTo('info@example.com', 'Information');
-        $mail->addCC('cc@example.com');
-        $mail->addBCC('bcc@example.com');
-    
-        
-        $mail->addAttachment('/var/tmp/file.tar.gz');         
-        $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    
-    
-        
-        $mail->isHTML(true);                                  
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-    
-        $mail->send();
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+
+    ['email' => $email, 'message' => $message]  = json_decode(file_get_contents('php://input'), true);
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Form not valid - try again']);
+        exit;
     }
+
+    $email = strip_tags(trim($email));
+    $message = strip_tags(trim($message));
+
+    if (!is_string($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Enter a valid email']);
+        exit;
+    }
+
+    if (!is_string($message) || !strlen($message)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Fill in the message field']);
+        exit;
+    }
+
+    try {
+        $mail = new PHPMailer(); 
+        $mail->isSMTP();  
+
+        
+        $mail->Host = $_ENV['SMTP_SERVER'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['SMTP_USER']; 
+        $mail->Password = $_ENV['PASSWORD'];   
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
+        $mail->Port = 587;
+
+        $mail->setFrom($_ENV['SMTP_EMAIL']);
+        $mail->addAddress($_ENV['SMTP_EMAIL']);
+        $mail->Subject = "Message on jordanss.co.uk from $email";
+        $mail->Body    = $message;
+
+        
+    if ($mail->send()) {
+        http_response_code(200);
+        echo json_encode(['data' => 'success']);
+        exit;
+    } else {
+        throw new Exception();
+    }
+}  catch (Exception) {
+    echo json_encode(['error' => "Message could not be sent: try again"]);
+}
