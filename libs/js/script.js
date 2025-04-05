@@ -1,10 +1,66 @@
 /// <reference path="./jquery.js" />
 
+let conicAngle = 40;
+
+const animatePortfolioDeg = (children) => {
+  if (conicAngle >= 204) return;
+
+  children.each(function () {
+    $(this).css('--deg-portfolio', `${conicAngle}deg`);
+  });
+
+  if (conicAngle <= 120) {
+    conicAngle += 5;
+  } else if (conicAngle <= 180) {
+    conicAngle += 1;
+  } else if (conicAngle <= 204) {
+    conicAngle += 5;
+  }
+
+  requestAnimationFrame(() => animatePortfolioDeg(children));
+};
+
 $(function () {
   let $preloader = $('#preloader');
   if ($preloader.length) {
     $preloader.delay(1000).fadeOut('slow', () => $preloader.remove());
   }
+
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && $(entry.target).hasClass('observed')) {
+        $(entry.target).attr('aria-disabled', 'false');
+
+        if ($(entry.target).hasClass('observed-portfolio')) {
+          const children = $(entry.target).find('.conic-bg');
+
+          animatePortfolioDeg(children);
+        }
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0.3,
+  });
+
+  $('.observed').each(function () {
+    observer.observe(this);
+  });
+});
+
+$('.nav-bt').on('click', function (e) {
+  e.preventDefault();
+
+  const targetSelector = `#${$(this).attr('href')}`;
+
+  const targetElement = $(targetSelector)[0];
+
+  targetElement.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
 });
 
 const updateOccupation = () => {
@@ -33,13 +89,73 @@ $('#nav-toggle').on('change', function () {
   }
 });
 
-let angle = 122;
+let angle = 0;
+let targetAngles = [
+  { class: 'js-skill', angle: 297 },
+  { class: 'jquery-skill', angle: 310 },
+  { class: 'ts-skill', angle: 330 },
+  { class: 'react-skill', angle: 354 },
+  { class: 'node-skill', angle: 10 },
+  { class: 'php-skill', angle: 26 },
+  { class: 'express-skill', angle: 278 },
+  { class: 'redux-skill', angle: 45 },
+  { class: 'tailwind-skill', angle: 255 },
+  { class: 'bootstrap-skill', angle: 70 },
+  { class: 'mysql-skill', angle: 225 },
+  { class: 'mongo-skill', angle: 97 },
+  { class: 'docker-skill', angle: 208 },
+  { class: 'jest-skill', angle: 190 },
+  { class: 'router-skill', angle: 172 },
+  { class: 'git-skill', angle: 151 },
+  { class: 'npm-skill', angle: 133 },
+  { class: 'framer-skill', angle: 117 },
+];
+let hovered;
+let targetAngle;
+
+$('.skill').on('mouseenter', function () {
+  let match = targetAngles.find((angle) => $(this).hasClass(angle.class));
+  if (match) {
+    hovered = true;
+    targetAngle = match.angle;
+
+    $('.skill').each(function () {
+      if (!$(this).hasClass(match.class)) {
+        $(this).attr('aria-disabled', 'true');
+      }
+    });
+  }
+});
+
+$('.skill').on('mouseleave', function () {
+  isHovering = false;
+  targetAngle = null;
+  $('.skills-square').css('--spotlight-color', `#19879cb3`);
+  $('.skills-square').css('--coverage-one', `7%`);
+  $('.skills-square').css('--coverage-two', `15%`);
+
+  $('.skill').each(function () {
+    $(this).attr('aria-disabled', 'false');
+  });
+});
 
 const animateSkillSquare = () => {
-  angle -= 1;
+  if (angle >= 360) angle -= 360;
+
+  if (hovered && targetAngle !== null) {
+    if (angle !== targetAngle) {
+      $('.skills-square').css('--spotlight-color', `  #e1faff94`);
+      $('.skills-square').css('--coverage-one', `5%`);
+      $('.skills-square').css('--coverage-two', `10%`);
+
+      const diff = (targetAngle - angle + 360) % 360;
+      angle = targetAngle;
+    }
+  } else {
+    angle += 1;
+  }
 
   $('.skills-square').css('--conic-deg', `${angle}deg`);
-
   requestAnimationFrame(animateSkillSquare);
 };
 
