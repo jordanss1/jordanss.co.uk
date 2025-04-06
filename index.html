@@ -585,14 +585,15 @@
                       to use GPT-4 otherwise this was pointless. Streaming the
                       response to my PHP backend was the key to prevent
                       timeouts. How to reduce costs overall? Storing the events
-                      was the key, that way once I retrieved the events one I
-                      could be almost certain I wouldn't have to send them to
-                      GPT ever again. Enter MySQL. After receiving the events
-                      back from ChatGPT I would fill my database up with the
-                      events. When a user selects the day again, the events
-                      would be ready, and if ChatGPT failed to provide coords
-                      for one the events, I would send a batch of these events
-                      again on this new request. This worked surprisingly well!
+                      was the key, that way a user makes one request for that
+                      specific day, I could be almost certain I wouldn't have to
+                      send the events to GPT ever again. Enter MySQL. After
+                      receiving the events back from ChatGPT I would fill my
+                      database up with the events. When a user selects the day
+                      again, the events would be ready, and if ChatGPT failed to
+                      provide coords for one of the events, I would send a batch
+                      of these events again on this new request. This worked
+                      surprisingly well!
                     </p>
                     <h4
                       class="font-oxanium w-fit text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2 -translate-x-4"
@@ -1899,7 +1900,7 @@
                 >
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-10 xs:h-12 hover:scale-105 active:scale-105 skill js-skill group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out relative"
+                    class="gap-1 h-10 xs:h-12 hover:scale-105 active:scale-105 skill js-skill group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out relative"
                   >
                     <img
                       class="size-10 xs:size-12 rounded-lg my-auto"
@@ -1913,7 +1914,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-10 xs:h-12 group skill jquery-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-10 xs:h-12 group skill jquery-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-10 xs:size-12 rounded-lg bg-blue-800 p-1 my-auto"
@@ -1927,7 +1928,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-11 xs:h-13 group skill ts-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-11 xs:h-13 group skill ts-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-11 xs:size-13 rounded-lg my-auto"
@@ -1941,7 +1942,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-11 xs:h-13 group skill react-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-11 xs:h-13 group skill react-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-11 xs:size-13 rounded-lg my-auto"
@@ -1955,7 +1956,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-11 xs:h-13 group skill node-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-11 xs:h-13 group skill node-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-11 xs:size-13 rounded-lg my-auto"
@@ -1969,7 +1970,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-14 group skill php-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-14 group skill php-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-14 rounded-lg my-auto"
@@ -1987,7 +1988,7 @@
                 >
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group skill express-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group skill express-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg bg-slate-200 my-auto p-1"
@@ -2001,7 +2002,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group skill redux-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group skill redux-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg bg-slate-200 my-auto p-1"
@@ -2019,7 +2020,7 @@
                   class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
                 >
                   <div
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill tailwind-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill tailwind-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-2 my-auto p-1"
@@ -2033,7 +2034,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill bootstrap-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill bootstrap-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto"
@@ -2051,7 +2052,7 @@
                 >
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill mysql-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill mysql-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg p-1 bg-white my-auto"
@@ -2065,7 +2066,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill mongo-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill mongo-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto"
@@ -2083,7 +2084,7 @@
                 >
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill docker-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill docker-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#539fce] border-2 p-1"
@@ -2097,7 +2098,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill jest-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill jest-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#99425b] border-2"
@@ -2111,7 +2112,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill router-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out overflow-visible"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill router-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out overflow-visible"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#99425b] border-1 p-1"
@@ -2125,7 +2126,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill git-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill git-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-slate-800 border-2"
@@ -2139,7 +2140,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill npm-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill npm-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto"
@@ -2153,7 +2154,7 @@
                   </div>
                   <div
                     aria-disabled="false"
-                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill framer-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill framer-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
                   >
                     <img
                       class="size-12 xs:size-13 rounded-lg my-auto bg-slate-800 border-slate-400 border-1"
@@ -2176,10 +2177,11 @@
         class="min-h-screen px-4 sm:px-10 w-full [background:conic-gradient(from_92deg_at_54%_-7%,_#378286,_#144c85,_#10207f00,_#421d85,_#3c1b87,_#134381,_#135da5,_#156e84),_linear-gradient(181deg,_#140c7c_15%,_#130d7e_100%)] overflow-hidden"
       >
         <div
-          class="w-full h-full mx-auto flex-col flex contain-layout mt-20 sm:mt-24"
+          class="w-full h-full mx-auto observed flex-col flex contain-layout mt-20 sm:mt-24"
         >
           <h3
-            class="font-oxanium w-full mr-auto sm:ml-auto max-w-4xl before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4 ml-6"
+            aria-disabled="true"
+            class="font-oxanium w-full mr-auto sm:ml-auto max-w-4xl before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4 ml-6 transition-all duration-1000 aria-disabled:translate-y-20 translate-y-0 aria-disabled:opacity-0 opacity-100 aria-disabled:scale-150 aria-disabled:blur-sm scale-100 blur-[0px] ease-in-out observed"
           >
             Portfolio
           </h3>
@@ -2194,7 +2196,7 @@
                 class="h-[450px] xs:h-[500px] sm:h-[700px] min-[902px]:h-[700px]"
               >
                 <div
-                  class="w-fit h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto"
+                  class="w-fit transition-all duration-1000 group-aria-disabled/main:translate-y-20 translate-y-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/main:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto delay-200"
                 >
                   <div
                     class="max-w-36 xs:max-w-40 sm:max-w-52 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-15px)] xs:transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-40px)]"
@@ -2222,9 +2224,11 @@
                   </div>
                 </div>
               </div>
-              <div class="w-full self-start sm:mt-0 mt-5">
+              <div
+                class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/main:translate-x-20 translate-x-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:blur-sm group-aria-disabled/main:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
                 <article
-                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)]"
+                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
                 >
                   <h4
                     class="font-oxanium text-amber-400 text-3xl xs:text-4xl mb-2 drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
@@ -2294,24 +2298,27 @@
               </div>
             </div>
             <div
-              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 xs:gap-12 controller-div mb-20 xs:mb-32"
+              aria-disabled="true"
+              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 xs:gap-12 controller-div mb-20 xs:mb-32 observed-portfolio observed"
               aria-expanded="false"
             >
-              <div class="w-full self-start">
+              <div
+                class="w-full self-start duration-1000 delay-500 group-aria-disabled/grid:-translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
                 <article
-                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2"
+                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2"
                 >
                   <div class="mb-2">
                     <div class="flex items-center justify-between px-1">
                       <div
                         aria-disabled="true"
-                        class="group drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] border flex gap-2 p-2 border-slate-400/0 hover:border-slate-400/50 active:border-slate-400/50 rounded-sm h-full w-fit"
+                        class="group drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] flex gap-2 p-2 rounded-sm h-full w-fit"
                       >
                         <div
-                          class="rounded-full size-2 p-1 transition-all ease-in border-slate-300 hover:border-white active:border-white cursor-pointer border bg-black/60 group-aria-disabled:bg-amber-400 group-aria-disabled:hover:bg-amber-300 hover:bg-slate-400/40 active:bg-slate-400/40 map-switch-1"
+                          class="rounded-full size-2 p-1.5 transition-all ease-in border-slate-300 hover:border-white active:border-white cursor-pointer border bg-black/60 group-aria-disabled:bg-amber-400 group-aria-disabled:hover:bg-amber-300 hover:bg-slate-400/20 active:bg-slate-400/20 map-switch-1"
                         ></div>
                         <div
-                          class="rounded-full size-2 p-1 transition-all ease-in group-aria-disabled:border-slate-400 border-slate-300 hover:border-white active:border-white cursor-pointer border group-aria-disabled:bg-black/60 hover:bg-amber-300 bg-amber-400 group-aria-disabled:hover:bg-slate-400/40 group-aria-disabled:active:bg-slate-400/40 map-switch-2"
+                          class="rounded-full size-2 p-1.5 transition-all ease-in group-aria-disabled:border-slate-400 border-slate-300 hover:border-white active:border-white cursor-pointer border group-aria-disabled:bg-black/60 hover:bg-amber-300 bg-amber-400 group-aria-disabled:hover:bg-slate-400/20 group-aria-disabled:active:bg-slate-400/20 map-switch-2"
                         ></div>
                       </div>
                       <h4
@@ -2415,7 +2422,7 @@
               </div>
               <div class="h-44 xs:h-56 sm:h-96">
                 <div
-                  class="w-fit h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto"
+                  class="w-fit h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
                 >
                   <div
                     class="max-w-44 xs:max-w-64 sm:max-w-80 min-[902px]:translate-x-4 min-[902px]:max-w-72 w-full relative rounded-md xs:translate-x-0 -translate-x-10 transform-[perspective(3em)rotateY(-1deg)translateZ(15px)translateY(16px)]"
@@ -2431,7 +2438,7 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1.5 -top-1 sm:-right-2 sm:-top-1 w-[106%] h-[107%] rounded-md -z-10"
+                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1.5 -top-1 sm:-right-2 sm:-top-1 w-[106%] h-[107%] rounded-md -z-10 conic-bg"
                     ></div>
                   </div>
                   <div
@@ -2448,18 +2455,19 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] xs:-right-1.5 sm:-right-2 -right-1 -top-1 sm:-top-2 w-[110%] h-[105%] rounded-md -z-10"
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] xs:-right-1.5 sm:-right-2 -right-1 -top-1 sm:-top-2 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
                     ></div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] xs:gap-12 gap-4 controller-div mb-20 xs:mb-32"
+              aria-disabled="true"
+              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] xs:gap-12 gap-4 controller-div mb-20 xs:mb-32 observed observed-portfolio"
             >
               <div class="h-64 xs:h-72 sm:h-96">
                 <div
-                  class="w-fit h-full relative mr-auto xs:translate-x-0 -translate-x-10 ml-auto min-[902px]:mr-0 min-[902px]:ml-auto"
+                  class="w-fit h-full relative mr-auto xs:translate-x-0 -translate-x-10 ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
                 >
                   <div
                     class="max-w-44 xs:max-w-64 sm:max-w-80 min-[902px]:-translate-x-4 min-[902px]:max-w-72 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)] xs:transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)]"
@@ -2470,7 +2478,7 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-[3px] xs:-top-1 xs:-right-1.5 sm:-top-1.5 w-[105%] h-[107%] rounded-md -z-10"
+                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-[3px] xs:-top-1 xs:-right-1.5 sm:-top-1.5 w-[105%] h-[107%] rounded-md -z-10 conic-bg"
                     ></div>
                   </div>
                   <div
@@ -2482,14 +2490,16 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-1 md:-right-2 xs:-top-1 md:-top-2 w-[110%] h-[105%] md:h-[107%] md:w-[111%] rounded-md -z-10"
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-1 md:-right-2 xs:-top-1 md:-top-2 w-[110%] h-[105%] md:h-[107%] md:w-[111%] rounded-md -z-10 conic-bg"
                     ></div>
                   </div>
                 </div>
               </div>
-              <div class="w-full self-start sm:mt-0 mt-5">
+              <div
+                class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/grid:translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
                 <article
-                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)]"
+                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
                 >
                   <h4
                     class="font-oxanium text-amber-400 text-3xl xs:text-4xl mb-2 drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
@@ -2550,11 +2560,14 @@
               </div>
             </div>
             <div
-              class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 xs:gap-12 mb-32"
+              aria-disabled="true"
+              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 xs:gap-12 mb-32 observed observed-portfolio"
             >
-              <div class="w-full self-start sm:mt-0 mt-5">
+              <div
+                class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/grid:-translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
                 <article
-                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2"
+                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2 duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
                 >
                   <div class="mb-2">
                     <h4
@@ -2628,7 +2641,7 @@
                 class="h-[450px] xs:h-[500px] sm:h-[700px] min-[902px]:h-[700px]"
               >
                 <div
-                  class="w-fit h-full sm:translate-x-0 xs:translate-x-20 min-[902px]:translate-x-10 relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto"
+                  class="w-fit h-full sm:translate-x-0 xs:translate-x-20 min-[902px]:translate-x-10 relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
                 >
                   <div
                     class="max-w-36 xs:max-w-40 sm:max-w-52 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-15px)] xs:transform-[perspective(3em)_rotateY(-1deg)_translateZ(15px)_translateY(76px)_translateX(-40px)]"
@@ -2639,7 +2652,7 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:inset_0_-23px_25px_#0000008a,inset_0_-36px_30px_#0000007a,inset_0_-16px_40px_#c3c3c3b5,0_-2px_1px_#c3c3c300,0_4px_2px_#00000017,-12px_0_26px_#00000052,0_26px_28px_#00000038,0_0_16px_#ffffff94] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 sm:-right-3 sm:-top-3 w-[110%] h-[105%] rounded-md -z-10"
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000008a,inset_0_-36px_30px_#0000007a,inset_0_-16px_40px_#c3c3c3b5,0_-2px_1px_#c3c3c300,0_4px_2px_#00000017,-12px_0_26px_#00000052,0_26px_28px_#00000038,0_0_16px_#ffffff94] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 sm:-right-3 sm:-top-3 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
                     ></div>
                   </div>
                   <div
@@ -2651,7 +2664,7 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_204deg_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 w-[110%] h-[105%] rounded-md -z-10"
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
                     ></div>
                   </div>
                 </div>
@@ -2661,8 +2674,9 @@
         </div>
       </section>
       <section
+        aria-disabled="true"
         id="contact"
-        class="h-screen flex flex-col justify-center items-center relative contain-layout [background:linear-gradient(181deg,_#13147f00_7%,_#171717_67%),_linear-gradient(90deg,_#13137e_25%,_#142581_70%)]"
+        class="h-screen flex flex-col group/main justify-center items-center relative contain-layout [background:linear-gradient(181deg,_#13147f00_7%,_#171717_67%),_linear-gradient(90deg,_#13137e_25%,_#142581_70%)] observed"
       >
         <div
           class="flex flex-col-reverse relative h-full items-center min-[790px]:-translate-x-40 md:-translate-x-28 justify-center gap-4 max-w-3xl w-full rounded-lg p-4"
@@ -2671,7 +2685,7 @@
             class="relative max-w-lg w-full -translate-y-1 translate-x-0 min-[790px]:translate-x-[69px] md:translate-x-0 md:translate-y-0"
           >
             <div
-              class="absolute drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] min-[790px]:transform-[perspective(6em)rotateY(5deg)] -top-14 sm:-top-20 left-0 flex items-center gap-2"
+              class="absolute drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] min-[790px]:transform-[perspective(6em)rotateY(5deg)rotateX(0deg)scale(1)translateX(0px)] group-aria-disabled/main:transform-[perspective(6em)rotateX(-3deg)scale(0.7)] transform-[perspective(0em)rotateX(0deg)scale(1)] min-[790px]:group-aria-disabled/main:transform-[perspective(6em)rotateY(3deg)rotateX(-3deg)scale(0.7)translateX(255px)] group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:blur-sm blur-[0px] transition-all duration-500 -top-14 sm:-top-20 left-0 flex items-center gap-2"
             >
               <div class="rounded-lg border-2 border-slate-300">
                 <img
@@ -2685,7 +2699,7 @@
               </h4>
             </div>
             <form
-              class="w-full flex [box-shadow:rgba(0,_0,_0,_0.17)_0px_-23px_25px_0px_inset,_rgba(0,_0,_0,_0.15)_0px_-36px_30px_0px_inset,_rgba(0,_0,_0,_0.1)_0px_-79px_40px_0px_inset,_rgba(0,_0,_0,_0.06)_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgba(0,_0,_0,_0.09)_0px_8px_4px,_rgba(0,_0,_0,_0.09)_0px_16px_8px,_rgba(0,_0,_0,_0.09)_0px_32px_16px] flex-col justify-center items-center p-4 xs:p-8 [background:conic-gradient(from_266deg_at_34%_134%,_#1800c5,_#6c01e1)] rounded-lg gap-4 max-w-md md:max-w-lg min-[790px]:transform-[perspective(6em)rotateY(1deg)] overflow-hidden relative mx-auto"
+              class="w-full flex [box-shadow:rgba(0,_0,_0,_0.17)_0px_-23px_25px_0px_inset,_rgba(0,_0,_0,_0.15)_0px_-36px_30px_0px_inset,_rgba(0,_0,_0,_0.1)_0px_-79px_40px_0px_inset,_rgba(0,_0,_0,_0.06)_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgba(0,_0,_0,_0.09)_0px_8px_4px,_rgba(0,_0,_0,_0.09)_0px_16px_8px,_rgba(0,_0,_0,_0.09)_0px_32px_16px] flex-col justify-center items-center p-4 xs:p-8 [background:conic-gradient(from_266deg_at_34%_134%,_#1800c5,_#6c01e1)] rounded-lg gap-4 max-w-md md:max-w-lg min-[790px]:transform-[perspective(6em)rotateY(1deg)rotateX(0deg)scale(1)translateX(-5px)translateY(6px)] md:transform-[perspective(6em)rotateY(1deg)rotateX(0deg)scale(1)translateX(3px)translateY(6px)] min-[790px]:group-aria-disabled/main:transform-[perspective(6em)rotateY(3deg)rotateX(-3deg)scale(0.7)translateX(255px)translateY(0px)] group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:blur-sm blur-[0px] group-aria-disabled/main:transform-[perspective(6em)rotateX(-3deg)scale(0.9)] transform-[perspective(6em)rotateX(0deg)scale(1)] transition-all duration-500 overflow-hidden relative min-[790px]:mx-0 mx-auto"
             >
               <div
                 id="contact-error"
@@ -2758,7 +2772,7 @@
                 class="w-full h-full pointer-events-none hidden min-[790px]:block absolute overflow-hidden"
               >
                 <div
-                  class="flex absolute -right-[227px] justify-center rounded-lg items-center -top-12"
+                  class="flex absolute transition-all duration-500 delay-300 ease-in-out group-aria-disabled/main:translate-x-24 translate-x-0 origin-right group-aria-disabled/main:scale-75 scale-100 -right-[227px] justify-center rounded-lg items-center -top-12"
                 >
                   <div class="relative">
                     <img
@@ -2774,7 +2788,9 @@
           <div
             class="hidden min-[790px]:flex absolute -right-24 -z-10 justify-center rounded-full items-center top-[177px] transform-[perspective(4em)rotateY(-1deg)] [box-shadow:0_54px_55px_#92929240,_0_-12px_30px_#ffffff40,_0_4px_6px_#ffffff99,_0_12px_13px_#c2c2c282,_0_-3px_5px_#ffffff78]"
           >
-            <div class="absolute -top-10 md:top-3 right-5 md:right-0">
+            <div
+              class="absolute -top-10 md:top-3 right-5 md:right-0 duration-500 delay-500 ease-in-out group-aria-disabled/main:-translate-x-12 translate-x-0 origin-right group-aria-disabled/main:scale-125 scale-100 group-aria-disabled/main:blur-sm blur-[0px] group-aria-disabled/main:opacity-0 opacity-100"
+            >
               <div
                 class="size-2 rounded-full absolute top-[72px] right-3 border-slate-200 border-2 [background:conic-gradient(from_43deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
               ></div>
@@ -2798,7 +2814,7 @@
             >
               <img
                 src="/libs/css/assets/images/sticker_copy.png"
-                class="h-[450px] md:h-[600px] rounded-full"
+                class="h-[450px] md:h-[600px] rounded-full transition-all group-aria-disabled/main:transform-[perspective(4em)rotateX(-4deg)] transform-[perspective(4em)rotateX(0deg)] duration-500 delay-300 ease-in-out group-aria-disabled/main:translate-x-24 translate-x-0 group-aria-disabled/main:translate-y-24 translate-y-0 origin-right group-aria-disabled/main:scale-75 scale-100 group-aria-disabled/main:blur-sm blur-[0px] group-aria-disabled/main:opacity-0 opacity-100"
                 alt=""
               />
               <div

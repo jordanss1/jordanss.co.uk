@@ -1,23 +1,19 @@
 /// <reference path="./jquery.js" />
 
-let conicAngle = 40;
+const animatePortfolioDeg = (children, conicAngle = 40) => {
+  if (conicAngle >= 204) {
+    children.each(function () {
+      $(this).removeClass('conic-bg');
+    });
 
-const animatePortfolioDeg = (children) => {
-  if (conicAngle >= 204) return;
+    return;
+  }
 
   children.each(function () {
     $(this).css('--deg-portfolio', `${conicAngle}deg`);
   });
 
-  if (conicAngle <= 120) {
-    conicAngle += 5;
-  } else if (conicAngle <= 180) {
-    conicAngle += 1;
-  } else if (conicAngle <= 204) {
-    conicAngle += 5;
-  }
-
-  requestAnimationFrame(() => animatePortfolioDeg(children));
+  requestAnimationFrame(() => animatePortfolioDeg(children, conicAngle + 4));
 };
 
 $(function () {
@@ -34,7 +30,7 @@ $(function () {
         if ($(entry.target).hasClass('observed-portfolio')) {
           const children = $(entry.target).find('.conic-bg');
 
-          animatePortfolioDeg(children);
+          setTimeout(() => animatePortfolioDeg(children), 500);
         }
       }
     });
@@ -42,7 +38,7 @@ $(function () {
 
   const observer = new IntersectionObserver(handleIntersection, {
     root: null,
-    threshold: 0.3,
+    threshold: 0.5,
   });
 
   $('.observed').each(function () {
