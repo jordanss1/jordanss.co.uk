@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./libs/css/styles.css" />
+    <link rel="stylesheet" href="./libs/css/output.css" />
+    <link href="./assets/font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/font-awesome/css/regular.css" rel="stylesheet" />
+    <link href="./assets/font-awesome/css/solid.css" rel="stylesheet" />
+    <link href="./assets/font-awesome/css/brands.css" rel="stylesheet" />
+    <title>Jordan S.</title>
+  </head>
+  <body>
+    <main class="min-h-screen">
+      <div class="visible" id="preloader"></div>
+      <div
+        aria-disabled="true"
+        id="taskx-overview"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Task-X
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  Task-X is a twist on a todo app that takes users through a
+                  social media esque journey. It uses the Google sign-in API
+                  with PassportJS, integrating with MongoDB through the use of
+                  MongooseJS. The database holds user profiles, users' tasks,
+                  amount of likes and comments on tasks, and notification data.
+                  The backend is Node with ExpressJS and the frontend is React
+                  with Redux for state management.
+                </p>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                >
+                  Upon signing in with Google for the first time users are taken
+                  through a profile setup flow where they can choose an avatar
+                  and a username. While the user types their potential username
+                  an event is debounced that checks against the database to
+                  ensure the username is available. I'm not trained in UI/UX but
+                  I used Framer (a great animation library) and Tailwind to give
+                  it a decent style.
+                </p>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                >
+                  Once signed in a user can create tasks with a due date and are
+                  given the ability to add the task to the Task Wall. The Task
+                  Wall is where users allow other users to interact with their
+                  task. Users can comment and like tasks. After a task receives
+                  a certain amount of likes these tasks gain awards. Users are
+                  notified of awards, comments and likes which funnel down from
+                  the database to be presented on the frontend. Finally, users
+                  can delete their accounts which removes all posts, likes and
+                  comments from the database.
+                </p>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/typescript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        TypeScript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
+                    >
+                      <img
+                        class="bg-slate-200 border-[#99425b] border-1 p-1 size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react-router.svg"
+                      />
+                      <span
+                        class="text-xs h-4 text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React Router
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-14 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/nodejs.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Node JS
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 p-1 rounded-lg mx-auto bg-slate-200 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/express.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Express
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 p-1 rounded-lg bg-slate-200 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/redux.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Redux
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/tailwind.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Tailwind
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-14 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/mongodb.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        MongoDB
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-800 border border-slate-400 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/framer.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Framer
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/npm.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        npm
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div class="flex p-4 gap-6 items-center">
+                    <a
+                      href="https://github.com/jordanss1/task-x"
+                      title="https://github.com/jordanss1/task-x"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl z-20 sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <a
+                      href="https://medium.com/@jordan.to.code/task-x-task-manager-with-social-integration-d5634389156d"
+                      title="https://medium.com/@jordan.to.code/task-x-task-manager-with-social-integration-d5634389156d"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-medium z-20 text-2xl sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-0 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <a
+                      title="https://task-x.onrender.com/"
+                      href="https://task-x.onrender.com/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl sm:text-3xl"
+                      ></i>
+
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-20 group-active:-translate-y-20 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Website loads slow due to host render.com
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/taskx1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/taskx1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/taskx2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/taskx2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/taskx3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/taskx3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/taskx4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/taskx4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/taskx5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/taskx5.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="map-overview"
+        aria-disabled="true"
+        aria-expanded="false"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 group/container overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Doublemap
+                <div
+                  role="button"
+                  id="overview-switch"
+                  class="block cursor-pointer group xs:inline xs:ml-0 ml-4 relative"
+                >
+                  <span
+                    class="text-xs xs:text-sm sm:text-lg transition-all ease-out text-slate-400 group-active:text-slate-300 group-hover:text-slate-300 ml-2 inline group-aria-expanded/container:hidden"
+                  >
+                    mapbox version
+                  </span>
+                  <span
+                    class="text-xs xs:text-sm sm:text-lg transition-all ease-out text-slate-400 group-hover:text-slate-300 ml-2 hidden group-aria-expanded/container:inline"
+                  >
+                    leaflet version
+                  </span>
+                  <i
+                    class="fa-solid fa-right-left transition-all ease-out group-hover:scale-105 group-active:scale-105 text-xs xs:text-sm ml-2 text-slate-400 group-hover:text-slate-300 group-active:text-slate-300"
+                  ></i>
+                </div>
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <div class="block group-aria-expanded/container:hidden">
+                  <div
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                  >
+                    The Mapbox version of Doublemap uses JQuery with a PHP
+                    backend and MySQL for database needs. Tailwind was used to
+                    give the application a decent feel and design. It was
+                    deployed using Docker on a VPS with an Nginx container and a
+                    PHP-FPM container. The map has a
+                    <span class="font-bold">modern</span>
+                    side and a
+                    <span class="font-bold">historical</span>
+                    side.
+                    <div class="mt-2">
+                      The modern side delivers:
+                      <ul class="list-disc first:mt-2 *:mb-2 last:mb-0 px-8">
+                        <li>
+                          Points of interest based on where the map is centered
+                          using the OpenStreetMap Overpass API. The user can
+                          expand the search for POIs at will.
+                        </li>
+                        <li>
+                          A search box that uses the Mapbox Search API to
+                          deliver countries, regions, cities, towns and streets.
+                        </li>
+                        <li>
+                          Users can select countries with the cursor or the
+                          select box and get information on a countries
+                          population, capital, region etc.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mt-2">
+                      The historical side delivers:
+                      <ul class="list-disc first:mt-2 *:mb-2 last:mb-0 px-8">
+                        <li>
+                          A range slider allowing users to choose a day of the
+                          year where the Wikipedia 'On This Day' API is used and
+                          combined with ChatGPT API to convert events to
+                          latitude and longitude that can be mapped.
+                        </li>
+                        <li>
+                          OpenHistoricalMap API is used so when users choose an
+                          event in time the tiles on the map change to represent
+                          the year in question, giving a context to the event.
+                        </li>
+                        <li>
+                          Users can select countries with the cursor or the
+                          select box where the history of that country is
+                          retrieved from Wikipedia and presented to the user.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <h4
+                    class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                  >
+                    Challenges and Solutions
+                  </h4>
+                  <div
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                  >
+                    There were many challenges and things I had to experiment
+                    with while creating this map but I will name the most
+                    significant:
+                    <ul class="list-disc first:mt-2 *:mb-2 last:mb-0 px-8">
+                      <li>
+                        <span class="font-bold">Challenge 1:</span>
+                        Is there an API that provides historical events with
+                        latitude and longitude? If not, how can this be done and
+                        what possible solutions are there?
+                      </li>
+                      <li>
+                        <span class="font-bold">Challenge 2:</span>
+                        ChatGPT API costs and can be slow in response especially
+                        GPT-4. GPT-3 is not accurate and can't be trusted, how
+                        can I get this working?
+                      </li>
+                      <li>
+                        <span class="font-bold">Challenge 3:</span>
+                        Mapbox also costs after a certain amount of requests,
+                        how can I ensure I don't go over this limit?
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="p-2">
+                    <h4
+                      class="font-oxanium w-fit text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2 -translate-x-4"
+                    >
+                      Solution 1
+                    </h4>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      After a few weeks of research I realised my needs were
+                      very niche and no API would provide what I needed. I knew
+                      Wikipedia would be a great resource but didn't know where
+                      to start. After researching the API I found 'On This Day'.
+                      Events that stretch back sometimes 2000 years -
+                      <span class="font-bold">perfect!</span>
+                      Wait, these events don't come with latitude and
+                      longitude...
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      On inspection the events have text with popular figures in
+                      pop culture, famous landmarks, and many times country,
+                      city or town names. There must be a way to deduce
+                      coordinates in this modern age if I have all this
+                      information to hand, right? Enter ChatGPT.
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      The answer was clear. ChatGPT excelled at this. Within
+                      these events are famous places, historical landmarks, and
+                      well-known figures. With the right approach, there had to
+                      be a way to extract locations. ChatGPT could recognize
+                      names and infer places even when they weren't explicitly
+                      mentioned. It wasn't just matching text - it was
+                      reasoning, connecting history, and filling in the gaps
+                      where a traditional API would fail. It could adapt, making
+                      it the perfect tool to bridge the missing latitude and
+                      longitude gap.
+                    </p>
+                    <h4
+                      class="font-oxanium w-fit text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2 -translate-x-4"
+                    >
+                      Solution 2
+                    </h4>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      ChatGPT costs. After testing, GPT-3 is less expensive at
+                      the cost of reasoning and accuracy, struggling with
+                      ambiguous locations or missing context. It might recognize
+                      a famous landmark but fail entirely to provide its
+                      coordinates, even mixing up events (as they are sent in
+                      batches). GPT-4, on the other hand, excels with a better
+                      understanding of historical events, better disambiguation,
+                      and a good grasp of geographic clues. GPT-4 is much slower
+                      and costs more with much better results, while GPT-3 is
+                      much faster and cheaper with less accurate results.
+                      Solution?
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      I
+                      <span class="font-bold">had</span>
+                      to use GPT-4 otherwise this was pointless. Streaming the
+                      response to my PHP backend was the key to prevent
+                      timeouts. How to reduce costs overall? Storing the events
+                      was the key, that way a user makes one request for that
+                      specific day, I could be almost certain I wouldn't have to
+                      send the events to GPT ever again. Enter MySQL. After
+                      receiving the events back from ChatGPT I would fill my
+                      database up with the events. When a user selects the day
+                      again, the events would be ready, and if ChatGPT failed to
+                      provide coords for one of the events, I would send a batch
+                      of these events again on this new request. This worked
+                      surprisingly well!
+                    </p>
+                    <h4
+                      class="font-oxanium w-fit text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2 -translate-x-4"
+                    >
+                      Solution 3
+                    </h4>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      This one is similar to the second problem and was a more
+                      easy solution. Loading the map and searching POIs go
+                      towards two seperate API calls that will cost after a
+                      certain amount of requests each month. Once again nothing
+                      a simple MySQL table can't solve.
+                    </p>
+                    <p
+                      class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                    >
+                      I setup a table to track the amount of requests per API
+                      and increment the counts after each request. If the app is
+                      at the limit the request never makes it to Mapbox and a
+                      429 error is returned to the user letting them know no
+                      more requests can be made. To reset the request counts on
+                      the 1st of the month I created a scheduled event. Viola,
+                      problem solved.
+                    </p>
+                  </div>
+                </div>
+                <div class="hidden group-aria-expanded/container:block">
+                  <p
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                  >
+                    The leaflet version of Doublemap was much easier than the
+                    Mapbox version and was completed in about a week give or
+                    take. JQuery and PHP are used to perform basic routines
+                    retrieving news articles, wikipedia articles, country
+                    information, weather for the capital and providing a
+                    currency converter. Tailwind and Bootstrap give the app a
+                    modern and simple design. Docker was used for deployment on
+                    a VPS with an Nginx container and a PHP-FPM container.
+                  </p>
+                  <p
+                    class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 mb-1 pb-0"
+                  >
+                    When a user first uses the map they are asked to give the
+                    map permission to access location using the Geolocation API.
+                    This is where the routine finds the coordinates and can
+                    select the correct country and query PHP to retrieve the
+                    country's information. There are also cities and airports
+                    pinned to the map and clustered.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto p-1 bg-blue-800 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/jquery.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        JQuery
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/javascript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Javascript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/php.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        PHP
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 p-1 rounded-lg mx-auto bg-slate-200 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/docker.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Docker
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/tailwind.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Tailwind
+                      </span>
+                    </div>
+                    <div
+                      class="hidden group-aria-expanded/container:flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/bootstrap.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Bootstrap
+                      </span>
+                    </div>
+                    <div
+                      class="flex group-aria-expanded/container:hidden flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg p-1 bg-white mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/mysql.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        MySQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div
+                    class="flex group-aria-expanded/container:hidden p-4 gap-6 items-center"
+                  >
+                    <a
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *: *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 z-20"
+                      ></i>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-14 group-active:-translate-y-14 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <a
+                      title="https://www.double-map.online/"
+                      href="https://www.double-map.online/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                  </div>
+                  <div
+                    class="hidden group-aria-expanded/container:flex p-4 gap-6 items-center"
+                  >
+                    <a
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *: *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 z-20"
+                      ></i>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-14 group-active:-translate-y-14 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <a
+                      title="https://map.double-map.online/"
+                      href="https://map.double-map.online/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex group-aria-expanded/container:hidden gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-6.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-7.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap1-8.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-6.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap1-7.png"
+                alt=""
+              />
+            </div>
+            <div
+              class="hidden group-aria-expanded/container:flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/doublemap2-5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/doublemap2-5.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        id="whatsong-overview"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Whatsong
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  Whatsong integrates with Spotify API to provide users the
+                  option to search songs and artists. It is a React/Typescript
+                  app that makes use of reducers and the useContext hook to
+                  handle the most important data in the application. React
+                  Router is used to route the user between the components.
+                  Framer Motion is used to give the app a decent design
+                  experience.
+                </p>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  Jest, React Testing Library and Mock Service Worker are used
+                  to test the user interface and network requests to the Spotify
+                  API. Axios is used to make all network requests. Users choose
+                  artists or songs and can search either one. The artists side
+                  gives users detailed information on that artist including top
+                  tracks and album lists. The songs sides lets users grab an
+                  element and drag it into a highlighted box in order to see the
+                  song's details.
+                </p>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  Looking back on Whatsong there are many things I would love to
+                  upgrade about this including the design and the knowledge I
+                  now have on React Router. React Router could have been
+                  implemented better. I also eventually want to move this over
+                  to Docker, add a Laravel backend, create an auth flow and
+                  allow users to save tracks, artists, songs and albums as
+                  favorites - all integrated with a user dashboard.
+                </p>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/typescript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        TypeScript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
+                    >
+                      <img
+                        class="bg-slate-200 border-[#99425b] border-1 p-1 size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react-router.svg"
+                      />
+                      <span
+                        class="text-xs h-4 text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React Router
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-200 border-[#99425b] border-2 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/jest.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Jest
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-800 border border-slate-400 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/framer.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Framer
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/npm.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        npm
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div class="flex p-4 gap-6 items-center">
+                    <a
+                      href="https://github.com/jordanss1/whatsong"
+                      title="https://github.com/jordanss1/whatsong"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl z-20 sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <button
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-medium group-hover:text-amber-300 *:group-active:text-amber-300 z-20 text-2xl sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-0 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                      <div
+                        class="absolute -top-4 left-1/2 w-56 -translate-x-1/2 group-hover:-translate-y-32 group-active:-translate-y-32 -translate-y-20 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40 *:cursor-pointer flex flex-col *:rounded-md *:hover:text-amber-300 *:active:hover:text-amber-300 *:hover:bg-black/50 *:active:hover:bg-black/50 *:transition-all *:delay-75 *:ease-in-out *:duration-150 gap-1 *:line-clamp-1 *:p-0.5 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7]"
+                      >
+                        <a
+                          href="https://medium.com/@jordan.to.code/react-front-end-renovation-adding-react-router-and-more-aa87918f602"
+                          target="_blank"
+                          title="React front-end renovation: adding react router and more"
+                        >
+                          React front-end renovation: adding react router and
+                          more
+                        </a>
+                        <a
+                          href="https://medium.com/@jordan.to.code/new-features-refactoring-and-reusable-components-290f42718885"
+                          target="_blank"
+                          title="New features, refactoring, and reusable components"
+                        >
+                          New features, refactoring, and reusable components
+                        </a>
+                        <a
+                          href="https://medium.com/@jordan.to.code/my-adventure-with-react-testing-and-jest-4d255bf12ef"
+                          target="_blank"
+                          title="My adventure with React Testing and Jest"
+                        >
+                          My adventure with React Testing and Jest
+                        </a>
+                        <a
+                          href="https://medium.com/@jordan.to.code/framer-motion-revision-b7a38895998b"
+                          target="_blank"
+                          title="React front-end renovation: adding react router and more"
+                        >
+                          Framer-motion revision
+                        </a>
+                      </div>
+                    </button>
+                    <a
+                      title="https://whatsong-rust.vercel.app/"
+                      href="https://whatsong-rust.vercel.app/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl sm:text-3xl"
+                      ></i>
+
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong5.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/whatsong6.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/whatsong6.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        id="hackernews-overview"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Hackernews
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  A simple responsive hackernews clone in React/Typescript.
+                  Axios is used to make requests to the News API which is used
+                  for both the News Feed and the Trending. Jest, React Testing
+                  Library and Mock Service Worker are used to test the user
+                  interface and network requests to the News API.
+                </p>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/typescript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        TypeScript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/react.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        React
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110 overflow-visible"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto bg-slate-200 border-[#99425b] border-2 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/jest.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Jest
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/npm.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        npm
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div class="flex p-4 gap-6 items-center">
+                    <a
+                      href="https://github.com/jordanss1/hackernews-clone"
+                      title="https://github.com/jordanss1/hackernews-clone"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl z-20 sm:text-3xl"
+                      ></i>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <button
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *: *:text-white cursor-default p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket text-2xl group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 z-20"
+                      ></i>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-20 group-active:-translate-y-20 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        API can only be used in development
+                      </div>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/hackernews1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/hackernews1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/hackernews2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/hackernews2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/hackernews3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/hackernews3.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav
+        id="nav"
+        aria-expanded="false"
+        class="fixed pointer-events-none group/nav top-0 left-1 md:left-4 h-full gap-4 flex items-center my-auto max-w-32 w-full z-[9998] p-1"
+      >
+        <input type="checkbox" id="nav-toggle" class="hidden peer" />
+
+        <label
+          for="nav-toggle"
+          class="fixed top-2 size-9 group rounded-full flex items-center justify-center opacity-70 hover:opacity-100 active:opacity-100 transition-all ease-in cursor-pointer pointer-events-auto hover:bg-slate-500 active:bg-slate-500 bg-slate-600 left-2 sm:hidden"
+        >
+          <i
+            class="fa-solid fa-angles-right text-slate-400 group-hover:text-white group-hover:translate-y-[1px] group-active:text-white group-active:translate-y-[1px] transition-all ease-out text-xl !inline group-aria-expanded/nav:!hidden"
+          ></i>
+          <i
+            class="fa-solid fa-angles-left text-slate-400 group-hover:text-white group-hover:translate-y-[1px] group-active:text-white group-active:translate-y-[1px] transition-all ease-out text-xl !hidden group-aria-expanded/nav:!inline"
+          ></i>
+        </label>
+        <ul
+          id="nav-ul"
+          class="h-fit overflow-hidden group sm:w-fit transition-all duration-500 ease-in-out flex flex-col gap-4"
+        >
+          <li
+            class="list-none group-aria-expanded/nav:delay-0 delay-300 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 opacity-0 scale-x-0 origin-left transition-all pointer-events-auto sm:opacity-100 sm:scale-x-100"
+          >
+            <a
+              href="home"
+              class="bg-slate-300 hover:bg-slate-200 active:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg active:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px] active:justify-normal active:w-20 sm:active:w-24 md:active:w-[102px] nav-bt"
+            >
+              <img class="md:w-7 w-5" src="/libs/css/assets/images/home.svg" />
+              <span
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline group-active:inline font-abel"
+              >
+                Home
+              </span>
+            </a>
+          </li>
+          <li
+            class="list-none pointer-events-auto delay-200 group-aria-expanded/nav:delay-100 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-0 origin-left sm:opacity-100 sm:scale-x-100"
+          >
+            <a
+              href="about"
+              class="bg-slate-300 hover:bg-slate-200 active:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg active:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px] active:justify-normal active:w-20 sm:active:w-24 md:active:w-[102px] nav-bt"
+            >
+              <img class="md:w-7 w-5" src="/libs/css/assets/images/about.svg" />
+              <span
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline group-active:inline delay-300 font-abel"
+              >
+                About
+              </span>
+            </a>
+          </li>
+          <li
+            class="list-none pointer-events-auto delay-100 group-aria-expanded/nav:delay-200 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-0 origin-left sm:opacity-100 sm:scale-x-100"
+          >
+            <a
+              href="portfolio"
+              class="bg-slate-300 hover:bg-slate-200 active:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg active:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px] active:justify-normal active:w-20 sm:active:w-24 md:active:w-[102px] nav-bt"
+            >
+              <img
+                class="md:w-7 w-5"
+                src="/libs/css/assets/images/portfolio.svg"
+              />
+              <span
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline group-active:inline delay-300 font-abel"
+              >
+                Portfolio
+              </span>
+            </a>
+          </li>
+          <li
+            class="list-none pointer-events-auto delay-0 group-aria-expanded/nav:delay-300 group-aria-expanded/nav:scale-x-100 group-aria-expanded/nav:opacity-100 transition-all opacity-0 scale-x-0 origin-left sm:opacity-100 sm:scale-x-100"
+          >
+            <a
+              href="contact"
+              class="bg-slate-300 hover:bg-slate-200 active:bg-slate-200 md:size-11 size-9 cursor-pointer group p-2 hover:rounded-lg active:rounded-lg overflow-hidden rounded-sm flex items-center gap-2 transition-all duration-500 ease-out hover:justify-normal hover:w-20 sm:hover:w-24 md:hover:w-[102px] active:justify-normal active:w-20 sm:active:w-24 md:active:w-[102px] nav-bt"
+            >
+              <img
+                class="md:w-7 w-5"
+                src="/libs/css/assets/images/contact.svg"
+              />
+              <span
+                class="text-slate-800 sm:text-[1rem] text-xs hidden group-hover:inline group-active:inline delay-300 font-abel"
+              >
+                Contact
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section
+        id="home"
+        class="h-screen p-4 flex justify-center items-center relative contain-layout bg-[linear-gradient(197deg,_#130f40_0%,_#000000_74%)]"
+      >
+        <div
+          class="top-0 w-1 rounded-full left-[15%] [--explosion-color:#efff33] animate-explosion absolute [--fall-delay:1s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-[45%] [--explosion-color:#efff33] animate-explosion rounded-full absolute [--fall-delay:2s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-[5%] [--explosion-color:#efff33] animate-explosion rounded-full absolute [--fall-delay:0.5s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-[15%] [--explosion-color:#ff1d6c] animate-explosion rounded-full absolute [--fall-delay:3.5s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-[55%] [--explosion-color:#ff1d6c] animate-explosion rounded-full absolute [--fall-delay:2s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-[95%] [--explosion-color:#ff1d6c] animate-explosion rounded-full absolute [--fall-delay:0s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-1/2 [--explosion-color:#93ff2d] animate-explosion rounded-full absolute [--fall-delay:3s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-1/2 [--explosion-color:#93ff2d] animate-explosion rounded-full absolute [--fall-delay:1.3s]"
+        ></div>
+        <div
+          class="top-0 w-1 left-3/4 [--explosion-color:#93ff2d] animate-explosion rounded-full absolute [--fall-delay:0.3s]"
+        ></div>
+
+        <div
+          class="bg-yellow-400 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:1s] transition-all transform h-36 w-1 absolute left-[15%]"
+        ></div>
+        <div
+          class="bg-yellow-400 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:2s] transition-all transform h-36 w-1 absolute left-[45%]"
+        ></div>
+        <div
+          class="bg-yellow-400 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:0.5s] transition-all transform h-36 w-1 absolute left-[5%]"
+        ></div>
+        <div
+          class="bg-red-500 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:2s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[55%]"
+        ></div>
+        <div
+          class="bg-red-500 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:3.5s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[15%]"
+        ></div>
+        <div
+          class="bg-red-500 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:0s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[95%]"
+        ></div>
+        <div
+          class="bg-green-700 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:3s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+        ></div>
+        <div
+          class="bg-green-700 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:1.3s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+        ></div>
+        <div
+          class="bg-green-700 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] rounded-full -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:0.3s] transition-all transform h-36 w-1 absolute border-blue-600 left-3/4"
+        ></div>
+        <div
+          class="p-2 xs:p-6 w-full md:h-60 xs:h-52 h-[133px] max-w-lg md:max-w-3xl flex justify-center bg-[#160c3d] rounded-sm fixed"
+        >
+          <div
+            class="absolute w-[90%] xs:w-[85%] opacity-100 md:opacity-80 sm:w-full h-[25%] xs:h-[20%] bg-[#3e30ba] transform-[perspective(3.9em)_rotatex(13deg)] top-[150%] scale-y-[.8] blur-2xl"
+          ></div>
+        </div>
+        <div
+          class="p-2 xs:!p-6 outline-2 outline outline-[#3400ff] !shadow-[0_0_2em_0px_black,inset_0_0_1em_5px_#110e3b,0_0_1em_5px_#110e3b] relative backdrop-blur-lg backdrop-saturate-200 overflow-hidden w-full max-w-lg md:max-w-3xl flex justify-center bg-[#160c3d] rounded-sm z-10"
+        >
+          <div class="h-full w-screen absolute bottom-1 -z-10">
+            <div
+              class="bg-yellow-400 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:1.2s] transition-all transform h-36 w-1 absolute left-[15%]"
+            ></div>
+            <div
+              class="bg-yellow-400 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:2.2s] transition-all transform h-36 w-1 absolute left-[45%]"
+            ></div>
+            <div
+              class="bg-yellow-400 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#efff33,_0_0_20px_#efff33] [--fall-delay:0.7s] transition-all transform h-36 w-1 absolute left-[5%]"
+            ></div>
+            <div
+              class="bg-red-500 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:2.2s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[55%]"
+            ></div>
+            <div
+              class="bg-red-500 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:3.7s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[15%]"
+            ></div>
+            <div
+              class="bg-red-500 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#ff1d6c,_0_0_30px_#ff1d6c] [--fall-delay:0.2s] transition-all transform h-36 w-1 absolute !border !border-blue-600 left-[95%]"
+            ></div>
+            <div
+              class="bg-green-700 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:3.2s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+            ></div>
+            <div
+              class="bg-green-700 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:1.5s] transition-all transform h-36 w-1 absolute border-blue-600 left-1/2"
+            ></div>
+            <div
+              class="bg-green-700 animate-fall xs:[--middle-opacity:.4] [--middle-opacity:0] blur-lg -top-40 drop-shadow-[0_0_10px_#93ff2d,_0_0_30px_#6cd20c] [--fall-delay:0.5s] transition-all transform h-36 w-1 absolute border-blue-600 left-3/4"
+            ></div>
+          </div>
+          <div
+            class="grid grid-cols-[auto_1fr] gap-2 xs:gap-4 w-full items-center"
+          >
+            <div
+              class="border-white border-4 size-20 min-[368px]:size-24 xs:size-28 md:size-44 shadow-[30px_0px_40px_red_inset,_-25px_-25px_30px_green_inset] flex justify-center items-center rounded-full relative"
+            >
+              <img
+                src="/libs/css/assets/images/sticker(11).png"
+                class="relative top-0.5 md:top-0 md:w-[170px] md:h-44 md:max-w-none"
+              />
+            </div>
+            <div class="flex flex-col gap-4">
+              <h1
+                class="font-quantico m-auto font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[80px] drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] whitespace-nowrap text-slate-100"
+              >
+                Jordan Shade
+              </h1>
+              <div
+                class="grid md:grid-cols-[1fr_40px] grid-cols-[1fr_20px] items-center mx-auto min-[368px]:w-[70%] w-[90%] xs:w-[80%] xs:ml-auto justify-items-center gap-2 md:gap-3 xs:mr-10 sm:mx-auto mb-0 xs:mb-5"
+              >
+                <h2
+                  id="occupation"
+                  class="font-oxanium animate-typing text-xs xs:text-sm xs:w-auto sm:text-xl md:text-4xl overflow-hidden whitespace-nowrap relative max-w-fit delay-1000 tracking-wide text-slate-100 border-r ml-auto"
+                >
+                  Frontend Developer
+                </h2>
+                <div
+                  class="md:size-9 size-5 min-w-5 xs:size-6 xs:min-w-6 md:min-w-8"
+                >
+                  <img class="" src="/libs/css/assets/images/syntax-1.svg" />
+                </div>
+              </div>
+              <div class="ml-auto flex gap-2">
+                <a
+                  title="https://www.github.com/jordanss1"
+                  href="https://www.github.com/jordanss1"
+                  target="_blank"
+                  class="cursor-pointer p-2 group flex justify-center items-center"
+                >
+                  <i
+                    class="fa-brands fa-github text-slate-100 group-hover:text-white group-active:text-white transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
+                  ></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jsshade"
+                  title="https://www.linkedin.com/in/jsshade"
+                  target="_blank"
+                  class="cursor-pointer p-2 group flex justify-center items-center"
+                >
+                  <i
+                    class="fa-brands fa-linkedin-in text-slate-100 group-hover:text-white group-active:text-white transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
+                  ></i>
+                </a>
+                <a
+                  href="https://medium.com/@jordan.to.code"
+                  title="https://medium.com/@jordan.to.code"
+                  target="_blank"
+                  class="cursor-pointer p-2 group flex justify-center items-center"
+                >
+                  <i
+                    class="fa-brands fa-medium text-slate-100 group-hover:text-white group-active:text-white transition-all duration-300 group-hover:scale-110 group-active:scale-110 group-hover:translate-y-0.5 group-active:translate-y-0.5 ease-out sm:text-2xl text-lg xs:text-xl"
+                  ></i>
+                </a>
+                <a
+                  title="Download CV"
+                  href="/assets/jordan-shade-cv.pdf"
+                  download
+                  class="group p-1 cursor-pointer transition-all duration-300 hover:scale-110 active:scale-110 hover:translate-y-0.5 active:translate-y-0.5 ease-out"
+                >
+                  <img
+                    class="sm:size-8 size-7 xs:size-6"
+                    src="/libs/css/assets/images/cv.svg"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="about-skills"
+        class="h-[200vh] relative bg-black overflow-hidden"
+      >
+        <section
+          id="about"
+          class="h-1/2 relative px-4 sm:px-10 [background:linear-gradient(16deg,_#192a9778_0%,_#130f40e6_45%,_#000000_70%),_conic-gradient(from_215deg_at_0_0,_#0a0a42_0%,_#2d0ab4)] overflow-hidden"
+        >
+          <div
+            class="absolute -bottom-96 xs:-bottom-48 -right-80 xs:-right-60 sm:-right-[280px] sm:-bottom-[358px] md:-bottom-[428px] md:-right-80 [mask-mode:luminance] [mask-size:30%_33%] xs:[mask-size:40%] sm:[mask-size:100%] mix-blend-color-dodge [mask-image:url('/libs/css/assets/images/crazy-shape.svg')]"
+          >
+            <img
+              class="md:max-w-4xl sm:max-w-3xl max-w-xl w-full"
+              src="/libs/css/assets/images/colors.webp"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute -top-[320px] left-0 sm:-top-[258px] md:-top-52 sm:left-0 [mask-mode:alpha] [mask-position:100%_57%] sm:[mask-position:21%_-45%] md:[mask-position:top] [mask-size:49%_129%] sm:[mask-size:136%_110%] md:[mask-size:290%_100%] mix-blend-hard-light md:mix-blend-color-dodge [mask-image:url('/libs/css/assets/images/genetic-algorithm.svg')]"
+          >
+            <img
+              class="sm:max-w-xs w-full min-w-[450px] sm:min-w-0"
+              src="/libs/css/assets/images/output.jpg"
+              alt=""
+            />
+          </div>
+          <div class="h-full">
+            <div
+              aria-disabled="true"
+              class="font-oxanium group max-w-7xl p-1 md:p-6 mx-auto rounded-sm mt-44 xs:mt-32 sm:mt-24 md:mt-20 observed"
+            >
+              <h4
+                class="flex items-baseline gap-2 group-aria-disabled:blur-sm transition-all duration-1000 group-aria-disabled:-translate-x-48 group-aria-disabled:opacity-0 opacity-100 translate-x-0 group-aria-disabled:scale-90 ease-in-out scale-100 blur-[0px]"
+              >
+                <img
+                  src="/libs/css/assets/images/shapes.svg"
+                  class="w-7 xs:w-12"
+                />
+                <span
+                  class="text-amber-500 relative text-xl xs:text-4xl sm:text-[48px] underline underline-offset-4 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4]"
+                >
+                  <span class="font-bold text-amber-400">Hi,</span>
+                  my name is Jordan.
+                </span>
+              </h4>
+              <div
+                class="text-slate-200 ps-2 xs:px-4 md:px-9 my-6 xs:my-10 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#969696] text-sm xs:text-2xl sm:text-3xl md:text-4xl leading-7 xs:*:leading-normal group-aria-disabled:blur-sm transition-all duration-1000 delay-200 group-aria-disabled:translate-y-20 translate-y-0 group-aria-disabled:opacity-0 opacity-100 group-aria-disabled:scale-90 scale-100 blur-[0px] ease-in-out"
+              >
+                <p class="mb-1 xs:mb-4 pl100 -7 xs:pl-10 md:pl-3">
+                  I'm a web developer with 3 years experience who's all about
+                  making apps that look awesome on any device. I've teamed up
+                  with some amazing folks, building and maintaining web apps
+                  from small businesses to big companies with all sorts of
+                  requirements. I'm always up for a new challenge and confident
+                  I can hold my own on any development team!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          id="skills"
+          class="h-1/2 px-4 sm:px-10 w-full relative overflow-hidden [background:linear-gradient(157deg,_#201893_20%,_#00000038_100%),_conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#782ca0,_#0d0895,_#135da5,_#20b2aa)]"
+        >
+          <div
+            class="skills-square w-full h-full left-1/2 -translate-x-1/2 absolute mx-auto transition-all overflow-hidden top-6 [clip-path:_polygon(0%_0%,_0%_100%,_25%_100%,_25%_25%,_75%_25%,_75%_75%,_25%_75%,_25%_100%,_100%_100%,_100%_0%)]"
+          ></div>
+          <div
+            class="absolute xs:h-[462px] sm:h-auto -top-[183px] xs:-top-[153px] -right-80 xs:-right-60 sm:-right-[280px] sm:-top-[410px] md:-right-80 md:-top-[467px] [mask-mode:luminance] [mask-size:30%_33%] xs:[mask-size:40%] sm:[mask-size:100%] mix-blend-hard-light [mask-image:url('/libs/css/assets/images/crazy-shape.svg')]"
+          >
+            <img
+              class="md:max-w-4xl sm:max-w-3xl max-w-xl w-full"
+              src="/libs/css/assets/images/light-colors.webp"
+              alt=""
+            />
+          </div>
+          <div
+            aria-disabled="true"
+            class="max-w-4xl group/main h-full mx-auto flex-col flex contain-layout xs:mt-20 sm:mt-24 observed"
+          >
+            <h3
+              class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4 sm:ml-0 ml-6 group-aria-disabled/main:blur-sm transition-all duration-1000 group-aria-disabled/main:translate-y-20 translate-y-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:scale-150 scale-100 blur-[0px] ease-in-out"
+            >
+              Skills
+            </h3>
+            <div class="w-full h-full mt-0 xs:mt-10 relative">
+              <div
+                id=""
+                class="skills-square max-w-md xs:w-full mx-auto xs:h-[457px] transition-all rounded-xl overflow-hidden mt-20 xs:mt-14 sm:scale-110 md:scale-125 top-0 [background:conic-gradient(from_var(--conic-deg)_at_50%_50%,_#20b2aa33,_var(--spotlight-color,#19879cb3)_var(--coverage-one,7%),_#20b2aa30_var(--coverage-two,15%),_#0d089500,_#4b008200,_#782ca000,_#0d089500,_#135da500),_conic-gradient(from_107deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_indigo,_indigo,_#0d0895,_#1b78ae,_#20b2aa)] animate-spinReverse [clip-path:_polygon(0%_0%,_0%_100%,_25%_100%,_25%_25%,_75%_25%,_75%_75%,_25%_75%,_25%_100%,_100%_100%,_100%_0%)] [box-shadow:rgb(0_0_0_/_46%)_0px_-30px_36px_-28px_inset,_rgb(19_15_86_/_69%)_-20px_10px_33px_-13px_inset,_rgb(19_15_86_/_69%)_10px_0px_33px_-12px_inset] relative h-80 w-[304px] aspect-square gap-0 xs:gap-2 py-1 px-2 xs:p-0 xs:py-4 xs:px-4 sm:px-7 flex flex-col group-aria-disabled/main:blur-sm duration-1000 group-aria-disabled/main:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] translate-x-0 group-aria-disabled/main:-translate-x-48 group-aria-disabled/main:opacity-0 opacity-100 blur-[0px] ease-in-out"
+              >
+                <div
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:xs:[scale:inherit] *:scale-75 *:flex *:flex-col *:items-center min-h-[65px] xs:min-h-[73px] -translate-x-1 xs:translate-x-0"
+                >
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-10 xs:h-12 hover:scale-105 active:scale-105 skill js-skill group hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out relative"
+                  >
+                    <img
+                      class="size-10 xs:size-12 rounded-lg my-auto"
+                      src="/libs/css/assets/images/javascript.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      JavaScript
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-10 xs:h-12 group skill jquery-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-10 xs:size-12 rounded-lg bg-blue-800 p-1 my-auto"
+                      src="/libs/css/assets/images/jquery.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      JQuery
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-11 xs:h-13 group skill ts-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-11 xs:size-13 rounded-lg my-auto"
+                      src="/libs/css/assets/images/typescript.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      TypeScript
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-11 xs:h-13 group skill react-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-11 xs:size-13 rounded-lg my-auto"
+                      src="/libs/css/assets/images/react.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      React
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-11 xs:h-13 group skill node-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-11 xs:size-13 rounded-lg my-auto"
+                      src="/libs/css/assets/images/nodejs.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Node JS
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-14 group skill php-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-14 rounded-lg my-auto"
+                      src="/libs/css/assets/images/php.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      PHP
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
+                >
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group skill express-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg bg-slate-200 my-auto p-1"
+                      src="/libs/css/assets/images/express.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Express
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group skill redux-skill hover:h-[65px] xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg bg-slate-200 my-auto p-1"
+                      src="/libs/css/assets/images/redux.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Redux
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-disabled="false"
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
+                >
+                  <div
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill tailwind-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-2 my-auto p-1"
+                      src="/libs/css/assets/images/tailwind.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Tailwind
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill bootstrap-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto"
+                      src="/libs/css/assets/images/bootstrap.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Bootstrap
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
+                >
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill mysql-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg p-1 bg-white my-auto"
+                      src="/libs/css/assets/images/mysql.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      MySQL
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill mongo-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto"
+                      src="/libs/css/assets/images/mongodb.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      MongoDB
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between *:my-auto *:cursor-pointer *:transition-all *:ease-out *:!overflow-visible *:flex *:flex-col *:items-center *:xs:[scale:inherit] *:scale-75 min-h-[65px] xs:min-h-[73px] -mt-1 xs:mt-2"
+                >
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill docker-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#539fce] border-2 p-1"
+                      src="/libs/css/assets/images/docker.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Docker
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill jest-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#99425b] border-2"
+                      src="/libs/css/assets/images/jest.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Jest
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill router-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out overflow-visible"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-[#99425b] border-1 p-1"
+                      src="/libs/css/assets/images/react-router.svg"
+                    />
+                    <span
+                      class="text-xs w-10 text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      React Router
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill git-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-200 border-slate-800 border-2"
+                      src="/libs/css/assets/images/git.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Git
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill npm-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto"
+                      src="/libs/css/assets/images/npm.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      npm
+                    </span>
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    class="gap-1 h-12 xs:h-13 group hover:h-[65px] skill framer-skill xs:hover:h-[73px] active:h-[65px] xs:active:h-[73px] aria-disabled:scale-[0.6] aria-disabled:brightness-75 xs:aria-disabled:scale-90 scale-100 blur-[0px] aria-disabled:blur-[2px] transition-all ease-in-out"
+                  >
+                    <img
+                      class="size-12 xs:size-13 rounded-lg my-auto bg-slate-800 border-slate-400 border-1"
+                      src="/libs/css/assets/images/framer.svg"
+                    />
+                    <span
+                      class="text-xs text-center text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-hover:opacity-100 group-active:blur-[0px] group-active:opacity-100 -translate-y-3 group-active:translate-y-0 group-hover:translate-y-0 font-oxanium"
+                    >
+                      Framer
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        id="portfolio"
+        class="min-h-screen px-4 sm:px-10 w-full [background:conic-gradient(from_92deg_at_54%_-7%,_#378286,_#144c85,_#10207f00,_#421d85,_#3c1b87,_#134381,_#135da5,_#156e84),_linear-gradient(181deg,_#140c7c_15%,_#130d7e_100%)] overflow-hidden"
+      >
+        <div
+          class="w-full h-full mx-auto observed flex-col flex contain-layout mt-20 sm:mt-24"
+        >
+          <h3
+            aria-disabled="true"
+            class="font-oxanium w-full mr-auto sm:ml-auto max-w-4xl before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgb(240_46_170_/28%)_0px_10px,_rgb(52_105_170)_0px_20px,_rgb(240_46_170_/0%)_0px_25px] before:absolute before:content-[''] before:w-4 xs:before:w-4 before:h-7 xs:before:h-9 before:bg-slate-200 before:-left-4 before:top-1 text-3xl xs:text-4xl relative whitespace-nowrap p-3 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-4 ml-6 transition-all duration-1000 aria-disabled:translate-y-20 translate-y-0 aria-disabled:opacity-0 opacity-100 aria-disabled:scale-150 aria-disabled:blur-sm scale-100 blur-[0px] ease-in-out observed"
+          >
+            Portfolio
+          </h3>
+          <div
+            class="max-w-4xl w-full mx-auto h-full mt-8 sm:mt-24 py-8 px-8 min-[800px]:px-20 relative"
+          >
+            <div
+              aria-disabled="true"
+              class="grid group/main grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-12 mb-32 observed-portfolio observed"
+            >
+              <div
+                class="h-[450px] xs:h-[500px] sm:h-[700px] min-[902px]:h-[700px]"
+              >
+                <div
+                  class="w-fit transition-all duration-1000 group-aria-disabled/main:translate-y-20 translate-y-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/main:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto delay-200"
+                >
+                  <div
+                    class="max-w-36 xs:max-w-40 sm:max-w-52 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-15px)] xs:transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-40px)]"
+                  >
+                    <img
+                      class="w-full rounded-md max-h-[500px]"
+                      src="/libs/css/assets/images/projects/mobile/taskx5.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] duration-1000 delay-500 transition-all [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 sm:-right-3 sm:-top-3 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute xs:-bottom-12 sm:bottom-11 -right-24 md:-right-36 rounded-md w-24 xs:w-32 md:w-36 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                  >
+                    <img
+                      class="rounded-md"
+                      src="/libs/css/assets/images/projects/mobile/taskx1.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/main:translate-x-20 translate-x-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:blur-sm group-aria-disabled/main:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
+                <article
+                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
+                >
+                  <h4
+                    class="font-oxanium text-amber-400 text-3xl xs:text-4xl mb-2 drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
+                  >
+                    Task-X
+                  </h4>
+                  <p class="font-oxanium text-white text-lg xs:text-xl mb-2">
+                    A task app with social integration allowing users to create
+                    a profile, add tasks and interact with other users' tasks.
+                  </p>
+                  <div
+                    class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
+                  >
+                    <a
+                      href="https://github.com/jordanss1/task-x"
+                      title="https://github.com/jordanss1/task-x"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Source</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </a>
+                    <button
+                      id="taskx-overview-button"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-book-open text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">
+                        Overview
+                      </span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </button>
+                    <a
+                      title="https://task-x.onrender.com/"
+                      href="https://task-x.onrender.com/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket group-hover:text-amber-300 group-active:text-amber-300 text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span
+                        class="text-sm xs:text-lg group-hover:text-amber-300 group-active:text-amber-300 sm:text-xl"
+                      >
+                        Website
+                      </span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                      <div
+                        class="absolute pointer-events-none p-1 -top-4 left-0 w-fit group-hover:-translate-y-24 group-active:-translate-y-24 -translate-y-10 opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Website loads slow due to host render.com
+                      </div>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div
+              aria-disabled="true"
+              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 xs:gap-12 controller-div mb-20 xs:mb-32 observed-portfolio observed"
+              aria-expanded="false"
+            >
+              <div
+                class="w-full self-start duration-1000 delay-500 group-aria-disabled/grid:-translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
+                <article
+                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2"
+                >
+                  <div class="mb-2">
+                    <div class="flex items-center justify-between px-1">
+                      <div
+                        aria-disabled="true"
+                        class="group drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] flex gap-2 p-2 rounded-sm h-full w-fit"
+                      >
+                        <div
+                          class="rounded-full size-2 p-1.5 transition-all ease-in border-slate-300 hover:border-white active:border-white cursor-pointer border bg-black/60 group-aria-disabled:bg-amber-400 group-aria-disabled:hover:bg-amber-300 hover:bg-slate-400/20 active:bg-slate-400/20 map-switch-1"
+                        ></div>
+                        <div
+                          class="rounded-full size-2 p-1.5 transition-all ease-in group-aria-disabled:border-slate-400 border-slate-300 hover:border-white active:border-white cursor-pointer border group-aria-disabled:bg-black/60 hover:bg-amber-300 bg-amber-400 group-aria-disabled:hover:bg-slate-400/20 group-aria-disabled:active:bg-slate-400/20 map-switch-2"
+                        ></div>
+                      </div>
+                      <h4
+                        class="font-oxanium text-amber-400 text-3xl xs:text-4xl w-full drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] text-end mb-0"
+                      >
+                        Doublemap
+                      </h4>
+                    </div>
+                    <span
+                      class="group-aria-expanded/grid:hidden block text-lg text-slate-200 text-end"
+                    >
+                      mapbox version
+                    </span>
+                    <span
+                      class="group-aria-expanded/grid:block hidden text-lg text-slate-200 text-end"
+                    >
+                      leaflet version
+                    </span>
+                  </div>
+                  <div class="group">
+                    <p
+                      class="font-oxanium group-aria-expanded/grid:hidden block text-white text-lg xs:text-xl mb-2 text-end"
+                    >
+                      A map providing modern points of interest, search ability
+                      and country information, whilst also offering a historical
+                      side to see historical events mapped out and country
+                      information.
+                    </p>
+                    <p
+                      class="font-oxanium text-white text-lg xs:text-xl mb-2 text-end group-aria-expanded/grid:block hidden"
+                    >
+                      A map providing different points of interest as well as
+                      news and wikipedia articles, weather, and a currency
+                      converter for countries.
+                    </p>
+                  </div>
+                  <div
+                    class="flex flex-row-reverse gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
+                  >
+                    <a
+                      class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md cursor-default"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket group-hover:text-slate-300/50 group-active:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 text-sm xs:text-lg text-white sm:text-2xl"
+                      ></i>
+                      <span
+                        class="sm:text-xl group-hover:text-slate-300/50 group-hactiveover:text-slate-300/50 text-sm xs:text-lg text-white"
+                      >
+                        Source
+                      </span>
+                      <div
+                        class="absolute pointer-events-none p-1 -top-4 left-0 w-fit group-hover:-translate-y-12 group-active:-translate-y-12 translate-y-10 opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
+                    </a>
+                    <button
+                      id="map-overview-button"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-book-open text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">
+                        Overview
+                      </span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </button>
+                    <a
+                      href="https://www.double-map.online/"
+                      title="https://www.double-map.online/"
+                      target="_blank"
+                      class="flex group-aria-expanded/grid:hidden gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Website</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </a>
+                    <a
+                      href="https://map.double-map.online/"
+                      title="https://map.double-map.online/"
+                      target="_blank"
+                      class="hidden group-aria-expanded/grid:flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Website</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="h-44 xs:h-56 sm:h-96">
+                <div
+                  class="w-fit h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
+                >
+                  <div
+                    class="max-w-44 xs:max-w-64 sm:max-w-80 min-[902px]:translate-x-4 min-[902px]:max-w-72 w-full relative rounded-md xs:translate-x-0 -translate-x-10 transform-[perspective(3em)rotateY(-1deg)translateZ(15px)translateY(16px)]"
+                  >
+                    <img
+                      class="w-full group-aria-expanded/grid:hidden block rounded-md max-h-[500px]"
+                      src="/libs/css/assets/images/projects/desktop/doublemap1-1.png"
+                      alt=""
+                    />
+                    <img
+                      class="w-full group-aria-expanded/grid:block hidden rounded-md max-h-[500px]"
+                      src="/libs/css/assets/images/projects/desktop/doublemap2-4.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1.5 -top-1 sm:-right-2 sm:-top-1 w-[106%] h-[107%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute -bottom-3 sm:bottom-9 xs:-right-30 xs:-bottom-12 -right-20 xs:-right-24 md:bottom-10 sm:-right-36 rounded-md w-20 xs:w-28 sm:w-36 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(-1deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                  >
+                    <img
+                      class="rounded-md group-aria-expanded/grid:hidden block"
+                      src="/libs/css/assets/images/projects/mobile/doublemap1-4.png"
+                      alt=""
+                    />
+                    <img
+                      class="rounded-md group-aria-expanded/grid:block hidden"
+                      src="/libs/css/assets/images/projects/mobile/doublemap2-1.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] xs:-right-1.5 sm:-right-2 -right-1 -top-1 sm:-top-2 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-disabled="true"
+              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] xs:gap-12 gap-4 controller-div mb-20 xs:mb-32 observed observed-portfolio"
+            >
+              <div class="h-64 xs:h-72 sm:h-96">
+                <div
+                  class="w-fit h-full relative mr-auto xs:translate-x-0 -translate-x-10 ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
+                >
+                  <div
+                    class="max-w-44 xs:max-w-64 sm:max-w-80 min-[902px]:-translate-x-4 min-[902px]:max-w-72 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)] xs:transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)]"
+                  >
+                    <img
+                      class="w-full rounded-md max-h-[500px]"
+                      src="/libs/css/assets/images/projects/desktop/whatsong5.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-[3px] xs:-top-1 xs:-right-1.5 sm:-top-1.5 w-[105%] h-[107%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute xs:-bottom-4 sm:bottom-9 -bottom-2 -right-32 xs:-right-24 sm:-right-36 md:bottom-1 md:-right-28 rounded-md w-16 xs:w-20 sm:w-28 md:w-32 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                  >
+                    <img
+                      class="rounded-md"
+                      src="/libs/css/assets/images/projects/mobile/whatsong3.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-1 md:-right-2 xs:-top-1 md:-top-2 w-[110%] h-[105%] md:h-[107%] md:w-[111%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/grid:translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
+                <article
+                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
+                >
+                  <h4
+                    class="font-oxanium text-amber-400 text-3xl xs:text-4xl mb-2 drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
+                  >
+                    Whatsong
+                  </h4>
+                  <p class="font-oxanium text-white text-lg xs:text-xl mb-2">
+                    A music based app that integrates the Spotify API, allowing
+                    users to search artists and song as well as their details.
+                  </p>
+                  <div
+                    class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
+                  >
+                    <a
+                      href="https://www.github.com/jordanss1/whatsong"
+                      title="https://www.github.com/jordanss1/whatsong"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Source</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </a>
+                    <button
+                      id="whatsong-overview-button"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-book-open text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">
+                        Overview
+                      </span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </button>
+                    <a
+                      href="https://whatsong-rust.vercel.app/"
+                      title="https://whatsong-rust.vercel.app/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Website</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div
+              aria-disabled="true"
+              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 xs:gap-12 mb-32 observed observed-portfolio"
+            >
+              <div
+                class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/grid:-translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
+                <article
+                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2 duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
+                >
+                  <div class="mb-2">
+                    <h4
+                      class="font-oxanium text-amber-400 text-end text-3xl xs:text-4xl drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
+                    >
+                      Hackernews
+                    </h4>
+                    <span
+                      class="group-aria-expanded/grid:hidden block text-lg text-slate-200 text-end"
+                    >
+                      clone
+                    </span>
+                  </div>
+                  <p
+                    class="font-oxanium text-end text-white text-lg xs:text-xl mb-2"
+                  >
+                    A clone of Hackernews that looks good on all devices.
+                  </p>
+                  <div
+                    class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
+                  >
+                    <a
+                      href="https://www.github.com/jordanss1/hackernews-clone"
+                      title="https://www.github.com/jordanss1/hackernews-clone"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Source</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </a>
+                    <button
+                      id="hackernews-overview-button"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-2 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-book-open text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">
+                        Overview
+                      </span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </button>
+                    <button
+                      class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md cursor-default"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 text-sm xs:text-lg text-white sm:text-2xl"
+                      ></i>
+                      <span
+                        class="sm:text-xl group-hover:text-slate-300/50 text-sm xs:text-lg text-white"
+                      >
+                        Website
+                      </span>
+                      <div
+                        class="absolute -top-4 left-0 w-fit group-hover:-translate-y-16 group-active:-translate-y-16 translate-y-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        API can only be used in development
+                      </div>
+                    </button>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="h-[450px] xs:h-[500px] sm:h-[700px] min-[902px]:h-[700px]"
+              >
+                <div
+                  class="w-fit h-full sm:translate-x-0 xs:translate-x-20 min-[902px]:translate-x-10 relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
+                >
+                  <div
+                    class="max-w-36 xs:max-w-40 sm:max-w-52 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-15px)] xs:transform-[perspective(3em)_rotateY(-1deg)_translateZ(15px)_translateY(76px)_translateX(-40px)]"
+                  >
+                    <img
+                      class="w-full rounded-md max-h-[500px]"
+                      src="/libs/css/assets/images/projects/mobile/hackernews1.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000008a,inset_0_-36px_30px_#0000007a,inset_0_-16px_40px_#c3c3c3b5,0_-2px_1px_#c3c3c300,0_4px_2px_#00000017,-12px_0_26px_#00000052,0_26px_28px_#00000038,0_0_16px_#ffffff94] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 sm:-right-3 sm:-top-3 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute xs:-bottom-12 sm:bottom-11 -left-5 xs:-left-24 md:-left-36 rounded-md w-24 xs:w-32 md:w-36 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                  >
+                    <img
+                      class="rounded-md"
+                      src="/libs/css/assets/images/projects/mobile/hackernews3.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-2 -top-2 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-disabled="true"
+        id="contact"
+        class="h-screen flex flex-col group/main justify-center items-center relative contain-layout [background:linear-gradient(181deg,_#13147f00_7%,_#171717_67%),_linear-gradient(90deg,_#13137e_25%,_#142581_70%)] observed"
+      >
+        <div
+          class="flex flex-col-reverse relative h-full items-center min-[790px]:-translate-x-40 md:-translate-x-28 justify-center gap-4 max-w-3xl w-full rounded-lg p-4"
+        >
+          <div
+            class="relative max-w-lg w-full -translate-y-1 translate-x-0 min-[790px]:translate-x-[69px] md:translate-x-0 md:translate-y-0"
+          >
+            <div
+              class="absolute drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] min-[790px]:transform-[perspective(6em)rotateY(5deg)rotateX(0deg)scale(1)translateX(0px)] group-aria-disabled/main:transform-[perspective(6em)rotateX(-3deg)scale(0.7)] transform-[perspective(0em)rotateX(0deg)scale(1)] min-[790px]:group-aria-disabled/main:transform-[perspective(6em)rotateY(3deg)rotateX(-3deg)scale(0.7)translateX(255px)] group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:blur-sm blur-[0px] transition-all duration-500 -top-14 sm:-top-20 left-0 flex items-center gap-2"
+            >
+              <div class="rounded-lg border-2 border-slate-300">
+                <img
+                  src="/libs/css/assets/images/write.svg"
+                  class="size-7 sm:size-9"
+                  alt=""
+                />
+              </div>
+              <h4 class="font-oxanium text-3xl sm:text-4xl text-slate-100">
+                Contact
+              </h4>
+            </div>
+            <form
+              class="w-full flex [box-shadow:rgba(0,_0,_0,_0.17)_0px_-23px_25px_0px_inset,_rgba(0,_0,_0,_0.15)_0px_-36px_30px_0px_inset,_rgba(0,_0,_0,_0.1)_0px_-79px_40px_0px_inset,_rgba(0,_0,_0,_0.06)_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgba(0,_0,_0,_0.09)_0px_8px_4px,_rgba(0,_0,_0,_0.09)_0px_16px_8px,_rgba(0,_0,_0,_0.09)_0px_32px_16px] flex-col justify-center items-center p-4 xs:p-8 [background:conic-gradient(from_266deg_at_34%_134%,_#1800c5,_#6c01e1)] rounded-lg gap-4 max-w-md md:max-w-lg min-[790px]:transform-[perspective(6em)rotateY(1deg)rotateX(0deg)scale(1)translateX(-5px)translateY(6px)] md:transform-[perspective(6em)rotateY(1deg)rotateX(0deg)scale(1)translateX(3px)translateY(6px)] min-[790px]:group-aria-disabled/main:transform-[perspective(6em)rotateY(3deg)rotateX(-3deg)scale(0.7)translateX(255px)translateY(0px)] group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:blur-sm blur-[0px] group-aria-disabled/main:transform-[perspective(6em)rotateX(-3deg)scale(0.9)] transform-[perspective(6em)rotateX(0deg)scale(1)] transition-all duration-500 overflow-hidden relative min-[790px]:mx-0 mx-auto"
+            >
+              <div
+                id="contact-error"
+                aria-disabled="true"
+                class="inset-0 group flex justify-center items-center absolute pointer-events-none z-50"
+              >
+                <div
+                  class="h-36 w-48 border-red-500 border-2 bg-slate-400 opacity-100 transition-all ease-in-out translate-y-0 group-aria-disabled:translate-y-4 group-aria-disabled:opacity-0 group-aria-disabled:blur-sm blur-[0px] overflow-auto p-2 flex flex-col gap-1 rounded-lg"
+                >
+                  <div
+                    aria-disabled="true"
+                    class="text-xl aria-disabled:hidden text-red-500 font-abel flex gap-2 items-baseline"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                    <span id="email-error"></span>
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    class="text-xl aria-disabled:hidden text-red-500 font-abel flex gap-2 items-baseline"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                    <span id="message-error"></span>
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    class="text-xl aria-disabled:hidden text-red-500 font-abel flex gap-2 items-baseline"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                    <span id="general-error"></span>
+                  </div>
+                </div>
+              </div>
+              <input
+                id="email-input"
+                placeholder="Your email"
+                class="focus:outline-none h-8 font-abel p-2 placeholder:drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] placeholder:text-xl placeholder:text-slate-200 text-slate-200 text-xl w-full bg-gray-600 rounded-lg focus:ring-2 focus:ring-sky-400"
+                type="text"
+              />
+              <textarea
+                class="focus:outline-none p-2 placeholder:drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] placeholder:text-xl text-slate-200 placeholder:text-slate-200 text-xl font-abel w-full rounded-lg h-44 bg-gray-600 focus:ring-2 focus:ring-sky-400"
+                name=""
+                id="message-input"
+                placeholder="What you'd like to say"
+              ></textarea>
+              <button
+                id="contact-button"
+                aria-busy="false"
+                aria-disabled="false"
+                class="group flex justify-center items-center aria-disabled:bg-slate-400/50 border-slate-200 active:border-slate-200/0 active:scale-105 active:font-semibold active:text-sky-400 active:bg-slate-400/50 hover:scale-95 scale-100 hover:border-slate-50 active:duration-75 hover:text-slate-200 transition-all ease-in cursor-pointer border-2 w-full p-1 rounded-lg text-sky-400 font-abel text-2xl"
+              >
+                <span
+                  class="group-aria-busy:hidden group-aria-disabled:hidden block"
+                >
+                  Send
+                </span>
+                <div
+                  class="group-aria-busy:flex group-aria-disabled:hidden hidden justify-end bg-black/0 w-fit rounded-md p-1"
+                >
+                  <div
+                    class="border-4 rounded-full border-slate-400 border-t-white w-7 h-7 animate-spin"
+                  ></div>
+                </div>
+                <div
+                  class="group-aria-busy:hidden group-aria-disabled:flex hidden rounded-full p-2 bg-green-500 size-9 justify-center items-center border border-white"
+                >
+                  <i class="fa-solid fa-check text-slate-200 text-2xl"></i>
+                </div>
+              </button>
+              <div
+                class="w-full h-full pointer-events-none hidden min-[790px]:block absolute overflow-hidden"
+              >
+                <div
+                  class="flex absolute transition-all duration-500 delay-300 ease-in-out group-aria-disabled/main:translate-x-24 translate-x-0 origin-right group-aria-disabled/main:scale-75 scale-100 -right-[227px] justify-center rounded-lg items-center -top-12"
+                >
+                  <div class="relative">
+                    <img
+                      src="/libs/css/assets/images/sticker_copy.png"
+                      class="h-[450px] md:h-[600px] rounded-full"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            class="hidden min-[790px]:flex absolute -right-24 -z-10 justify-center rounded-full items-center top-[177px] transform-[perspective(4em)rotateY(-1deg)] [box-shadow:0_54px_55px_#92929240,_0_-12px_30px_#ffffff40,_0_4px_6px_#ffffff99,_0_12px_13px_#c2c2c282,_0_-3px_5px_#ffffff78]"
+          >
+            <div
+              class="absolute -top-10 md:top-3 right-5 md:right-0 duration-500 delay-500 ease-in-out group-aria-disabled/main:-translate-x-12 translate-x-0 origin-right group-aria-disabled/main:scale-125 scale-100 group-aria-disabled/main:blur-sm blur-[0px] group-aria-disabled/main:opacity-0 opacity-100"
+            >
+              <div
+                class="size-2 rounded-full absolute top-[72px] right-3 border-slate-200 border-2 [background:conic-gradient(from_43deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+              ></div>
+              <div
+                class="size-4 rounded-full absolute top-12 -right-3 border-slate-200 border-2 [background:conic-gradient(from_103deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+              ></div>
+              <div
+                class="size-6 rounded-full absolute top-4 -right-10 border-slate-200 border-2 [background:conic-gradient(from_180deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+              ></div>
+              <div
+                class="w-16 h-12 md:w-24 md:h-20 [box-shadow:rgb(160_160_160_/34%)_0px_19px_38px,_rgb(130_0_225_/25%)_0px_15px_12px] rounded-full absolute flex items-center justify-center top-[-42px] -right-20 md:-top-[72px] md:-right-28 border-slate-200 border-2 [background:conic-gradient(from_243deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)] transform-[perspective(4em)rotateY(-4deg)]"
+              >
+                <img
+                  class="size-10 md:size-16"
+                  src="/libs/css/assets/images/message.svg"
+                />
+              </div>
+            </div>
+            <div
+              class="relative rounded-full border-8 border-white overflow-hidden"
+            >
+              <img
+                src="/libs/css/assets/images/sticker_copy.png"
+                class="h-[450px] md:h-[600px] rounded-full transition-all group-aria-disabled/main:transform-[perspective(4em)rotateX(-4deg)] transform-[perspective(4em)rotateX(0deg)] duration-500 delay-300 ease-in-out group-aria-disabled/main:translate-x-24 translate-x-0 group-aria-disabled/main:translate-y-24 translate-y-0 origin-right group-aria-disabled/main:scale-75 scale-100 group-aria-disabled/main:blur-sm blur-[0px] group-aria-disabled/main:opacity-0 opacity-100"
+                alt=""
+              />
+              <div
+                class="absolute top-0 right-0 md:right-10 w-[155%] h-full z-10 transform-[perspective(4em)rotateY(-2deg)] rounded-full mix-blend-saturation [background:conic-gradient(from_243deg_at_50%_125%,_#20b2aa,_#135da5,_#0000bd,_#8801eb,_#4b0082,_#0600a2,_#135da5,_#20b2aa)]"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./libs/js/jquery.js"></script>
+    <script src="./libs/js/script.js"></script>
+  </body>
+</html>

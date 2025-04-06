@@ -1,0 +1,41 @@
+services:
+  web4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    expose:
+      - ${WEB_PORT}
+    depends_on:
+      - api4
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.web4-app.rule=Host(${WEB})
+      - traefik.http.routers.web4-app.entrypoints=websecure
+      - traefik.http.routers.web4-app.tls.certResolver=letsencrypt
+      - traefik.http.services.web4-app.loadbalancer.server.port=${WEB_PORT}
+    restart: unless-stopped
+    networks:
+      - dokploy-network
+    env_file:
+      - .env
+
+  api4:
+    build:
+      context: ./libs/php
+      dockerfile: Dockerfile
+      args:
+        SMTP_USER: ${SMTP_USER}
+        SMTP_EMAIL: ${SMTP_EMAIL}
+        SMTP_SERVER: ${SMTP_SERVER}
+        PASSWORD: ${PASSWORD}
+    container_name: api
+    restart: unless-stopped
+    networks:
+      - dokploy-network
+    env_file:
+      - ./.env
+
+networks:
+  dokploy-network:
+    external: true
