@@ -1536,6 +1536,286 @@
           </div>
         </div>
       </div>
+      <div
+        aria-disabled="true"
+        id="directory-overview"
+        class="fixed z-[9999] aria-disabled:invisible aria-disabled:pointer-events-none visible pointer-events-auto aria-disabled:scale-90 scale-100 aria-disabled:blur-sm blur-[0px] aria-disabled:opacity-0 opacity-100 transition-all ease-in-out duration-500 overflow-auto p-4 sm:p-8 h-screen w-full"
+      >
+        <div
+          class="[box-shadow:_rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px] bg-[linear-gradient(111.4deg,_rgba(7,7,9,1)_6.5%,_#0c1878_93.2%)] w-full max-w-6xl rounded-lg overflow-auto flex flex-col gap-4 mx-auto relative"
+        >
+          <div class="min-h-[80vh] p-3 xs:p-4 sm:p-8">
+            <div
+              class="flex items-baseline [box-shadow:rgb(50_50_50)_0px_2px] drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] mb-2"
+            >
+              <h4
+                class="font-oxanium w-full py-2 text-amber-400 text-2xl sm:text-3xl lg:text-4xl"
+              >
+                Company Directory
+              </h4>
+              <div
+                role="button"
+                class="cursor-pointer p-1 group relative exit-overview"
+              >
+                <i
+                  class="fa-solid fa-xmark text-slate-400 group-hover:text-white text-3xl sm:text-4xl"
+                ></i>
+                <div
+                  class="absolute rounded-md group-hover:h-full opacity-30 group-hover:opacity-100 bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-red-800 transition-all ease-in-out to-black/40 -z-10"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="w-full h-full flex md:flex-row flex-col justify-between gap-8 p-1 xs:p-2"
+            >
+              <div
+                class="md:flex-shrink md:basis-2/3 md:min-w-[500px] py-2 md:p-2 lg:min-w-[600px]"
+              >
+                <h4
+                  class="font-oxanium w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-2"
+                >
+                  Overview
+                </h4>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  A directory that gives the user control over the company's
+                  records. Users manipulate records with a search input, filters
+                  for personnel, edit and delete buttons for records and also
+                  the ability to add records with an add button. A JQuery
+                  frontend directs these network requests to the PHP backend,
+                  where the MySQL database is queried. Tailwind and Bootstrap
+                  are used to give a simple and effective UI.
+                </p>
+                <p
+                  class="font-oxanium p-4 text-white text-xs xs:text-sm sm:text-lg lg:text-xl leading-8 pb-0"
+                >
+                  The MySQL database is the star of the show ensuring that
+                  records with dependencies aren't deleted with defined foreign
+                  keys and delete restrictions as well as cascading updates to
+                  those related records. The PHP backend has extensive error
+                  handling to explain these things to the user in a
+                  user-friendly way. Personnel record filters allow users to
+                  search by department or location. A query param is added the
+                  request URL with the query and the filter, which is added as a
+                  WHERE clause to the mySQL query on the backend.
+                </p>
+              </div>
+              <div
+                class="md:flex-shrink-[2] md:basis-1/3 md:ml-auto flex flex-col gap-4 mx-auto md:mr-0 md:max-w-none w-full md:w-fit h-fit p-0 xs:p-5 md:p-2"
+              >
+                <div class="">
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Skills
+                  </h4>
+                  <div
+                    class="justify-self-end md:justify-normal w-full p-2 grid-cols-[repeat(auto-fit,minmax(50px,65px))] h-fit justify-items-center grid *:cursor-pointer"
+                  >
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto p-1 bg-blue-800 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/jquery.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        JQuery
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/javascript.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Javascript
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/php.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        PHP
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 p-1 rounded-lg mx-auto bg-slate-200 translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/docker.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Docker
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg bg-slate-200 border-[#44a8b3] border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/tailwind.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Tailwind
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg border-1 mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/bootstrap.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        Bootstrap
+                      </span>
+                    </div>
+                    <div
+                      class="flex flex-col justify-center h-20 sm:h-24 md:h-[86px] lg:h-24 group scale-110 md:scale-100 lg:scale-110"
+                    >
+                      <img
+                        class="size-9 sm:size-13 rounded-lg p-1 bg-white mx-auto translate-y-0.5 group-hover:-translate-y-1 group-active:-translate-y-1 transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50"
+                        src="/libs/css/assets/images/mysql.svg"
+                      />
+                      <span
+                        class="text-xs text-white transition-all ease-in-out origin-top group-hover:delay-50 group-active:delay-50 opacity-0 blur-sm group-hover:blur-[0px] group-active:blur-[0px] group-active:opacity-100 group-hover:opacity-100 -translate-y-3 group-hover:translate-y-1 group-active:translate-y-1 font-oxanium block mx-auto text-center"
+                      >
+                        MySQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4
+                    class="font-oxanium w-full md:w-fit before:[box-shadow:rgba(240,_46,_170,_0.4)_0px_0px,_rgba(240,_46,_170,_0.3)_0px_5px,_rgb(240_46_170_/28%)_0px_5px,_rgb(52_105_170)_0px_10px,_rgb(240_46_170_/0%)_0px_17px] before:absolute before:content-[''] before:w-2 before:h-5 before:bg-slate-200 before:left-0 before:top-3 text-xl sm:text-2xl relative whitespace-nowrap p-4 text-slate-100 drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#c4c4c4] left-0"
+                  >
+                    Links
+                  </h4>
+                  <div class="flex p-4 gap-6 items-center">
+                    <a
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *: *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-brands fa-square-github text-2xl group-hover:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 z-20"
+                      ></i>
+                      <div
+                        class="absolute pointer-events-none -top-4 left-1/2 w-36 -translate-x-1/2 group-hover:-translate-y-14 group-active:-translate-y-14 -translate-y-10 p-2 mx-auto opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                    <a
+                      title="https://directory.jordanss.co.uk/"
+                      href="https://directory.jordanss.co.uk/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid group-hover:text-amber-300 group-active:text-amber-300 fa-arrow-right-from-bracket z-20 text-2xl sm:text-3xl"
+                      ></i>
+
+                      <div
+                        class="absolute rounded-md group-hover:h-full group-active:h-full bottom-0 -left-0 w-full h-[0%] bg-gradient-to-r from-[#5e18e188] to-black/40 z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-b-md [box-shadow:rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset] [background:conic-gradient(from_90deg_at_50%_125%,_#20b2aa,_#135da5,_#0d0895,_#4b0082,_#4b0082,_#0d0895,_#135da5,_#20b2aa)] overflow-hidden relative p-8 xs:p-14 md:p-36 slider-container h-full"
+          >
+            <div
+              class="absolute flex delay-75 transition-all ease-in-out [background:linear-gradient(to_right,_var(--left-grad,rgba(0,_0,_0,_0.5)),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_var(--right-grad,rgba(0,_0,_0,_0.5))),_linear-gradient(to_bottom,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0)_20%,_rgba(0,_0,_0,_0)_80%,_rgba(0,_0,_0,_0.3))] justify-between bottom-0 w-full h-full items-center left-0 z-10"
+            >
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group prev-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-left text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+              <button
+                class="h-full w-20 xs:w-32 transition-all ease-in-out p-4 cursor-pointer group next-photo"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-[70px] transition-all ease-in-out group-hover:text-slate-300 text-slate-400"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="flex gap-16 mx-[15%] sm:mx-0 max-w-xs sm:max-w-none slider-track transition-all ease-in-out duration-1000 h-full"
+            >
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/directory1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/directory1.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/directory2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/directory2.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/directory3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/directory3.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:block hidden"
+                src="/libs/css/assets/images/projects/desktop/directory4.png"
+                alt=""
+              />
+              <img
+                class="w-full rounded-lg [box-shadow:rgba(6,_24,_44,_0.4)_0px_0px_0px_3px,_rgba(6,_24,_44,_0.65)_0px_4px_9px_4px,_rgb(255_255_255_/0%)_0px_1px_100px_inset] sm:hidden block"
+                src="/libs/css/assets/images/projects/mobile/directory4.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <nav
         id="nav"
         aria-expanded="false"
@@ -2189,13 +2469,13 @@
           >
             <div
               aria-disabled="true"
-              class="grid group/main grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-12 mb-32 observed-portfolio observed"
+              class="grid group/main min-[970px]:grid-cols-[1fr_1fr] gap-12 mb-32 observed-portfolio aria-disabled:pointer-events-none pointer-events-auto observed"
             >
               <div
-                class="h-[450px] xs:h-[500px] sm:h-[700px] min-[902px]:h-[700px]"
+                class="h-[450px] xs:h-[500px] sm:h-[700px] min-[970px]:h-[700px]"
               >
                 <div
-                  class="w-fit transition-all duration-1000 group-aria-disabled/main:translate-y-20 translate-y-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/main:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto delay-200"
+                  class="w-fit transition-all duration-1000 group-aria-disabled/main:translate-y-20 translate-y-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/main:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] h-full relative mr-auto ml-auto min-[970px]:mr-0 min-[970px]:ml-auto delay-200"
                 >
                   <div
                     class="max-w-36 xs:max-w-40 sm:max-w-52 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-15px)] xs:transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-40px)]"
@@ -2227,7 +2507,7 @@
                 class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/main:translate-x-20 translate-x-0 group-aria-disabled/main:opacity-0 opacity-100 group-aria-disabled/main:blur-sm group-aria-disabled/main:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
               >
                 <article
-                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
+                  class="p-2 sm:p-4 translate-x-0 sm:translate-x-16 min-[970px]:translate-x-0 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
                 >
                   <h4
                     class="font-oxanium text-amber-400 text-3xl xs:text-4xl mb-2 drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
@@ -2238,9 +2518,7 @@
                     A task app with social integration allowing users to create
                     a profile, add tasks and interact with other users' tasks.
                   </p>
-                  <div
-                    class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
-                  >
+                  <div class="flex gap-2 sm:gap-4 items-center">
                     <a
                       href="https://github.com/jordanss1/task-x"
                       title="https://github.com/jordanss1/task-x"
@@ -2298,14 +2576,14 @@
             </div>
             <div
               aria-disabled="true"
-              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 xs:gap-12 controller-div mb-20 xs:mb-32 observed-portfolio observed"
+              class="grid group/grid min-[970px]:grid-cols-[1fr_1fr] gap-4 xs:gap-12 controller-div mb-20 xs:mb-32 aria-disabled:pointer-events-none pointer-events-auto observed-portfolio observed"
               aria-expanded="false"
             >
               <div
                 class="w-full self-start duration-1000 delay-500 group-aria-disabled/grid:-translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
               >
                 <article
-                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2"
+                  class="p-4 -translate-x-3 xs:translate-x-5 sm:translate-x-24 min-[970px]:-translate-x-5 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)] min-[970px]:mb-0 mb-5"
                 >
                   <div class="mb-2">
                     <div class="flex items-center justify-between px-1">
@@ -2354,9 +2632,7 @@
                       converter for countries.
                     </p>
                   </div>
-                  <div
-                    class="flex flex-row-reverse gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
-                  >
+                  <div class="flex flex-row-reverse gap-4 items-center">
                     <a
                       class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md cursor-default"
                     >
@@ -2421,10 +2697,10 @@
               </div>
               <div class="h-44 xs:h-56 sm:h-96">
                 <div
-                  class="w-fit h-full relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
+                  class="w-fit h-full relative mr-auto ml-auto min-[970px]:mr-0 min-[970px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
                 >
                   <div
-                    class="max-w-44 xs:max-w-64 sm:max-w-80 min-[902px]:translate-x-4 min-[902px]:max-w-72 w-full relative rounded-md xs:translate-x-0 -translate-x-10 transform-[perspective(3em)rotateY(-1deg)translateZ(15px)translateY(16px)]"
+                    class="max-w-44 xs:max-w-64 sm:max-w-80 min-[970px]:translate-x-4 min-[970px]:max-w-72 w-full relative rounded-md xs:translate-x-0 -translate-x-10 transform-[perspective(3em)rotateY(-1deg)translateZ(15px)translateY(16px)]"
                   >
                     <img
                       class="w-full group-aria-expanded/grid:hidden block rounded-md max-h-[500px]"
@@ -2462,14 +2738,14 @@
             </div>
             <div
               aria-disabled="true"
-              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] xs:gap-12 gap-4 controller-div mb-20 xs:mb-32 observed observed-portfolio"
+              class="grid group/grid min-[970px]:grid-cols-[1fr_1fr] xs:gap-12 gap-4 controller-div aria-disabled:pointer-events-none pointer-events-auto mb-20 xs:mb-32 observed observed-portfolio"
             >
               <div class="h-64 xs:h-72 sm:h-96">
                 <div
-                  class="w-fit h-full relative mr-auto xs:translate-x-0 -translate-x-10 ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
+                  class="w-fit h-full relative mr-auto translate-x-0 ml-auto min-[970px]:mr-0 min-[970px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
                 >
                   <div
-                    class="max-w-44 xs:max-w-64 sm:max-w-80 min-[902px]:-translate-x-4 min-[902px]:max-w-72 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)] xs:transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)]"
+                    class="max-w-44 xs:max-w-64 sm:max-w-80 min-[970px]:-translate-x-4 min-[970px]:max-w-72 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)] xs:transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)]"
                   >
                     <img
                       class="w-full rounded-md max-h-[500px]"
@@ -2481,7 +2757,7 @@
                     ></div>
                   </div>
                   <div
-                    class="absolute xs:-bottom-4 sm:bottom-9 -bottom-2 -right-32 xs:-right-24 sm:-right-36 md:bottom-1 md:-right-28 rounded-md w-16 xs:w-20 sm:w-28 md:w-32 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                    class="absolute xs:-bottom-4 sm:bottom-9 -bottom-2 -right-32 xs:-right-24 md:bottom-1 sm:-right-28 rounded-md w-16 xs:w-20 sm:w-32 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
                   >
                     <img
                       class="rounded-md"
@@ -2489,7 +2765,7 @@
                       alt=""
                     />
                     <div
-                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1 -top-1 md:-right-2 xs:-top-1 md:-top-2 w-[110%] h-[105%] md:h-[107%] md:w-[111%] rounded-md -z-10 conic-bg"
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1.5 -top-1 md:-right-2 xs:-top-1 md:-top-2 w-[110%] h-[105%] md:h-[107%] md:w-[111%] rounded-md -z-10 conic-bg"
                     ></div>
                   </div>
                 </div>
@@ -2498,7 +2774,7 @@
                 class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/grid:translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
               >
                 <article
-                  class="p-2 sm:p-4 -translate-x-10 xs:translate-x-0 max-w-md w-full transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
+                  class="p-2 sm:p-4 -translate-x-2 xs:translate-x-0 sm:translate-x-16 min-[970px]:translate-x-0 max-w-md w-full transform-[perspective(4em)_rotateY(-2deg)_translateZ(-4px)] duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
                 >
                   <h4
                     class="font-oxanium text-amber-400 text-3xl xs:text-4xl mb-2 drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7]"
@@ -2509,9 +2785,7 @@
                     A music based app that integrates the Spotify API, allowing
                     users to search artists and song as well as their details.
                   </p>
-                  <div
-                    class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
-                  >
+                  <div class="flex gap-2 sm:gap-4 items-center">
                     <a
                       href="https://www.github.com/jordanss1/whatsong"
                       title="https://www.github.com/jordanss1/whatsong"
@@ -2560,13 +2834,118 @@
             </div>
             <div
               aria-disabled="true"
-              class="grid group/grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 xs:gap-12 mb-32 observed observed-portfolio"
+              class="grid group/grid min-[970px]:grid-cols-[1fr_1fr] gap-4 xs:gap-12 controller-div mb-20 xs:mb-32 aria-disabled:pointer-events-none pointer-events-auto observed-portfolio observed"
+            >
+              <div
+                class="w-full self-start duration-1000 delay-500 group-aria-disabled/grid:-translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
+              >
+                <article
+                  class="p-4 -translate-x-3 xs:translate-x-5 sm:translate-x-24 min-[970px]:-translate-x-5 max-w-md w-full duration-1000 delay-500 transition-all ease-in-out transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)] min-[970px]:mb-0 mb-5"
+                >
+                  <div class="mb-2">
+                    <h4
+                      class="font-oxanium text-amber-400 text-3xl xs:text-4xl whitespace-nowrap overflow-visible w-full drop-shadow-[0px_0px_.2em_black,0px_0px_.05em_#b7b7b7] text-end mb-0"
+                    >
+                      Company Directory
+                    </h4>
+                  </div>
+                  <div class="">
+                    <p
+                      class="font-oxanium text-white text-lg xs:text-xl mb-2 text-end"
+                    >
+                      A company directory where users can search, modify, add
+                      and delete personnel, department and location records.
+                    </p>
+                  </div>
+                  <div class="flex flex-row-reverse gap-4 items-center">
+                    <a
+                      class="flex gap-2 group items-baseline transition-all delay-75 ease-in-out duration-150 bg-black/0 hover:bg-black/30 *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 p-2 relative rounded-md cursor-default"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket group-hover:text-slate-300/50 group-active:text-slate-300/50 transition-all delay-75 ease-in-out duration-150 text-sm xs:text-lg text-white sm:text-2xl"
+                      ></i>
+                      <span
+                        class="sm:text-xl group-hover:text-slate-300/50 group-hactiveover:text-slate-300/50 text-sm xs:text-lg text-white"
+                      >
+                        Source
+                      </span>
+                      <div
+                        class="absolute pointer-events-none p-1 -top-4 left-0 w-fit group-hover:-translate-y-12 group-active:-translate-y-12 translate-y-10 opacity-0 group-hover:opacity-100 group-active:opacity-100 blur-sm group-hover:blur-[0px] group-active:blur-[0px] text-white rounded-md bg-gradient-to-r from-[#5e18e1ba] to-black/40"
+                      >
+                        Code not available yet
+                      </div>
+                    </a>
+                    <button
+                      id="directory-overview-button"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-book-open text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">
+                        Overview
+                      </span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </button>
+                    <a
+                      href="https://directory.jordanss.co.uk/"
+                      title="https://directory.jordanss.co.uk/"
+                      target="_blank"
+                      class="flex gap-2 group items-baseline *:drop-shadow-[0px_0px_.2em_black,0px_0px_.1em_#b7b7b7] *:transition-all *:delay-75 *:ease-in-out *:duration-150 *:group-hover:text-amber-300 *:group-active:text-amber-300 *:text-white cursor-pointer p-1 relative rounded-md"
+                    >
+                      <i
+                        class="fa-solid fa-arrow-right-from-bracket text-sm xs:text-lg sm:text-2xl"
+                      ></i>
+                      <span class="text-sm xs:text-lg sm:text-xl">Website</span>
+                      <div
+                        class="absolute rounded-md group-hover:h-[105%] group-active:h-[105%] bottom-0 -left-1 w-[105%] h-[0%] bg-gradient-to-r from-[#5e18e1ba] to-black/40 -z-10"
+                      ></div>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="h-44 xs:h-56 sm:h-96">
+                <div
+                  class="w-fit h-full relative mr-auto xs:-translate-x-2 sm:translate-x-0 ml-auto min-[970px]:mr-0 min-[970px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
+                >
+                  <div
+                    class="max-w-44 xs:max-w-64 sm:max-w-80 min-[970px]:translate-x-4 min-[970px]:max-w-72 w-full relative rounded-md xs:translate-x-0 -translate-x-10 transform-[perspective(3em)rotateY(-1deg)translateZ(15px)translateY(16px)]"
+                  >
+                    <img
+                      class="w-full rounded-md max-h-[500px]"
+                      src="/libs/css/assets/images/projects/desktop/directory2.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:rgb(0_0_0_/_54%)_0px_-23px_25px_0px_inset,_rgb(0_0_0_/_48%)_0px_-36px_30px_0px_inset,_rgb(195_195_195_/_71%)_0px_-79px_40px_0px_inset,_#c3c3c300_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgb(0_0_0_/_32%)_25px_0px_26px,_rgb(0_0_0_/_22%)_0px_-3px_28px,_#ffffff94_0px_0px_16px] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] -right-1.5 -top-1 sm:-right-2 sm:-top-1 w-[106%] h-[107%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute -bottom-3 sm:bottom-9 xs:-right-30 xs:-bottom-12 -right-20 xs:-right-24 md:bottom-10 sm:-right-36 rounded-md w-20 xs:w-28 sm:w-36 h-fit transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-72px)] xs:transform-[perspective(19em)_rotateY(-1deg)_translateZ(1px)_translate(-34px)] sm:transform-[perspective(19em)_rotateY(354deg)_translateZ(1px)_translate(-55px)]"
+                  >
+                    <img
+                      class="rounded-md"
+                      src="/libs/css/assets/images/projects/mobile/directory4.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute [box-shadow:inset_0_-23px_25px_#0000006e,_inset_0_0_30px_#c2c2c247,_inset_0_-28px_24px_#c3c3c347,_0_5px_2px_#0000002b,_0_4px_2px_#00000017,_-23px_0_25px_#00000052,_0_-8px_20px_#00000038,_10px_13px_15px_#0000008a] [background:conic-gradient(from_var(--deg-portfolio,40deg)_at_0_100%,_red,_#f06,_#f0c,_#c0f,_#1413b7,_#156c84,_#21628a,_#131b7e,_#00f)] xs:-right-1.5 sm:-right-2 -right-1 -top-1 sm:-top-2 w-[110%] h-[105%] rounded-md -z-10 conic-bg"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-disabled="true"
+              class="grid group/grid min-[970px]:grid-cols-[1fr_1fr] gap-2 xs:gap-12 mb-32 aria-disabled:pointer-events-none pointer-events-auto observed observed-portfolio"
             >
               <div
                 class="w-full self-start sm:mt-0 mt-5 duration-1000 delay-500 group-aria-disabled/grid:-translate-x-20 translate-x-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:blur-sm group-aria-disabled/grid:scale-110 scale-100 blur-[0px] ease-in-out transition-all"
               >
                 <article
-                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] min-[902px]:mb-0 mb-5 min-[902px]:translate-x-2 duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
+                  class="p-4 -translate-x-5 xs:translate-x-0 sm:translate-x-16 max-w-md w-full transform-[perspective(4em)_rotateY(2deg)_translateZ(-4px)] min-[970px]:mb-0 mb-5 min-[970px]:translate-x-2 duration-1000 delay-500 transition-all ease-in-out group-aria-disabled/main:transform-[perspective(4em)_rotateY(0deg)_translateZ(-4px)]"
                 >
                   <div class="mb-2">
                     <h4
@@ -2585,9 +2964,7 @@
                   >
                     A clone of Hackernews that looks good on all devices.
                   </p>
-                  <div
-                    class="flex gap-2 sm:gap-4 items-center transform-[perspective(4em)_rotateY(-2deg)] sm:-translate-x-5"
-                  >
+                  <div class="flex gap-2 sm:gap-4 items-center justify-end">
                     <a
                       href="https://www.github.com/jordanss1/hackernews-clone"
                       title="https://www.github.com/jordanss1/hackernews-clone"
@@ -2637,10 +3014,10 @@
                 </article>
               </div>
               <div
-                class="h-[450px] xs:h-[500px] sm:h-[700px] min-[902px]:h-[700px]"
+                class="h-[450px] xs:h-[500px] sm:h-[700px] min-[970px]:h-[700px]"
               >
                 <div
-                  class="w-fit h-full sm:translate-x-0 xs:translate-x-20 min-[902px]:translate-x-10 relative mr-auto ml-auto min-[902px]:mr-0 min-[902px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
+                  class="w-fit h-full min-[970px]:translate-x-0 sm:translate-x-10 xs:translate-x-20 relative mr-auto ml-auto min-[970px]:mr-0 min-[970px]:ml-auto transition-all duration-1000 group-aria-disabled/grid:translate-y-20 translate-y-0 group-aria-disabled/grid:opacity-0 opacity-100 group-aria-disabled/grid:scale-75 scale-100 blur-[0px] ease-in-out group-aria-disabled/grid:[transform:perspective(4rem)rotateX(6deg)] [transform:perspective(4rem)rotateX(0deg)] delay-200"
                 >
                   <div
                     class="max-w-36 xs:max-w-40 sm:max-w-52 w-full relative rounded-md transform-[perspective(3em)_rotateY(1deg)_translateZ(15px)_translateY(76px)_translateX(-15px)] xs:transform-[perspective(3em)_rotateY(-1deg)_translateZ(15px)_translateY(76px)_translateX(-40px)]"

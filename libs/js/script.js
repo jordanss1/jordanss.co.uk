@@ -244,6 +244,10 @@ $('#hackernews-overview-button').on('click', function () {
   $('#hackernews-overview').attr('aria-disabled', 'false');
   $('body').css('overflow', 'hidden');
 });
+$('#directory-overview-button').on('click', function () {
+  $('#directory-overview').attr('aria-disabled', 'false');
+  $('body').css('overflow', 'hidden');
+});
 
 $('.next-photo').on('click', function () {
   let sliderTrack = $(this)

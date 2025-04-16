@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: web
+    container_name: web4
     ports:
       - 8080:8080
     depends_on:
@@ -31,7 +31,7 @@ services:
         PASSWORD: ${PASSWORD}
     ports:
       - 9000:9000
-    container_name: api
+    container_name: api4
     restart: no
     develop:
       watch:
