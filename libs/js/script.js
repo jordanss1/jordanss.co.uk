@@ -217,6 +217,7 @@ $('#overview-switch').on('click', function () {
 });
 
 $('.exit-overview').on('click', function () {
+  index = 0;
   $(this).closest('.fixed').attr('aria-disabled', 'true');
   $('body').css('overflow', 'auto');
 
@@ -304,20 +305,28 @@ $('#contact-button').on('click', async function (e) {
   $('#contact-button').attr('aria-disabled', 'false');
   $('#contact-button').attr('aria-busy', 'true');
   $('#contact-error').attr('aria-disabled', 'true');
+  $('#name-error').closest('div').attr('aria-disabled', 'true');
   $('#email-error').closest('div').attr('aria-disabled', 'true');
   $('#message-error').closest('div').attr('aria-disabled', 'true');
   $('#general-error').closest('div').attr('aria-disabled', 'true');
 
+  $('#name-error').text('');
   $('#email-error').text('');
   $('#message-error').text('');
   $('#general-error').text('');
 
+  const name = $('#name-input').val().trim();
   const email = $('#email-input').val().trim();
   const message = $('#message-input').val().trim();
 
   if (!isValidEmail(email) && email.length) {
     $('#email-error').text('Not valid email');
     $('#email-error').closest('div').attr('aria-disabled', 'false');
+  }
+
+  if (!name.length) {
+    $('#name-error').text('Name field is empty');
+    $('#name-error').closest('div').attr('aria-disabled', 'false');
   }
 
   if (!email.length) {
@@ -350,7 +359,7 @@ $('#contact-button').on('click', async function (e) {
       dataType: 'json',
       contentType: 'application/json',
 
-      data: JSON.stringify({ email, message }),
+      data: JSON.stringify({ name, email, message }),
     });
 
     $('#contact-button').attr('aria-busy', 'false');

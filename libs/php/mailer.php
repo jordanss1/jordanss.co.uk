@@ -9,7 +9,7 @@
     
     $mail = new PHPMailer(true);
 
-    ['email' => $email, 'message' => $message]  = json_decode(file_get_contents('php://input'), true);
+    ['name' => $name, 'email' => $email, 'message' => $message]  = json_decode(file_get_contents('php://input'), true);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
         http_response_code(400);
@@ -17,8 +17,15 @@
         exit;
     }
 
+    $name = strip_tags(trim($name));
     $email = strip_tags(trim($email));
     $message = strip_tags(trim($message));
+
+    if (!is_string($name) || !strlen($name)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Enter a name']);
+        exit;
+    }
 
     if (!is_string($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
@@ -47,7 +54,7 @@
         $mail->setFrom($_ENV['SMTP_EMAIL']);
         $mail->addAddress($_ENV['SMTP_EMAIL']);
         $mail->Subject = "Message on jordanss.co.uk from $email";
-        $mail->Body    = $message;
+        $mail->Body = "Name: $name\nEmail: $email\n\n$message";
 
         
     if ($mail->send()) {
