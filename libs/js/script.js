@@ -24,8 +24,8 @@ $(function () {
 
   const updateOccupation = () => {
     let occupations = [
-      'Javascript Developer',
       'PHP Developer',
+      'Javascript Developer',
       'Frontend Developer',
     ];
 
