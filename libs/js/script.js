@@ -35,7 +35,7 @@ $(function () {
       index = index === occupations.length - 1 ? 0 : index + 1;
 
       $('#occupation').text(occupations[index]);
-    }, 4000);
+    }, 4500);
   };
 
   $('#occupation').addClass('animate-typing');
