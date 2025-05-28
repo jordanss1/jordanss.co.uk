@@ -51,6 +51,8 @@ $(function () {
       }, 4000);
     };
 
+    $('#occupation').addClass('animate-typing');
+
     updateOccupation();
   };
 
