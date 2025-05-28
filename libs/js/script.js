@@ -34,6 +34,24 @@ $(function () {
         }
       }
     });
+
+    const updateOccupation = () => {
+      let occupations = [
+        'Javascript Developer',
+        'PHP Developer',
+        'Frontend Developer',
+      ];
+
+      let index = 0;
+
+      setInterval(() => {
+        index = index === occupations.length - 1 ? 0 : index + 1;
+
+        $('#occupation').text(occupations[index]);
+      }, 4000);
+    };
+
+    updateOccupation();
   };
 
   const observer = new IntersectionObserver(handleIntersection, {
@@ -58,24 +76,6 @@ $('.nav-bt').on('click', function (e) {
     block: 'start',
   });
 });
-
-const updateOccupation = () => {
-  let occupations = [
-    'Javascript Developer',
-    'PHP Developer',
-    'Frontend Developer',
-  ];
-
-  let index = 0;
-
-  setInterval(() => {
-    index = index === occupations.length - 1 ? 0 : index + 1;
-
-    $('#occupation').text(occupations[index]);
-  }, 4000);
-};
-
-updateOccupation();
 
 $('#nav-toggle').on('change', function () {
   if ($(this).prop('checked')) {
