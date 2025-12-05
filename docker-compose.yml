@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: web
+    container_name: web4
     expose:
       - ${WEB_PORT}
     depends_on:
@@ -29,7 +29,7 @@ services:
         SMTP_EMAIL: ${SMTP_EMAIL}
         SMTP_SERVER: ${SMTP_SERVER}
         PASSWORD: ${PASSWORD}
-    container_name: api
+    container_name: api4
     restart: unless-stopped
     networks:
       - dokploy-network
